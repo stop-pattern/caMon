@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Authors>stop pattern</Authors>
+    <Product />
+    <AssemblyVersion>0.0.0.1</AssemblyVersion>
+    <FileVersion>0.0.0.1</FileVersion>
+    <Copyright>Copyright 2020 stop pattern</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\caMon.IPages\caMon.IPages.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="IAtsPI">
+      <HintPath>..\bin\ref\IAtsPI.dll</HintPath>
+    </Reference>
+    <Reference Include="TR.BIDSSMemLib.rw">
+      <HintPath>..\bin\ref\TR.BIDSSMemLib.rw.dll</HintPath>
+    </Reference>
+    <Reference Include="TR.BIDSSMemLib.structs">
+      <HintPath>..\bin\ref\TR.BIDSSMemLib.structs.dll</HintPath>
+    </Reference>
+    <Reference Include="TR.SMemCtrler">
+      <HintPath>..\bin\ref\TR.SMemCtrler.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
