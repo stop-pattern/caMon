@@ -8,7 +8,78 @@
       Title="TIS">
 
     <Viewbox>
-        <Grid Background="Black" Height="1200" Width="1920">
+        <Grid Background="Black" Height="1200" Width="1600">
+            <Grid Margin="0,0" Height="100" VerticalAlignment="Top">
+                <Rectangle Height="100" VerticalAlignment="Top" Fill="DodgerBlue" />
+                <Label Content="◆ 表示灯 ◆" FontSize="75" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid Margin="0,0" Height="100" VerticalAlignment="Bottom">
+                <Rectangle Height="100" VerticalAlignment="Bottom" Fill="Cyan" />
+            </Grid>
+            <Grid x:Name="G" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid x:Name="Step" Margin="50, 200, 1400, 50" Height="650" Width="150">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Grid.Row="1" Stroke="White" StrokeThickness="2"/>
+                    <Rectangle Grid.Row="2" Stroke="White" StrokeThickness="2"/>
+                    <Rectangle Grid.Row="3" Stroke="White" StrokeThickness="2"/>
+                    <Rectangle Grid.Row="4" Stroke="White" StrokeThickness="2"/>
+                    <Rectangle Grid.Row="5" Stroke="White" StrokeThickness="2"/>
+                    <Rectangle Grid.Row="6" Stroke="White" StrokeThickness="2"/>
+                    <Rectangle Grid.Row="7" Stroke="White" StrokeThickness="2"/>
+                    <Rectangle Grid.Row="8" Stroke="White" StrokeThickness="2"/>
+                    <Rectangle Grid.Row="9" Stroke="White" StrokeThickness="2"/>
+                    <Rectangle Grid.Row="10" Stroke="White" StrokeThickness="2"/>
+                    <Rectangle Grid.Row="11" Stroke="White" StrokeThickness="2"/>
+                    <Rectangle Grid.Row="12" Stroke="White" StrokeThickness="2"/>
+                    <Rectangle Grid.Row="13" Stroke="White" StrokeThickness="2"/>
+
+                    <Label Content="EB" FontSize="40" Foreground="White" Grid.Row="0" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="B7" FontSize="40" Foreground="White" Grid.Row="1" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="B6" FontSize="40" Foreground="White" Grid.Row="2" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="B5" FontSize="40" Foreground="White" Grid.Row="3" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="B4" FontSize="40" Foreground="White" Grid.Row="4" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="B3" FontSize="40" Foreground="White" Grid.Row="5" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="B2" FontSize="40" Foreground="White" Grid.Row="6" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="B1" FontSize="40" Foreground="White" Grid.Row="7" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="N" FontSize="40" Foreground="White" Grid.Row="8" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="P1" FontSize="40" Foreground="White" Grid.Row="9" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="P2" FontSize="40" Foreground="White" Grid.Row="10" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="P3" FontSize="40" Foreground="White" Grid.Row="11" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="P4" FontSize="40" Foreground="White" Grid.Row="12" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Grid>
+            </Grid>
+            <Grid x:Name="TKK" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label Content="東急" FontSize="30" Foreground="Black" Background="DarkOrange"
+                       Height="50" Width="75" HorizontalAlignment="Right" VerticalAlignment="Top"
+                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            </Grid>
+            <Grid x:Name="TRTA" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label Content="地下鉄" FontSize="20" Foreground="Black" Background="DarkOrange"
+                       Height="50" Width="75" HorizontalAlignment="Right" VerticalAlignment="Top"
+                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            </Grid>
+            <Grid x:Name="SEB" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            </Grid>
+            <Grid x:Name="TOB" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            </Grid>
         </Grid>
     </Viewbox>
 </Page>
