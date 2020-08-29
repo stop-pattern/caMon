@@ -28,6 +28,9 @@ namespace caMon.pages.TIS
 			camonIF = arg_camonIF;
 
 			SharedFuncs.SML.SMC_BSMDChanged += SMemLib_BIDSSMemChanged;
+			SharedFuncs.SML.SMC_OpenDChanged += SMemLib_OpenChanged;
+			SharedFuncs.SML.SMC_PanelDChanged += SMemLib_PanelChanged;
+			SharedFuncs.SML.SMC_SoundDChanged += SMemLib_SoundChanged;
 
 			timer.Tick += Timer_Tick;
 			timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
@@ -43,9 +46,12 @@ namespace caMon.pages.TIS
 		int EBPosVal = -1;
 		int ATSCheckBPosVal = -1;
 		int TimeVal = -1;
+		int bNotch = -1;
+		int pNotch = -1;
+		int KeyPosition = -1;
 
 		/// <summary> 
-		/// SMLに更新があったときに呼ばれる関数
+		/// SharedMemに更新があったときに呼ばれる関数
 		/// </summary>
 		private void SMemLib_BIDSSMemChanged(object sender, ValueChangedEventArgs<BIDSSharedMemoryData> e)
 		{
@@ -55,6 +61,8 @@ namespace caMon.pages.TIS
 			BCPresVal = e.NewValue.StateData.BC;
 			MRPresVal = e.NewValue.StateData.MR;
 
+			//bNotch = e.NewValue.HandleData.B;
+
 			BNumVal = e.NewValue.HandleData.B;
 			BMaxVal = e.NewValue.SpecData.B;
 			EBPosVal = BMaxVal + 1;
@@ -63,6 +71,30 @@ namespace caMon.pages.TIS
 
 
 			TimeVal = e.NewValue.StateData.T;
+		}
+
+		/// <summary> 
+		/// Openに更新があったときに呼ばれる関数
+		/// </summary>
+		private void SMemLib_OpenChanged(object sender, ValueChangedEventArgs<OpenD> e)
+		{
+		}
+
+		/// <summary> 
+		/// Panelに更新があったときに呼ばれる関数
+		/// </summary>
+		private void SMemLib_PanelChanged(object sender, ValueChangedEventArgs<int[]> p)
+		{
+			bNotch = p.NewValue[51];
+			pNotch = p.NewValue[66];
+			KeyPosition = p.NewValue[92];
+		}
+
+		/// <summary> 
+		/// Soundに更新があったときに呼ばれる関数
+		/// </summary>
+		private void SMemLib_SoundChanged(object sender, ValueChangedEventArgs<int[]> s)
+		{
 		}
 
 		/// <summary> 
@@ -126,7 +158,33 @@ namespace caMon.pages.TIS
 		/// <param name="num">ノッチ段数</param>
 		private void DispNotches(int num)
 		{
-            switch (BNumVal)
+			if(KeyPosition == 0)
+			{
+				ChangeNotches(R_EB, L_EB, Colors.Transparent);
+				ChangeNotches(R_B7, L_B7, Colors.Transparent);
+				ChangeNotches(R_B6, L_B6, Colors.Transparent);
+				ChangeNotches(R_B5, L_B5, Colors.Transparent);
+				ChangeNotches(R_B4, L_B4, Colors.Transparent);
+				ChangeNotches(R_B3, L_B3, Colors.Transparent);
+				ChangeNotches(R_B2, L_B2, Colors.Transparent);
+				ChangeNotches(R_B1, L_B1, Colors.Transparent);
+				ChangeNotches(R_N0, L_N0, Colors.Transparent);
+				ChangeNotches(R_P1, L_P1, Colors.Transparent);
+				ChangeNotches(R_P2, L_P2, Colors.Transparent);
+				ChangeNotches(R_P3, L_P3, Colors.Transparent);
+				ChangeNotches(R_P4, L_P4, Colors.Transparent);
+				return;
+			}
+			if (pNotch >= 4) ChangeNotches(R_P4, L_P4, PBase_on, true);
+			else ChangeNotches(R_P4, L_P4, Colors.Transparent);
+			if (pNotch >= 3) ChangeNotches(R_P3, L_P3, PBase_on, true);
+			else ChangeNotches(R_P3, L_P3, Colors.Transparent);
+			if (pNotch >= 2) ChangeNotches(R_P2, L_P2, PBase_on, true);
+			else ChangeNotches(R_P2, L_P2, Colors.Transparent);
+			if (pNotch >= 1) ChangeNotches(R_P1, L_P1, PBase_on, true);
+			else ChangeNotches(R_P1, L_P1, Colors.Transparent);
+
+			switch (BNumVal)
 			{
 				case 8:
 					ChangeNotches(R_EB, L_EB, EBBase_on, true);
@@ -138,10 +196,6 @@ namespace caMon.pages.TIS
 					ChangeNotches(R_B2, L_B2, BBase_on, true);
 					ChangeNotches(R_B1, L_B1, BBase_on, true);
 					ChangeNotches(R_N0, L_N0, NBase_on, true);
-					ChangeNotches(R_P1, L_P1, Colors.Transparent);
-					ChangeNotches(R_P2, L_P2, Colors.Transparent);
-					ChangeNotches(R_P3, L_P3, Colors.Transparent);
-					ChangeNotches(R_P4, L_P4, Colors.Transparent);
 					break;
 				case 7:
 					ChangeNotches(R_EB, L_EB, Colors.Transparent);
@@ -153,10 +207,6 @@ namespace caMon.pages.TIS
 					ChangeNotches(R_B2, L_B2, BBase_on, true);
 					ChangeNotches(R_B1, L_B1, BBase_on, true);
 					ChangeNotches(R_N0, L_N0, NBase_on, true);
-					ChangeNotches(R_P1, L_P1, Colors.Transparent);
-					ChangeNotches(R_P2, L_P2, Colors.Transparent);
-					ChangeNotches(R_P3, L_P3, Colors.Transparent);
-					ChangeNotches(R_P4, L_P4, Colors.Transparent);
 					break;
 				case 6:
 					ChangeNotches(R_EB, L_EB, Colors.Transparent);
@@ -168,10 +218,6 @@ namespace caMon.pages.TIS
 					ChangeNotches(R_B2, L_B2, BBase_on, true);
 					ChangeNotches(R_B1, L_B1, BBase_on, true);
 					ChangeNotches(R_N0, L_N0, NBase_on, true);
-					ChangeNotches(R_P1, L_P1, Colors.Transparent);
-					ChangeNotches(R_P2, L_P2, Colors.Transparent);
-					ChangeNotches(R_P3, L_P3, Colors.Transparent);
-					ChangeNotches(R_P4, L_P4, Colors.Transparent);
 					break;
 				case 5:
 					ChangeNotches(R_EB, L_EB, Colors.Transparent);
@@ -183,10 +229,6 @@ namespace caMon.pages.TIS
 					ChangeNotches(R_B2, L_B2, BBase_on, true);
 					ChangeNotches(R_B1, L_B1, BBase_on, true);
 					ChangeNotches(R_N0, L_N0, NBase_on, true);
-					ChangeNotches(R_P1, L_P1, Colors.Transparent);
-					ChangeNotches(R_P2, L_P2, Colors.Transparent);
-					ChangeNotches(R_P3, L_P3, Colors.Transparent);
-					ChangeNotches(R_P4, L_P4, Colors.Transparent);
 					break;
 				case 4:
 					ChangeNotches(R_EB, L_EB, Colors.Transparent);
@@ -198,10 +240,6 @@ namespace caMon.pages.TIS
 					ChangeNotches(R_B2, L_B2, BBase_on, true);
 					ChangeNotches(R_B1, L_B1, BBase_on, true);
 					ChangeNotches(R_N0, L_N0, NBase_on, true);
-					ChangeNotches(R_P1, L_P1, Colors.Transparent);
-					ChangeNotches(R_P2, L_P2, Colors.Transparent);
-					ChangeNotches(R_P3, L_P3, Colors.Transparent);
-					ChangeNotches(R_P4, L_P4, Colors.Transparent);
 					break;
 				case 3:
 					ChangeNotches(R_EB, L_EB, Colors.Transparent);
@@ -213,10 +251,6 @@ namespace caMon.pages.TIS
 					ChangeNotches(R_B2, L_B2, BBase_on, true);
 					ChangeNotches(R_B1, L_B1, BBase_on, true);
 					ChangeNotches(R_N0, L_N0, NBase_on, true);
-					ChangeNotches(R_P1, L_P1, Colors.Transparent);
-					ChangeNotches(R_P2, L_P2, Colors.Transparent);
-					ChangeNotches(R_P3, L_P3, Colors.Transparent);
-					ChangeNotches(R_P4, L_P4, Colors.Transparent);
 					break;
 				case 2:
 					ChangeNotches(R_EB, L_EB, Colors.Transparent);
@@ -228,10 +262,6 @@ namespace caMon.pages.TIS
 					ChangeNotches(R_B2, L_B2, BBase_on, true);
 					ChangeNotches(R_B1, L_B1, BBase_on, true);
 					ChangeNotches(R_N0, L_N0, NBase_on, true);
-					ChangeNotches(R_P1, L_P1, Colors.Transparent);
-					ChangeNotches(R_P2, L_P2, Colors.Transparent);
-					ChangeNotches(R_P3, L_P3, Colors.Transparent);
-					ChangeNotches(R_P4, L_P4, Colors.Transparent);
 					break;
 				case 1:
 					ChangeNotches(R_EB, L_EB, Colors.Transparent);
@@ -243,10 +273,6 @@ namespace caMon.pages.TIS
 					ChangeNotches(R_B2, L_B2, Colors.Transparent);
 					ChangeNotches(R_B1, L_B1, BBase_on, true);
 					ChangeNotches(R_N0, L_N0, NBase_on, true);
-					ChangeNotches(R_P1, L_P1, Colors.Transparent);
-					ChangeNotches(R_P2, L_P2, Colors.Transparent);
-					ChangeNotches(R_P3, L_P3, Colors.Transparent);
-					ChangeNotches(R_P4, L_P4, Colors.Transparent);
 					break;
 				case 0:
 					ChangeNotches(R_EB, L_EB, Colors.Transparent);
@@ -258,10 +284,6 @@ namespace caMon.pages.TIS
 					ChangeNotches(R_B2, L_B2, Colors.Transparent);
 					ChangeNotches(R_B1, L_B1, Colors.Transparent);
 					ChangeNotches(R_N0, L_N0, NBase_on, true);
-					ChangeNotches(R_P1, L_P1, Colors.Transparent);
-					ChangeNotches(R_P2, L_P2, Colors.Transparent);
-					ChangeNotches(R_P3, L_P3, Colors.Transparent);
-					ChangeNotches(R_P4, L_P4, Colors.Transparent);
 					break;
 				default:
 					ChangeNotches(R_EB, L_EB, Colors.Transparent);
@@ -273,10 +295,6 @@ namespace caMon.pages.TIS
 					ChangeNotches(R_B2, L_B2, Colors.Transparent);
 					ChangeNotches(R_B1, L_B1, Colors.Transparent);
 					ChangeNotches(R_N0, L_N0, Colors.Transparent);
-					ChangeNotches(R_P1, L_P1, Colors.Transparent);
-					ChangeNotches(R_P2, L_P2, Colors.Transparent);
-					ChangeNotches(R_P3, L_P3, Colors.Transparent);
-					ChangeNotches(R_P4, L_P4, Colors.Transparent);
 					break;
             }
 		}
