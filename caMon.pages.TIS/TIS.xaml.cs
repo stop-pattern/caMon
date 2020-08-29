@@ -7,6 +7,7 @@ using System.Windows.Threading;
 using System.Windows.Shapes;
 
 using TR;
+using TR.BIDSSMemLib;
 
 namespace caMon.pages.TIS
 {
@@ -20,6 +21,8 @@ namespace caMon.pages.TIS
 		int timerInterval = 300;
 		int TimeOld = 0;
 		caMonIF camonIF;
+		Rectangle[,] rectangles;
+		Label[,] labels;
 
 		public TIS(caMonIF arg_camonIF)
 		{
@@ -35,6 +38,18 @@ namespace caMon.pages.TIS
 			timer.Tick += Timer_Tick;
 			timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
 			timer.Start();
+			rectangles= new Rectangle[3, 12]
+			{
+				{r11,r13,r15,r17,r19,r111,r113,r115,r117,r119,r121,r123},
+				{r31,r33,r35,r37,r39,r311,r313,r315,r317,r319,r321,r323},
+				{r51,r53,r55,r57,r59,r511,r513,r515,r517,r519,r521,r523}
+			};
+			labels = new Label[3, 12]
+			{
+				{l00,l02,l04,l06,l08,l010,l012,l014,l016,l018,l020,l022},
+				{l20,l22,l24,l26,l28,l210,l212,l214,l216,l218,l220,l222},
+				{l40,l42,l44,l46,l48,l410,l412,l414,l416,l418,l420,l422}
+			};
 		}
 
 		bool BIDSSMemIsEnabled = false;
@@ -145,14 +160,14 @@ namespace caMon.pages.TIS
 		/// </summary>
 		private void NextP(object sender, RoutedEventArgs e) => camonIF.BackToHomeDo();
 
-		/// <summary>EBノッチ表示で使用する色</summary>
-		static readonly Color EBBase_on = Colors.Red;
-		/// <summary>Bノッチ表示で使用する色</summary>
-		static readonly Color BBase_on = Colors.Orange;
-		/// <summary>Nノッチ表示で使用する色</summary>
-		static readonly Color NBase_on = Colors.Lime;
-		/// <summary>Pノッチ表示で使用する色</summary>
-		static readonly Color PBase_on = Colors.Aquamarine;
+		/// <summary>非常表示で使用する色</summary>
+		static readonly Color colorEmergency = Colors.Red;
+		/// <summary>注意表示で使用する色</summary>
+		static readonly Color colorBrake = Colors.Orange;
+		/// <summary>通知表示で使用する色</summary>
+		static readonly Color colorNotice = Colors.Lime;
+		/// <summary>有効表示で使用する色</summary>
+		static readonly Color colorActive = Colors.Aquamarine;
 
 		/// <summary>
 		/// ノッチ表示更新
@@ -161,73 +176,50 @@ namespace caMon.pages.TIS
 		{
 			if(KeyPosition == 0)
 			{
-				ChangeNotches(R_EB, L_EB, Colors.Transparent);
-				ChangeNotches(R_B7, L_B7, Colors.Transparent);
-				ChangeNotches(R_B6, L_B6, Colors.Transparent);
-				ChangeNotches(R_B5, L_B5, Colors.Transparent);
-				ChangeNotches(R_B4, L_B4, Colors.Transparent);
-				ChangeNotches(R_B3, L_B3, Colors.Transparent);
-				ChangeNotches(R_B2, L_B2, Colors.Transparent);
-				ChangeNotches(R_B1, L_B1, Colors.Transparent);
-				ChangeNotches(R_N0, L_N0, Colors.Transparent);
-				ChangeNotches(R_P1, L_P1, Colors.Transparent);
-				ChangeNotches(R_P2, L_P2, Colors.Transparent);
-				ChangeNotches(R_P3, L_P3, Colors.Transparent);
-				ChangeNotches(R_P4, L_P4, Colors.Transparent);
+				ChangeDisplay(R_EB, L_EB, Colors.Transparent);
+				ChangeDisplay(R_B7, L_B7, Colors.Transparent);
+				ChangeDisplay(R_B6, L_B6, Colors.Transparent);
+				ChangeDisplay(R_B5, L_B5, Colors.Transparent);
+				ChangeDisplay(R_B4, L_B4, Colors.Transparent);
+				ChangeDisplay(R_B3, L_B3, Colors.Transparent);
+				ChangeDisplay(R_B2, L_B2, Colors.Transparent);
+				ChangeDisplay(R_B1, L_B1, Colors.Transparent);
+				ChangeDisplay(R_N0, L_N0, Colors.Transparent);
+				ChangeDisplay(R_P1, L_P1, Colors.Transparent);
+				ChangeDisplay(R_P2, L_P2, Colors.Transparent);
+				ChangeDisplay(R_P3, L_P3, Colors.Transparent);
+				ChangeDisplay(R_P4, L_P4, Colors.Transparent);
 				return;
 			}
 
-			if (bNotch >= 8) ChangeNotches(R_EB, L_EB, EBBase_on, true);
-			else ChangeNotches(R_EB, L_EB, Colors.Transparent);
+			if (bNotch >= 8) ChangeDisplay(R_EB, L_EB, colorEmergency, true);
+			else ChangeDisplay(R_EB, L_EB, Colors.Transparent);
 
-			if (bNotch >= 7) ChangeNotches(R_B7, L_B7, BBase_on, true);
-			else ChangeNotches(R_B7, L_B7, Colors.Transparent);
-			if (bNotch >= 6) ChangeNotches(R_B6, L_B6, BBase_on, true);
-			else ChangeNotches(R_B6, L_B6, Colors.Transparent);
-			if (bNotch >= 5) ChangeNotches(R_B5, L_B5, BBase_on, true);
-			else ChangeNotches(R_B5, L_B5, Colors.Transparent);
-			if (bNotch >= 4) ChangeNotches(R_B4, L_B4, BBase_on, true);
-			else ChangeNotches(R_B4, L_B4, Colors.Transparent);
-			if (bNotch >= 3) ChangeNotches(R_B3, L_B3, BBase_on, true);
-			else ChangeNotches(R_B3, L_B3, Colors.Transparent);
-			if (bNotch >= 2) ChangeNotches(R_B2, L_B2, BBase_on, true);
-			else ChangeNotches(R_B2, L_B2, Colors.Transparent);
-			if (bNotch >= 1) ChangeNotches(R_B1, L_B1, BBase_on, true);
-			else ChangeNotches(R_B1, L_B1, Colors.Transparent);
+			if (bNotch >= 7) ChangeDisplay(R_B7, L_B7, colorBrake, true);
+			else ChangeDisplay(R_B7, L_B7, Colors.Transparent);
+			if (bNotch >= 6) ChangeDisplay(R_B6, L_B6, colorBrake, true);
+			else ChangeDisplay(R_B6, L_B6, Colors.Transparent);
+			if (bNotch >= 5) ChangeDisplay(R_B5, L_B5, colorBrake, true);
+			else ChangeDisplay(R_B5, L_B5, Colors.Transparent);
+			if (bNotch >= 4) ChangeDisplay(R_B4, L_B4, colorBrake, true);
+			else ChangeDisplay(R_B4, L_B4, Colors.Transparent);
+			if (bNotch >= 3) ChangeDisplay(R_B3, L_B3, colorBrake, true);
+			else ChangeDisplay(R_B3, L_B3, Colors.Transparent);
+			if (bNotch >= 2) ChangeDisplay(R_B2, L_B2, colorBrake, true);
+			else ChangeDisplay(R_B2, L_B2, Colors.Transparent);
+			if (bNotch >= 1) ChangeDisplay(R_B1, L_B1, colorBrake, true);
+			else ChangeDisplay(R_B1, L_B1, Colors.Transparent);
 
-			ChangeNotches(R_N0, L_N0, NBase_on, true);
+			ChangeDisplay(R_N0, L_N0, colorNotice, true);
 
-			if (pNotch >= 1) ChangeNotches(R_P1, L_P1, PBase_on, true);
-			else ChangeNotches(R_P1, L_P1, Colors.Transparent);
-			if (pNotch >= 2) ChangeNotches(R_P2, L_P2, PBase_on, true);
-			else ChangeNotches(R_P2, L_P2, Colors.Transparent);
-			if (pNotch >= 3) ChangeNotches(R_P3, L_P3, PBase_on, true);
-			else ChangeNotches(R_P3, L_P3, Colors.Transparent);
-			if (pNotch >= 4) ChangeNotches(R_P4, L_P4, PBase_on, true);
-			else ChangeNotches(R_P4, L_P4, Colors.Transparent);
-		}
-
-		/// <summary>
-		/// ノッチ表示更新
-		/// </summary>
-		/// <param name="rectangle">変更する長方形</param>
-		/// <param name="label">変更する文字</param>
-		/// <param name="color">塗りつぶし色</param>
-		/// <param name="status">状態</param>
-		private void ChangeNotches(Rectangle rectangle, Label label, Color color, bool status = false)
-		{
-			if (status)
-			{
-				rectangle.Fill = new SolidColorBrush(color);
-				rectangle.Stroke = new SolidColorBrush(Colors.Transparent);
-				label.Foreground = new SolidColorBrush(Colors.Black);
-			}
-			else
-			{
-				rectangle.Fill = new SolidColorBrush(Colors.Transparent);
-				rectangle.Stroke = new SolidColorBrush(Colors.White);
-				label.Foreground = new SolidColorBrush(Colors.White);
-			}
+			if (pNotch >= 1) ChangeDisplay(R_P1, L_P1, colorActive, true);
+			else ChangeDisplay(R_P1, L_P1, Colors.Transparent);
+			if (pNotch >= 2) ChangeDisplay(R_P2, L_P2, colorActive, true);
+			else ChangeDisplay(R_P2, L_P2, Colors.Transparent);
+			if (pNotch >= 3) ChangeDisplay(R_P3, L_P3, colorActive, true);
+			else ChangeDisplay(R_P3, L_P3, Colors.Transparent);
+			if (pNotch >= 4) ChangeDisplay(R_P4, L_P4, colorActive, true);
+			else ChangeDisplay(R_P4, L_P4, Colors.Transparent);
 		}
 
 		/// <summary>
@@ -254,6 +246,11 @@ namespace caMon.pages.TIS
 						comp.Content = "東急";
 						//comp.Content = "東急・横高";
 						comp.Visibility = Visibility.Visible;
+
+						//rectangles[0,0].
+						labels[0, 0].Content = "非常運転";
+						labels[0, 3].Content = "ATC";
+						ChangeDisplay(rectangles[0, 3], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[21]));
 						break;
 					/// SEB
 					case 4:
@@ -287,5 +284,29 @@ namespace caMon.pages.TIS
 				comp.Visibility = Visibility.Hidden;
 			}
 		}
+
+		/// <summary>
+		/// 表示更新
+		/// </summary>
+		/// <param name="rectangle">変更する長方形</param>
+		/// <param name="label">変更する文字</param>
+		/// <param name="color">塗りつぶし色</param>
+		/// <param name="status">状態</param>
+		private void ChangeDisplay(Rectangle rectangle, Label label, Color color, bool status = false)
+		{
+			if (status)
+			{
+				rectangle.Fill = new SolidColorBrush(color);
+				rectangle.Stroke = new SolidColorBrush(Colors.Transparent);
+				label.Foreground = new SolidColorBrush(Colors.Black);
+			}
+			else
+			{
+				rectangle.Fill = new SolidColorBrush(Colors.Transparent);
+				rectangle.Stroke = new SolidColorBrush(Colors.White);
+				label.Foreground = new SolidColorBrush(Colors.White);
+			}
+		}
+
 	}
 }
