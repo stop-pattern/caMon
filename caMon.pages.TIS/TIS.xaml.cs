@@ -127,6 +127,7 @@ namespace caMon.pages.TIS
 			}
 
 			DispNotches();
+			DispRoute();
 		}
 
         /// <summary>
@@ -221,11 +222,69 @@ namespace caMon.pages.TIS
 				rectangle.Stroke = new SolidColorBrush(Colors.Transparent);
 				label.Foreground = new SolidColorBrush(Colors.Black);
 			}
-            else
-            {
+			else
+			{
 				rectangle.Fill = new SolidColorBrush(Colors.Transparent);
 				rectangle.Stroke = new SolidColorBrush(Colors.White);
 				label.Foreground = new SolidColorBrush(Colors.White);
+			}
+		}
+
+		/// <summary>
+		/// 線区関係
+		/// </summary>
+		private void DispRoute()
+		{
+			if (KeyPosition != 0)
+			{
+                switch (KeyPosition)
+                {
+					/// TRTA
+					case 1:
+						comp.Content = "地下鉄";
+						comp.Visibility = Visibility.Visible;
+						break;
+					/// TOB
+					case 2:
+						comp.Content = "東武";
+						comp.Visibility = Visibility.Visible;
+						break;
+					/// TKK
+					case 3:
+						comp.Content = "東急";
+						//comp.Content = "東急・横高";
+						comp.Visibility = Visibility.Visible;
+						break;
+					/// SEB
+					case 4:
+						comp.Content = "西武";
+						comp.Visibility = Visibility.Visible;
+						break;
+					/// SOT
+					case 5:
+						comp.Content = "相鉄";
+						comp.Visibility = Visibility.Visible;
+						break;
+					/// SOT
+					case 6:
+						comp.Content = "JR";
+						comp.Visibility = Visibility.Visible;
+						break;
+					/// SOT
+					case 7:
+						comp.Content = "小田急";
+						comp.Visibility = Visibility.Visible;
+						break;
+					case 8:
+						comp.Content = "東葉";
+						comp.Visibility = Visibility.Visible;
+						break;
+				}
+			}
+			else
+			{
+				comp.Content = "";
+				comp.Visibility = Visibility.Hidden;
 			}
 		}
 	}

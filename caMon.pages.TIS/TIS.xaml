@@ -105,22 +105,18 @@
                     <Rectangle Grid.Column="1" Grid.Row="1" Stroke="White"/>
                     <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="非常運転" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
                 </Grid>
+                <Label x:Name="comp" Content="" FontSize="60" Foreground="Black" Background="DarkOrange"
+                       Height="100" Width="200" HorizontalAlignment="Right" VerticalAlignment="Top"
+                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             </Grid>
             <Grid x:Name="TKK" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Content="東急" FontSize="30" Foreground="Black" Background="DarkOrange"
-                       Height="50" Width="75" HorizontalAlignment="Right" VerticalAlignment="Top"
-                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             </Grid>
             <Grid x:Name="TRTA" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Content="地下鉄" FontSize="20" Foreground="Black" Background="DarkOrange"
-                       Height="50" Width="75" HorizontalAlignment="Right" VerticalAlignment="Top"
-                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             </Grid>
             <Grid x:Name="SEB" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
-
             </Grid>
             <Grid x:Name="TOB" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
-
+                
             </Grid>
         </Grid>
     </Viewbox>
