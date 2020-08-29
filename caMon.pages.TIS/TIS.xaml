@@ -9,11 +9,11 @@
 
     <Viewbox>
         <Grid Background="Black" Height="1200" Width="1600">
-            <Grid Margin="0,0" Height="100" VerticalAlignment="Top">
+            <Grid x:Name="displayTop" Margin="0,0" Height="100" VerticalAlignment="Top">
                 <Rectangle Height="100" VerticalAlignment="Top" Fill="DodgerBlue" />
                 <Label Content="◆ 表示灯 ◆" FontSize="75" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
-            <Grid Margin="0,0" Height="100" VerticalAlignment="Bottom">
+            <Grid x:Name="displayBottom" Margin="0,0" Height="100" VerticalAlignment="Bottom">
                 <Rectangle Height="100" VerticalAlignment="Bottom" Fill="Cyan" />
             </Grid>
             <Grid x:Name="G" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
