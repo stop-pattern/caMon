@@ -61,8 +61,8 @@ namespace caMon.pages.TIS
 			BCPresVal = e.NewValue.StateData.BC;
 			MRPresVal = e.NewValue.StateData.MR;
 
-			bNotch = e.NewValue.HandleData.B;
-			pNotch = e.NewValue.HandleData.P;
+			//bNotch = e.NewValue.HandleData.B;
+			//pNotch = e.NewValue.HandleData.P;
 
 			BNumVal = e.NewValue.HandleData.B;
 			BMaxVal = e.NewValue.SpecData.B;
