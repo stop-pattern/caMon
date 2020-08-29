@@ -251,10 +251,97 @@ namespace caMon.pages.TIS
 						rectangles[0, 0].Visibility = Visibility.Visible;
 						labels[0, 0].Visibility = Visibility.Visible;
 
-						labels[0, 3].Content = "ATC";
-						ChangeDisplay(rectangles[0, 3], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[21]));
+						labels[0, 2].Content = "ＴＡＳＣ";
+						ChangeDisplay(rectangles[0, 2], labels[0, 2], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[136]));
+						rectangles[0, 2].Visibility = Visibility.Visible;
+						labels[0, 2].Visibility = Visibility.Visible;
+
+						labels[0, 3].Content = "ＡＴＣ";
+						ChangeDisplay(rectangles[0, 3], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[19]));
 						rectangles[0, 3].Visibility = Visibility.Visible;
 						labels[0, 3].Visibility = Visibility.Visible;
+
+						labels[0, 4].Content = "入換";
+						ChangeDisplay(rectangles[0, 4], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[32]));
+						rectangles[0, 4].Visibility = Visibility.Visible;
+						labels[0, 4].Visibility = Visibility.Visible;
+
+						labels[0, 5].Content = "構内";
+						rectangles[0, 5].Visibility = Visibility.Visible;
+						labels[0, 5].Visibility = Visibility.Visible;
+
+						labels[0, 6].Content = "非設";
+						ChangeDisplay(rectangles[0, 6], labels[0, 6], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[28]));
+						rectangles[0, 6].Visibility = Visibility.Visible;
+						labels[0, 6].Visibility = Visibility.Visible;
+
+						labels[0, 8].Content = "ハイビーム";
+						ChangeDisplay(rectangles[0, 3], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[18]));
+						rectangles[0, 8].Visibility = Visibility.Visible;
+						labels[0, 8].Visibility = Visibility.Visible;
+
+						labels[1, 0].Content = "ＡＴＣ非常";
+						ChangeDisplay(rectangles[1, 0], labels[1, 0], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[22]));
+						rectangles[1, 0].Visibility = Visibility.Visible;
+						labels[1, 0].Visibility = Visibility.Visible;
+
+						labels[1, 1].Content = "ＡＴＣ常用";
+						ChangeDisplay(rectangles[1, 1], labels[1, 1], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[23]));
+						rectangles[1, 1].Visibility = Visibility.Visible;
+						labels[1, 1].Visibility = Visibility.Visible;
+
+						labels[1, 2].Content = "TASC制御";
+						ChangeDisplay(rectangles[1, 2], labels[1, 2], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[138]));
+						rectangles[1, 2].Visibility = Visibility.Visible;
+						labels[1, 2].Visibility = Visibility.Visible;
+
+						labels[1, 3].Content = "耐雪ﾌﾞﾚｰｷ";
+						ChangeDisplay(rectangles[1, 3], labels[1, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[176]));
+						rectangles[1, 3].Visibility = Visibility.Visible;
+						labels[1, 3].Visibility = Visibility.Visible;
+
+						labels[1, 4].Content = "回生開放";
+						//ChangeDisplay(rectangles[1, 4], labels[1, 4], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[171]));	// 廃止
+						rectangles[1, 4].Visibility = Visibility.Visible;
+						labels[1, 4].Visibility = Visibility.Visible;
+
+						labels[1, 5].Content = "非常ﾌﾞﾚｰｷ";
+						ChangeDisplay(rectangles[1, 5], labels[1, 5], colorEmergency, (SharedFuncs.SML.PanelA[51] >= 8));
+						rectangles[1, 5].Visibility = Visibility.Visible;
+						labels[1, 5].Visibility = Visibility.Visible;
+
+						labels[1, 6].Content = "制御開放";
+						rectangles[1, 6].Visibility = Visibility.Visible;
+						labels[1, 6].Visibility = Visibility.Visible;
+
+						labels[1, 8].Content = "情報伝送故障";
+						labels[1, 8].FontSize = 40;
+						rectangles[1, 8].Visibility = Visibility.Visible;
+						labels[1, 8].Visibility = Visibility.Visible;
+
+						labels[1, 9].Content = "TIS試験";
+						rectangles[1, 9].Visibility = Visibility.Visible;
+						labels[1, 9].Visibility = Visibility.Visible;
+
+						labels[2, 0].Content = "ﾎｰﾑﾄﾞｱ連動";
+						labels[2, 0].FontSize = 40;
+						ChangeDisplay(rectangles[2, 0], labels[2, 0], colorNotice, (SharedFuncs.SML.PanelA[155] == 1));
+						rectangles[2, 0].Visibility = Visibility.Visible;
+						labels[2, 0].Visibility = Visibility.Visible;
+
+						labels[2, 1].Content = "ﾎｰﾑﾄﾞｱ非連動";
+						labels[2, 1].FontSize = 40;
+						ChangeDisplay(rectangles[2, 1], labels[2, 1], colorBrake, (SharedFuncs.SML.PanelA[155] == 2));
+						rectangles[2, 1].Visibility = Visibility.Visible;
+						labels[2, 1].Visibility = Visibility.Visible;
+
+						labels[2, 3].Content = "ﾎｰﾑﾄﾞｱ支障";
+						rectangles[2, 3].Visibility = Visibility.Visible;
+						labels[2, 3].Visibility = Visibility.Visible;
+
+						labels[2, 5].Content = "起動試験";
+						rectangles[2, 5].Visibility = Visibility.Visible;
+						labels[2, 5].Visibility = Visibility.Visible;
 						break;
 					/// SEB
 					case 4:
