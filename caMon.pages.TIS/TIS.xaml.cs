@@ -247,10 +247,14 @@ namespace caMon.pages.TIS
 						//comp.Content = "東急・横高";
 						comp.Visibility = Visibility.Visible;
 
-						//rectangles[0,0].
 						labels[0, 0].Content = "非常運転";
+						rectangles[0, 0].Visibility = Visibility.Visible;
+						labels[0, 0].Visibility = Visibility.Visible;
+
 						labels[0, 3].Content = "ATC";
 						ChangeDisplay(rectangles[0, 3], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[21]));
+						rectangles[0, 3].Visibility = Visibility.Visible;
+						labels[0, 3].Visibility = Visibility.Visible;
 						break;
 					/// SEB
 					case 4:
