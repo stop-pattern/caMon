@@ -126,10 +126,159 @@ namespace caMon.pages.TIS
 		/// <param name="num">ノッチ段数</param>
 		private void DispNotches(int num)
 		{
-			if (num == 0)
+            switch (BNumVal)
 			{
-				ChangeNotches(R_N0, L_N0, NBase_on, true);
-			}
+				case 8:
+					ChangeNotches(R_EB, L_EB, EBBase_on, true);
+					ChangeNotches(R_B7, L_B7, BBase_on, true);
+					ChangeNotches(R_B6, L_B6, BBase_on, true);
+					ChangeNotches(R_B5, L_B5, BBase_on, true);
+					ChangeNotches(R_B4, L_B4, BBase_on, true);
+					ChangeNotches(R_B3, L_B3, BBase_on, true);
+					ChangeNotches(R_B2, L_B2, BBase_on, true);
+					ChangeNotches(R_B1, L_B1, BBase_on, true);
+					ChangeNotches(R_N0, L_N0, NBase_on, true);
+					ChangeNotches(R_P1, L_P1, Colors.Transparent);
+					ChangeNotches(R_P2, L_P2, Colors.Transparent);
+					ChangeNotches(R_P3, L_P3, Colors.Transparent);
+					ChangeNotches(R_P4, L_P4, Colors.Transparent);
+					break;
+				case 7:
+					ChangeNotches(R_EB, L_EB, Colors.Transparent);
+					ChangeNotches(R_B7, L_B7, BBase_on, true);
+					ChangeNotches(R_B6, L_B6, BBase_on, true);
+					ChangeNotches(R_B5, L_B5, BBase_on, true);
+					ChangeNotches(R_B4, L_B4, BBase_on, true);
+					ChangeNotches(R_B3, L_B3, BBase_on, true);
+					ChangeNotches(R_B2, L_B2, BBase_on, true);
+					ChangeNotches(R_B1, L_B1, BBase_on, true);
+					ChangeNotches(R_N0, L_N0, NBase_on, true);
+					ChangeNotches(R_P1, L_P1, Colors.Transparent);
+					ChangeNotches(R_P2, L_P2, Colors.Transparent);
+					ChangeNotches(R_P3, L_P3, Colors.Transparent);
+					ChangeNotches(R_P4, L_P4, Colors.Transparent);
+					break;
+				case 6:
+					ChangeNotches(R_EB, L_EB, Colors.Transparent);
+					ChangeNotches(R_B7, L_B7, Colors.Transparent);
+					ChangeNotches(R_B6, L_B6, BBase_on, true);
+					ChangeNotches(R_B5, L_B5, BBase_on, true);
+					ChangeNotches(R_B4, L_B4, BBase_on, true);
+					ChangeNotches(R_B3, L_B3, BBase_on, true);
+					ChangeNotches(R_B2, L_B2, BBase_on, true);
+					ChangeNotches(R_B1, L_B1, BBase_on, true);
+					ChangeNotches(R_N0, L_N0, NBase_on, true);
+					ChangeNotches(R_P1, L_P1, Colors.Transparent);
+					ChangeNotches(R_P2, L_P2, Colors.Transparent);
+					ChangeNotches(R_P3, L_P3, Colors.Transparent);
+					ChangeNotches(R_P4, L_P4, Colors.Transparent);
+					break;
+				case 5:
+					ChangeNotches(R_EB, L_EB, Colors.Transparent);
+					ChangeNotches(R_B7, L_B7, Colors.Transparent);
+					ChangeNotches(R_B6, L_B6, Colors.Transparent);
+					ChangeNotches(R_B5, L_B5, BBase_on, true);
+					ChangeNotches(R_B4, L_B4, BBase_on, true);
+					ChangeNotches(R_B3, L_B3, BBase_on, true);
+					ChangeNotches(R_B2, L_B2, BBase_on, true);
+					ChangeNotches(R_B1, L_B1, BBase_on, true);
+					ChangeNotches(R_N0, L_N0, NBase_on, true);
+					ChangeNotches(R_P1, L_P1, Colors.Transparent);
+					ChangeNotches(R_P2, L_P2, Colors.Transparent);
+					ChangeNotches(R_P3, L_P3, Colors.Transparent);
+					ChangeNotches(R_P4, L_P4, Colors.Transparent);
+					break;
+				case 4:
+					ChangeNotches(R_EB, L_EB, Colors.Transparent);
+					ChangeNotches(R_B7, L_B7, Colors.Transparent);
+					ChangeNotches(R_B6, L_B6, Colors.Transparent);
+					ChangeNotches(R_B5, L_B5, Colors.Transparent);
+					ChangeNotches(R_B4, L_B4, BBase_on, true);
+					ChangeNotches(R_B3, L_B3, BBase_on, true);
+					ChangeNotches(R_B2, L_B2, BBase_on, true);
+					ChangeNotches(R_B1, L_B1, BBase_on, true);
+					ChangeNotches(R_N0, L_N0, NBase_on, true);
+					ChangeNotches(R_P1, L_P1, Colors.Transparent);
+					ChangeNotches(R_P2, L_P2, Colors.Transparent);
+					ChangeNotches(R_P3, L_P3, Colors.Transparent);
+					ChangeNotches(R_P4, L_P4, Colors.Transparent);
+					break;
+				case 3:
+					ChangeNotches(R_EB, L_EB, Colors.Transparent);
+					ChangeNotches(R_B7, L_B7, Colors.Transparent);
+					ChangeNotches(R_B6, L_B6, Colors.Transparent);
+					ChangeNotches(R_B5, L_B5, Colors.Transparent);
+					ChangeNotches(R_B4, L_B4, Colors.Transparent);
+					ChangeNotches(R_B3, L_B3, BBase_on, true);
+					ChangeNotches(R_B2, L_B2, BBase_on, true);
+					ChangeNotches(R_B1, L_B1, BBase_on, true);
+					ChangeNotches(R_N0, L_N0, NBase_on, true);
+					ChangeNotches(R_P1, L_P1, Colors.Transparent);
+					ChangeNotches(R_P2, L_P2, Colors.Transparent);
+					ChangeNotches(R_P3, L_P3, Colors.Transparent);
+					ChangeNotches(R_P4, L_P4, Colors.Transparent);
+					break;
+				case 2:
+					ChangeNotches(R_EB, L_EB, Colors.Transparent);
+					ChangeNotches(R_B7, L_B7, Colors.Transparent);
+					ChangeNotches(R_B6, L_B6, Colors.Transparent);
+					ChangeNotches(R_B5, L_B5, Colors.Transparent);
+					ChangeNotches(R_B4, L_B4, Colors.Transparent);
+					ChangeNotches(R_B3, L_B3, Colors.Transparent);
+					ChangeNotches(R_B2, L_B2, BBase_on, true);
+					ChangeNotches(R_B1, L_B1, BBase_on, true);
+					ChangeNotches(R_N0, L_N0, NBase_on, true);
+					ChangeNotches(R_P1, L_P1, Colors.Transparent);
+					ChangeNotches(R_P2, L_P2, Colors.Transparent);
+					ChangeNotches(R_P3, L_P3, Colors.Transparent);
+					ChangeNotches(R_P4, L_P4, Colors.Transparent);
+					break;
+				case 1:
+					ChangeNotches(R_EB, L_EB, Colors.Transparent);
+					ChangeNotches(R_B7, L_B7, Colors.Transparent);
+					ChangeNotches(R_B6, L_B6, Colors.Transparent);
+					ChangeNotches(R_B5, L_B5, Colors.Transparent);
+					ChangeNotches(R_B4, L_B4, Colors.Transparent);
+					ChangeNotches(R_B3, L_B3, Colors.Transparent);
+					ChangeNotches(R_B2, L_B2, Colors.Transparent);
+					ChangeNotches(R_B1, L_B1, BBase_on, true);
+					ChangeNotches(R_N0, L_N0, NBase_on, true);
+					ChangeNotches(R_P1, L_P1, Colors.Transparent);
+					ChangeNotches(R_P2, L_P2, Colors.Transparent);
+					ChangeNotches(R_P3, L_P3, Colors.Transparent);
+					ChangeNotches(R_P4, L_P4, Colors.Transparent);
+					break;
+				case 0:
+					ChangeNotches(R_EB, L_EB, Colors.Transparent);
+					ChangeNotches(R_B7, L_B7, Colors.Transparent);
+					ChangeNotches(R_B6, L_B6, Colors.Transparent);
+					ChangeNotches(R_B5, L_B5, Colors.Transparent);
+					ChangeNotches(R_B4, L_B4, Colors.Transparent);
+					ChangeNotches(R_B3, L_B3, Colors.Transparent);
+					ChangeNotches(R_B2, L_B2, Colors.Transparent);
+					ChangeNotches(R_B1, L_B1, Colors.Transparent);
+					ChangeNotches(R_N0, L_N0, NBase_on, true);
+					ChangeNotches(R_P1, L_P1, Colors.Transparent);
+					ChangeNotches(R_P2, L_P2, Colors.Transparent);
+					ChangeNotches(R_P3, L_P3, Colors.Transparent);
+					ChangeNotches(R_P4, L_P4, Colors.Transparent);
+					break;
+				default:
+					ChangeNotches(R_EB, L_EB, Colors.Transparent);
+					ChangeNotches(R_B7, L_B7, Colors.Transparent);
+					ChangeNotches(R_B6, L_B6, Colors.Transparent);
+					ChangeNotches(R_B5, L_B5, Colors.Transparent);
+					ChangeNotches(R_B4, L_B4, Colors.Transparent);
+					ChangeNotches(R_B3, L_B3, Colors.Transparent);
+					ChangeNotches(R_B2, L_B2, Colors.Transparent);
+					ChangeNotches(R_B1, L_B1, Colors.Transparent);
+					ChangeNotches(R_N0, L_N0, Colors.Transparent);
+					ChangeNotches(R_P1, L_P1, Colors.Transparent);
+					ChangeNotches(R_P2, L_P2, Colors.Transparent);
+					ChangeNotches(R_P3, L_P3, Colors.Transparent);
+					ChangeNotches(R_P4, L_P4, Colors.Transparent);
+					break;
+            }
 		}
 
 		/// <summary>
