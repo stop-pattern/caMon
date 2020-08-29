@@ -389,7 +389,8 @@ namespace caMon.pages.TIS
 			{
 				rectangle.Fill = new SolidColorBrush(color);
 				rectangle.Stroke = new SolidColorBrush(Colors.Transparent);
-				label.Foreground = new SolidColorBrush(Colors.Black);
+				if (color != colorEmergency) label.Foreground = new SolidColorBrush(Colors.Black);
+				else label.Foreground = new SolidColorBrush(Colors.White);
 			}
 			else
 			{
