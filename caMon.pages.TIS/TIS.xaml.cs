@@ -61,7 +61,8 @@ namespace caMon.pages.TIS
 			BCPresVal = e.NewValue.StateData.BC;
 			MRPresVal = e.NewValue.StateData.MR;
 
-			//bNotch = e.NewValue.HandleData.B;
+			bNotch = e.NewValue.HandleData.B;
+			pNotch = e.NewValue.HandleData.P;
 
 			BNumVal = e.NewValue.HandleData.B;
 			BMaxVal = e.NewValue.SpecData.B;
@@ -148,7 +149,7 @@ namespace caMon.pages.TIS
 		/// <summary>Bノッチ表示で使用する色</summary>
 		static readonly Color BBase_on = Colors.Orange;
 		/// <summary>Nノッチ表示で使用する色</summary>
-		static readonly Color NBase_on = Colors.LimeGreen;
+		static readonly Color NBase_on = Colors.Lime;
 		/// <summary>Pノッチ表示で使用する色</summary>
 		static readonly Color PBase_on = Colors.Aquamarine;
 
