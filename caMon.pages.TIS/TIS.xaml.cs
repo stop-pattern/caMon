@@ -11,394 +11,402 @@ using TR.BIDSSMemLib;
 
 namespace caMon.pages.TIS
 {
-	/// <summary>
-	/// TIS.xaml の相互作用ロジック
-	/// </summary>
-	public partial class TIS : Page
-	{
-		/// <summary> ループタイマー </summary>
-		DispatcherTimer timer = new DispatcherTimer();
-		int timerInterval = 300;
-		int TimeOld = 0;
-		caMonIF camonIF;
-		Rectangle[,] rectangles;
-		Label[,] labels;
+    /// <summary>
+    /// TIS.xaml の相互作用ロジック
+    /// </summary>
+    public partial class TIS : Page
+    {
+        /// <summary> ループタイマー </summary>
+        DispatcherTimer timer = new DispatcherTimer();
+        int timerInterval = 300;
+        int TimeOld = 0;
+        caMonIF camonIF;
+        Rectangle[,] rectangles;
+        Label[,] labels;
 
-		public TIS(caMonIF arg_camonIF)
-		{
-			InitializeComponent();
+        public TIS(caMonIF arg_camonIF)
+        {
+            InitializeComponent();
 
-			camonIF = arg_camonIF;
+            camonIF = arg_camonIF;
 
-			SharedFuncs.SML.SMC_BSMDChanged += SMemLib_BIDSSMemChanged;
-			SharedFuncs.SML.SMC_OpenDChanged += SMemLib_OpenChanged;
-			SharedFuncs.SML.SMC_PanelDChanged += SMemLib_PanelChanged;
-			SharedFuncs.SML.SMC_SoundDChanged += SMemLib_SoundChanged;
+            SharedFuncs.SML.SMC_BSMDChanged += SMemLib_BIDSSMemChanged;
+            SharedFuncs.SML.SMC_OpenDChanged += SMemLib_OpenChanged;
+            SharedFuncs.SML.SMC_PanelDChanged += SMemLib_PanelChanged;
+            SharedFuncs.SML.SMC_SoundDChanged += SMemLib_SoundChanged;
 
-			timer.Tick += Timer_Tick;
-			timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
-			timer.Start();
-			rectangles= new Rectangle[3, 12]
-			{
-				{r11,r13,r15,r17,r19,r111,r113,r115,r117,r119,r121,r123},
-				{r31,r33,r35,r37,r39,r311,r313,r315,r317,r319,r321,r323},
-				{r51,r53,r55,r57,r59,r511,r513,r515,r517,r519,r521,r523}
-			};
-			labels = new Label[3, 12]
-			{
-				{l00,l02,l04,l06,l08,l010,l012,l014,l016,l018,l020,l022},
-				{l20,l22,l24,l26,l28,l210,l212,l214,l216,l218,l220,l222},
-				{l40,l42,l44,l46,l48,l410,l412,l414,l416,l418,l420,l422}
-			};
-		}
+            timer.Tick += Timer_Tick;
+            timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
+            timer.Start();
+            rectangles = new Rectangle[3, 12]
+            {
+                {r11,r13,r15,r17,r19,r111,r113,r115,r117,r119,r121,r123},
+                {r31,r33,r35,r37,r39,r311,r313,r315,r317,r319,r321,r323},
+                {r51,r53,r55,r57,r59,r511,r513,r515,r517,r519,r521,r523}
+            };
+            labels = new Label[3, 12]
+            {
+                {l00,l02,l04,l06,l08,l010,l012,l014,l016,l018,l020,l022},
+                {l20,l22,l24,l26,l28,l210,l212,l214,l216,l218,l220,l222},
+                {l40,l42,l44,l46,l48,l410,l412,l414,l416,l418,l420,l422}
+            };
+        }
 
-		bool BIDSSMemIsEnabled = false;
-		float SpeedAbsVal = float.NaN;
-		float BCPresVal = float.NaN;
-		float MRPresVal = float.NaN;
-		int BNumVal = -1;
-		int BMaxVal = -1;
-		int EBPosVal = -1;
-		int ATSCheckBPosVal = -1;
-		int TimeVal = -1;
-		int bNotch = -1;
-		int pNotch = -1;
-		int KeyPosition = -1;
+        bool BIDSSMemIsEnabled = false;
+        float SpeedAbsVal = float.NaN;
+        float BCPresVal = float.NaN;
+        float MRPresVal = float.NaN;
+        int BNumVal = -1;
+        int BMaxVal = -1;
+        int EBPosVal = -1;
+        int ATSCheckBPosVal = -1;
+        int TimeVal = -1;
+        int bNotch = -1;
+        int pNotch = -1;
+        int KeyPosition = -1;
 
-		/// <summary> 
-		/// SharedMemに更新があったときに呼ばれる関数
-		/// </summary>
-		private void SMemLib_BIDSSMemChanged(object sender, ValueChangedEventArgs<BIDSSharedMemoryData> e)
-		{
-			BIDSSMemIsEnabled = e.NewValue.IsEnabled;
+        /// <summary> 
+        /// SharedMemに更新があったときに呼ばれる関数
+        /// </summary>
+        private void SMemLib_BIDSSMemChanged(object sender, ValueChangedEventArgs<BIDSSharedMemoryData> e)
+        {
+            BIDSSMemIsEnabled = e.NewValue.IsEnabled;
 
-			SpeedAbsVal = Math.Abs(e.NewValue.StateData.V);
-			BCPresVal = e.NewValue.StateData.BC;
-			MRPresVal = e.NewValue.StateData.MR;
+            SpeedAbsVal = Math.Abs(e.NewValue.StateData.V);
+            BCPresVal = e.NewValue.StateData.BC;
+            MRPresVal = e.NewValue.StateData.MR;
 
-			//bNotch = e.NewValue.HandleData.B;
-			//pNotch = e.NewValue.HandleData.P;
+            //bNotch = e.NewValue.HandleData.B;
+            //pNotch = e.NewValue.HandleData.P;
 
-			BNumVal = e.NewValue.HandleData.B;
-			BMaxVal = e.NewValue.SpecData.B;
-			EBPosVal = BMaxVal + 1;
+            BNumVal = e.NewValue.HandleData.B;
+            BMaxVal = e.NewValue.SpecData.B;
+            EBPosVal = BMaxVal + 1;
 
-			ATSCheckBPosVal = e.NewValue.SpecData.A;
+            ATSCheckBPosVal = e.NewValue.SpecData.A;
 
 
-			TimeVal = e.NewValue.StateData.T;
-		}
+            TimeVal = e.NewValue.StateData.T;
+        }
 
-		/// <summary> 
-		/// Openに更新があったときに呼ばれる関数
-		/// </summary>
-		private void SMemLib_OpenChanged(object sender, ValueChangedEventArgs<OpenD> e)
-		{
-		}
+        /// <summary> 
+        /// Openに更新があったときに呼ばれる関数
+        /// </summary>
+        private void SMemLib_OpenChanged(object sender, ValueChangedEventArgs<OpenD> e)
+        {
+        }
 
-		/// <summary> 
-		/// Panelに更新があったときに呼ばれる関数
-		/// </summary>
-		private void SMemLib_PanelChanged(object sender, ValueChangedEventArgs<int[]> p)
-		{
-			bNotch = p.NewValue[51];
-			pNotch = p.NewValue[66];
-			KeyPosition = p.NewValue[92];
-		}
+        /// <summary> 
+        /// Panelに更新があったときに呼ばれる関数
+        /// </summary>
+        private void SMemLib_PanelChanged(object sender, ValueChangedEventArgs<int[]> p)
+        {
+            bNotch = p.NewValue[51];
+            pNotch = p.NewValue[66];
+            KeyPosition = p.NewValue[92];
+        }
 
-		/// <summary> 
-		/// Soundに更新があったときに呼ばれる関数
-		/// </summary>
-		private void SMemLib_SoundChanged(object sender, ValueChangedEventArgs<int[]> s)
-		{
-		}
+        /// <summary> 
+        /// Soundに更新があったときに呼ばれる関数
+        /// </summary>
+        private void SMemLib_SoundChanged(object sender, ValueChangedEventArgs<int[]> s)
+        {
+        }
 
-		/// <summary> 
-		/// タイマで呼ばれる関数
-		/// </summary>
-		private void Timer_Tick(object sender, object e)
-		{
-			if (!BIDSSMemIsEnabled)
-			{
-				SpeedAbsVal = 0;
-				BCPresVal = 0;
-				MRPresVal = 700;
-			}
+        /// <summary> 
+        /// タイマで呼ばれる関数
+        /// </summary>
+        private void Timer_Tick(object sender, object e)
+        {
+            if (!BIDSSMemIsEnabled)
+            {
+                SpeedAbsVal = 0;
+                BCPresVal = 0;
+                MRPresVal = 700;
+            }
 
-			if (TimeVal < TimeOld)
-				Task.Delay(10);
+            if (TimeVal < TimeOld)
+                Task.Delay(10);
 
-			TimeOld = TimeVal;
+            TimeOld = TimeVal;
 
-			if (Smooth.IsChecked == true && timerInterval == 300)
-			{
-				timerInterval = 0;
-				TimerStart();
-			}
-			if (Smooth.IsChecked == false && timerInterval != 300)
-			{
-				timerInterval = 300;
-				TimerStart();
-			}
+            if (Smooth.IsChecked == true && timerInterval == 300)
+            {
+                timerInterval = 0;
+                TimerStart();
+            }
+            if (Smooth.IsChecked == false && timerInterval != 300)
+            {
+                timerInterval = 300;
+                TimerStart();
+            }
 
-			DispNotches();
-			DispRoute();
-		}
+            DispNotches();
+            DispRoute();
+        }
 
         /// <summary>
         /// タイマー更新
         /// </summary>
         private void TimerStart()
-		{
-			timer.Stop();
-			timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
-			timer.Start();
-		}
+        {
+            timer.Stop();
+            timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
+            timer.Start();
+        }
 
-		/// <summary>
-		/// 戻るボタン
-		/// </summary>
-		private void NextP(object sender, RoutedEventArgs e) => camonIF.BackToHomeDo();
+        /// <summary>
+        /// 戻るボタン
+        /// </summary>
+        private void NextP(object sender, RoutedEventArgs e) => camonIF.BackToHomeDo();
 
-		/// <summary>非常表示で使用する色</summary>
-		static readonly Color colorEmergency = Colors.Red;
-		/// <summary>注意表示で使用する色</summary>
-		static readonly Color colorBrake = Colors.Orange;
-		/// <summary>通知表示で使用する色</summary>
-		static readonly Color colorNotice = Colors.Lime;
-		/// <summary>有効表示で使用する色</summary>
-		static readonly Color colorActive = Colors.Aquamarine;
+        /// <summary>非常表示で使用する色</summary>
+        static readonly Color colorEmergency = Colors.Red;
+        /// <summary>注意表示で使用する色</summary>
+        static readonly Color colorBrake = Colors.Orange;
+        /// <summary>通知表示で使用する色</summary>
+        static readonly Color colorNotice = Colors.Lime;
+        /// <summary>有効表示で使用する色</summary>
+        static readonly Color colorActive = Colors.Aquamarine;
 
-		/// <summary>
-		/// ノッチ表示更新
-		/// </summary>
-		private void DispNotches()
-		{
-			if(KeyPosition == 0)
-			{
-				ChangeDisplay(R_EB, L_EB, Colors.Transparent);
-				ChangeDisplay(R_B7, L_B7, Colors.Transparent);
-				ChangeDisplay(R_B6, L_B6, Colors.Transparent);
-				ChangeDisplay(R_B5, L_B5, Colors.Transparent);
-				ChangeDisplay(R_B4, L_B4, Colors.Transparent);
-				ChangeDisplay(R_B3, L_B3, Colors.Transparent);
-				ChangeDisplay(R_B2, L_B2, Colors.Transparent);
-				ChangeDisplay(R_B1, L_B1, Colors.Transparent);
-				ChangeDisplay(R_N0, L_N0, Colors.Transparent);
-				ChangeDisplay(R_P1, L_P1, Colors.Transparent);
-				ChangeDisplay(R_P2, L_P2, Colors.Transparent);
-				ChangeDisplay(R_P3, L_P3, Colors.Transparent);
-				ChangeDisplay(R_P4, L_P4, Colors.Transparent);
-				return;
-			}
+        /// <summary>
+        /// ノッチ表示更新
+        /// </summary>
+        private void DispNotches()
+        {
+            if (KeyPosition == 0)
+            {
+                ChangeDisplay(R_EB, L_EB, Colors.Transparent);
+                ChangeDisplay(R_B7, L_B7, Colors.Transparent);
+                ChangeDisplay(R_B6, L_B6, Colors.Transparent);
+                ChangeDisplay(R_B5, L_B5, Colors.Transparent);
+                ChangeDisplay(R_B4, L_B4, Colors.Transparent);
+                ChangeDisplay(R_B3, L_B3, Colors.Transparent);
+                ChangeDisplay(R_B2, L_B2, Colors.Transparent);
+                ChangeDisplay(R_B1, L_B1, Colors.Transparent);
+                ChangeDisplay(R_N0, L_N0, Colors.Transparent);
+                ChangeDisplay(R_P1, L_P1, Colors.Transparent);
+                ChangeDisplay(R_P2, L_P2, Colors.Transparent);
+                ChangeDisplay(R_P3, L_P3, Colors.Transparent);
+                ChangeDisplay(R_P4, L_P4, Colors.Transparent);
+                return;
+            }
 
-			if (bNotch >= 8) ChangeDisplay(R_EB, L_EB, colorEmergency, true);
-			else ChangeDisplay(R_EB, L_EB, Colors.Transparent);
+            if (bNotch >= 8) ChangeDisplay(R_EB, L_EB, colorEmergency, true);
+            else ChangeDisplay(R_EB, L_EB, Colors.Transparent);
 
-			if (bNotch >= 7) ChangeDisplay(R_B7, L_B7, colorBrake, true);
-			else ChangeDisplay(R_B7, L_B7, Colors.Transparent);
-			if (bNotch >= 6) ChangeDisplay(R_B6, L_B6, colorBrake, true);
-			else ChangeDisplay(R_B6, L_B6, Colors.Transparent);
-			if (bNotch >= 5) ChangeDisplay(R_B5, L_B5, colorBrake, true);
-			else ChangeDisplay(R_B5, L_B5, Colors.Transparent);
-			if (bNotch >= 4) ChangeDisplay(R_B4, L_B4, colorBrake, true);
-			else ChangeDisplay(R_B4, L_B4, Colors.Transparent);
-			if (bNotch >= 3) ChangeDisplay(R_B3, L_B3, colorBrake, true);
-			else ChangeDisplay(R_B3, L_B3, Colors.Transparent);
-			if (bNotch >= 2) ChangeDisplay(R_B2, L_B2, colorBrake, true);
-			else ChangeDisplay(R_B2, L_B2, Colors.Transparent);
-			if (bNotch >= 1) ChangeDisplay(R_B1, L_B1, colorBrake, true);
-			else ChangeDisplay(R_B1, L_B1, Colors.Transparent);
+            if (bNotch >= 7) ChangeDisplay(R_B7, L_B7, colorBrake, true);
+            else ChangeDisplay(R_B7, L_B7, Colors.Transparent);
+            if (bNotch >= 6) ChangeDisplay(R_B6, L_B6, colorBrake, true);
+            else ChangeDisplay(R_B6, L_B6, Colors.Transparent);
+            if (bNotch >= 5) ChangeDisplay(R_B5, L_B5, colorBrake, true);
+            else ChangeDisplay(R_B5, L_B5, Colors.Transparent);
+            if (bNotch >= 4) ChangeDisplay(R_B4, L_B4, colorBrake, true);
+            else ChangeDisplay(R_B4, L_B4, Colors.Transparent);
+            if (bNotch >= 3) ChangeDisplay(R_B3, L_B3, colorBrake, true);
+            else ChangeDisplay(R_B3, L_B3, Colors.Transparent);
+            if (bNotch >= 2) ChangeDisplay(R_B2, L_B2, colorBrake, true);
+            else ChangeDisplay(R_B2, L_B2, Colors.Transparent);
+            if (bNotch >= 1) ChangeDisplay(R_B1, L_B1, colorBrake, true);
+            else ChangeDisplay(R_B1, L_B1, Colors.Transparent);
 
-			ChangeDisplay(R_N0, L_N0, colorNotice, true);
+            ChangeDisplay(R_N0, L_N0, colorNotice, true);
 
-			if (pNotch >= 1) ChangeDisplay(R_P1, L_P1, colorActive, true);
-			else ChangeDisplay(R_P1, L_P1, Colors.Transparent);
-			if (pNotch >= 2) ChangeDisplay(R_P2, L_P2, colorActive, true);
-			else ChangeDisplay(R_P2, L_P2, Colors.Transparent);
-			if (pNotch >= 3) ChangeDisplay(R_P3, L_P3, colorActive, true);
-			else ChangeDisplay(R_P3, L_P3, Colors.Transparent);
-			if (pNotch >= 4) ChangeDisplay(R_P4, L_P4, colorActive, true);
-			else ChangeDisplay(R_P4, L_P4, Colors.Transparent);
-		}
+            if (pNotch >= 1) ChangeDisplay(R_P1, L_P1, colorActive, true);
+            else ChangeDisplay(R_P1, L_P1, Colors.Transparent);
+            if (pNotch >= 2) ChangeDisplay(R_P2, L_P2, colorActive, true);
+            else ChangeDisplay(R_P2, L_P2, Colors.Transparent);
+            if (pNotch >= 3) ChangeDisplay(R_P3, L_P3, colorActive, true);
+            else ChangeDisplay(R_P3, L_P3, Colors.Transparent);
+            if (pNotch >= 4) ChangeDisplay(R_P4, L_P4, colorActive, true);
+            else ChangeDisplay(R_P4, L_P4, Colors.Transparent);
+        }
 
-		/// <summary>
-		/// 線区関係
-		/// </summary>
-		private void DispRoute()
-		{
-			if (KeyPosition != 0)
-			{
+        /// <summary>
+        /// 線区関係
+        /// </summary>
+        private void DispRoute()
+        {
+            if (KeyPosition != 0)
+            {
                 switch (KeyPosition)
                 {
-					/// TRTA
-					case 1:
-						comp.Content = "地下鉄";
-						comp.Visibility = Visibility.Visible;
-						break;
-					/// TOB
-					case 2:
-						comp.Content = "東武";
-						comp.Visibility = Visibility.Visible;
-						break;
-					/// TKK
-					case 3:
-						comp.Content = "東急";
-						//comp.Content = "東急・横高";
-						comp.Visibility = Visibility.Visible;
+                    /// TRTA
+                    case 1:
+                        comp.Content = "地下鉄";
+                        comp.Visibility = Visibility.Visible;
+                        break;
 
-						labels[0, 0].Content = "非常運転";
-						rectangles[0, 0].Visibility = Visibility.Visible;
-						labels[0, 0].Visibility = Visibility.Visible;
+                    /// TOB
+                    case 2:
+                        comp.Content = "東武";
+                        comp.Visibility = Visibility.Visible;
+                        break;
 
-						labels[0, 2].Content = "ＴＡＳＣ";
-						ChangeDisplay(rectangles[0, 2], labels[0, 2], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[136]));
-						rectangles[0, 2].Visibility = Visibility.Visible;
-						labels[0, 2].Visibility = Visibility.Visible;
+                    /// TKK
+                    case 3:
+                        comp.Content = "東急";
+                        //comp.Content = "東急・横高";
+                        comp.Visibility = Visibility.Visible;
 
-						labels[0, 3].Content = "ＡＴＣ";
-						ChangeDisplay(rectangles[0, 3], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[19]));
-						rectangles[0, 3].Visibility = Visibility.Visible;
-						labels[0, 3].Visibility = Visibility.Visible;
+                        labels[0, 0].Content = "非常運転";
+                        rectangles[0, 0].Visibility = Visibility.Visible;
+                        labels[0, 0].Visibility = Visibility.Visible;
 
-						labels[0, 4].Content = "入換";
-						ChangeDisplay(rectangles[0, 4], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[32]));
-						rectangles[0, 4].Visibility = Visibility.Visible;
-						labels[0, 4].Visibility = Visibility.Visible;
+                        labels[0, 2].Content = "ＴＡＳＣ";
+                        ChangeDisplay(rectangles[0, 2], labels[0, 2], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[136]));
+                        rectangles[0, 2].Visibility = Visibility.Visible;
+                        labels[0, 2].Visibility = Visibility.Visible;
 
-						labels[0, 5].Content = "構内";
-						rectangles[0, 5].Visibility = Visibility.Visible;
-						labels[0, 5].Visibility = Visibility.Visible;
+                        labels[0, 3].Content = "ＡＴＣ";
+                        ChangeDisplay(rectangles[0, 3], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[19]));
+                        rectangles[0, 3].Visibility = Visibility.Visible;
+                        labels[0, 3].Visibility = Visibility.Visible;
 
-						labels[0, 6].Content = "非設";
-						ChangeDisplay(rectangles[0, 6], labels[0, 6], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[28]));
-						rectangles[0, 6].Visibility = Visibility.Visible;
-						labels[0, 6].Visibility = Visibility.Visible;
+                        labels[0, 4].Content = "入換";
+                        ChangeDisplay(rectangles[0, 4], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[32]));
+                        rectangles[0, 4].Visibility = Visibility.Visible;
+                        labels[0, 4].Visibility = Visibility.Visible;
 
-						labels[0, 8].Content = "ハイビーム";
-						ChangeDisplay(rectangles[0, 3], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[18]));
-						rectangles[0, 8].Visibility = Visibility.Visible;
-						labels[0, 8].Visibility = Visibility.Visible;
+                        labels[0, 5].Content = "構内";
+                        rectangles[0, 5].Visibility = Visibility.Visible;
+                        labels[0, 5].Visibility = Visibility.Visible;
 
-						labels[1, 0].Content = "ＡＴＣ非常";
-						ChangeDisplay(rectangles[1, 0], labels[1, 0], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[22]));
-						rectangles[1, 0].Visibility = Visibility.Visible;
-						labels[1, 0].Visibility = Visibility.Visible;
+                        labels[0, 6].Content = "非設";
+                        ChangeDisplay(rectangles[0, 6], labels[0, 6], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[28]));
+                        rectangles[0, 6].Visibility = Visibility.Visible;
+                        labels[0, 6].Visibility = Visibility.Visible;
 
-						labels[1, 1].Content = "ＡＴＣ常用";
-						ChangeDisplay(rectangles[1, 1], labels[1, 1], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[23]));
-						rectangles[1, 1].Visibility = Visibility.Visible;
-						labels[1, 1].Visibility = Visibility.Visible;
+                        labels[0, 8].Content = "ハイビーム";
+                        ChangeDisplay(rectangles[0, 3], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[18]));
+                        rectangles[0, 8].Visibility = Visibility.Visible;
+                        labels[0, 8].Visibility = Visibility.Visible;
 
-						labels[1, 2].Content = "TASC制御";
-						ChangeDisplay(rectangles[1, 2], labels[1, 2], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[138]));
-						rectangles[1, 2].Visibility = Visibility.Visible;
-						labels[1, 2].Visibility = Visibility.Visible;
+                        labels[1, 0].Content = "ＡＴＣ非常";
+                        ChangeDisplay(rectangles[1, 0], labels[1, 0], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[22]));
+                        rectangles[1, 0].Visibility = Visibility.Visible;
+                        labels[1, 0].Visibility = Visibility.Visible;
 
-						labels[1, 3].Content = "耐雪ﾌﾞﾚｰｷ";
-						ChangeDisplay(rectangles[1, 3], labels[1, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[176]));
-						rectangles[1, 3].Visibility = Visibility.Visible;
-						labels[1, 3].Visibility = Visibility.Visible;
+                        labels[1, 1].Content = "ＡＴＣ常用";
+                        ChangeDisplay(rectangles[1, 1], labels[1, 1], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[23]));
+                        rectangles[1, 1].Visibility = Visibility.Visible;
+                        labels[1, 1].Visibility = Visibility.Visible;
 
-						labels[1, 4].Content = "回生開放";
-						//ChangeDisplay(rectangles[1, 4], labels[1, 4], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[171]));	// 廃止
-						rectangles[1, 4].Visibility = Visibility.Visible;
-						labels[1, 4].Visibility = Visibility.Visible;
+                        labels[1, 2].Content = "TASC制御";
+                        ChangeDisplay(rectangles[1, 2], labels[1, 2], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[138]));
+                        rectangles[1, 2].Visibility = Visibility.Visible;
+                        labels[1, 2].Visibility = Visibility.Visible;
 
-						labels[1, 5].Content = "非常ﾌﾞﾚｰｷ";
-						ChangeDisplay(rectangles[1, 5], labels[1, 5], colorEmergency, (SharedFuncs.SML.PanelA[51] >= 8));
-						rectangles[1, 5].Visibility = Visibility.Visible;
-						labels[1, 5].Visibility = Visibility.Visible;
+                        labels[1, 3].Content = "耐雪ﾌﾞﾚｰｷ";
+                        ChangeDisplay(rectangles[1, 3], labels[1, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[176]));
+                        rectangles[1, 3].Visibility = Visibility.Visible;
+                        labels[1, 3].Visibility = Visibility.Visible;
 
-						labels[1, 6].Content = "制御開放";
-						rectangles[1, 6].Visibility = Visibility.Visible;
-						labels[1, 6].Visibility = Visibility.Visible;
+                        labels[1, 4].Content = "回生開放";
+                        //ChangeDisplay(rectangles[1, 4], labels[1, 4], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[171]));	// 廃止
+                        rectangles[1, 4].Visibility = Visibility.Visible;
+                        labels[1, 4].Visibility = Visibility.Visible;
 
-						labels[1, 8].Content = "情報伝送故障";
-						labels[1, 8].FontSize = 40;
-						rectangles[1, 8].Visibility = Visibility.Visible;
-						labels[1, 8].Visibility = Visibility.Visible;
+                        labels[1, 5].Content = "非常ﾌﾞﾚｰｷ";
+                        ChangeDisplay(rectangles[1, 5], labels[1, 5], colorEmergency, (SharedFuncs.SML.PanelA[51] >= 8));
+                        rectangles[1, 5].Visibility = Visibility.Visible;
+                        labels[1, 5].Visibility = Visibility.Visible;
 
-						labels[1, 9].Content = "TIS試験";
-						rectangles[1, 9].Visibility = Visibility.Visible;
-						labels[1, 9].Visibility = Visibility.Visible;
+                        labels[1, 6].Content = "制御開放";
+                        rectangles[1, 6].Visibility = Visibility.Visible;
+                        labels[1, 6].Visibility = Visibility.Visible;
 
-						labels[2, 0].Content = "ﾎｰﾑﾄﾞｱ連動";
-						labels[2, 0].FontSize = 40;
-						ChangeDisplay(rectangles[2, 0], labels[2, 0], colorNotice, (SharedFuncs.SML.PanelA[155] == 1));
-						rectangles[2, 0].Visibility = Visibility.Visible;
-						labels[2, 0].Visibility = Visibility.Visible;
+                        labels[1, 8].Content = "情報伝送故障";
+                        labels[1, 8].FontSize = 40;
+                        rectangles[1, 8].Visibility = Visibility.Visible;
+                        labels[1, 8].Visibility = Visibility.Visible;
 
-						labels[2, 1].Content = "ﾎｰﾑﾄﾞｱ非連動";
-						labels[2, 1].FontSize = 40;
-						ChangeDisplay(rectangles[2, 1], labels[2, 1], colorBrake, (SharedFuncs.SML.PanelA[155] == 2));
-						rectangles[2, 1].Visibility = Visibility.Visible;
-						labels[2, 1].Visibility = Visibility.Visible;
+                        labels[1, 9].Content = "TIS試験";
+                        rectangles[1, 9].Visibility = Visibility.Visible;
+                        labels[1, 9].Visibility = Visibility.Visible;
 
-						labels[2, 3].Content = "ﾎｰﾑﾄﾞｱ支障";
-						rectangles[2, 3].Visibility = Visibility.Visible;
-						labels[2, 3].Visibility = Visibility.Visible;
+                        labels[2, 0].Content = "ﾎｰﾑﾄﾞｱ連動";
+                        labels[2, 0].FontSize = 40;
+                        ChangeDisplay(rectangles[2, 0], labels[2, 0], colorNotice, (SharedFuncs.SML.PanelA[155] == 1));
+                        rectangles[2, 0].Visibility = Visibility.Visible;
+                        labels[2, 0].Visibility = Visibility.Visible;
 
-						labels[2, 5].Content = "起動試験";
-						rectangles[2, 5].Visibility = Visibility.Visible;
-						labels[2, 5].Visibility = Visibility.Visible;
-						break;
-					/// SEB
-					case 4:
-						comp.Content = "西武";
-						comp.Visibility = Visibility.Visible;
-						break;
-					/// SOT
-					case 5:
-						comp.Content = "相鉄";
-						comp.Visibility = Visibility.Visible;
-						break;
-					/// SOT
-					case 6:
-						comp.Content = "JR";
-						comp.Visibility = Visibility.Visible;
-						break;
-					/// SOT
-					case 7:
-						comp.Content = "小田急";
-						comp.Visibility = Visibility.Visible;
-						break;
-					case 8:
-						comp.Content = "東葉";
-						comp.Visibility = Visibility.Visible;
-						break;
-				}
-			}
-			else
-			{
-				comp.Content = "";
-				comp.Visibility = Visibility.Hidden;
-			}
-		}
+                        labels[2, 1].Content = "ﾎｰﾑﾄﾞｱ非連動";
+                        labels[2, 1].FontSize = 40;
+                        ChangeDisplay(rectangles[2, 1], labels[2, 1], colorBrake, (SharedFuncs.SML.PanelA[155] == 2));
+                        rectangles[2, 1].Visibility = Visibility.Visible;
+                        labels[2, 1].Visibility = Visibility.Visible;
 
-		/// <summary>
-		/// 表示更新
-		/// </summary>
-		/// <param name="rectangle">変更する長方形</param>
-		/// <param name="label">変更する文字</param>
-		/// <param name="color">塗りつぶし色</param>
-		/// <param name="status">状態</param>
-		private void ChangeDisplay(Rectangle rectangle, Label label, Color color, bool status = false)
-		{
-			if (status)
-			{
-				rectangle.Fill = new SolidColorBrush(color);
-				rectangle.Stroke = new SolidColorBrush(Colors.Transparent);
-				if (color != colorEmergency) label.Foreground = new SolidColorBrush(Colors.Black);
-				else label.Foreground = new SolidColorBrush(Colors.White);
-			}
-			else
-			{
-				rectangle.Fill = new SolidColorBrush(Colors.Transparent);
-				rectangle.Stroke = new SolidColorBrush(Colors.White);
-				label.Foreground = new SolidColorBrush(Colors.White);
-			}
-		}
+                        labels[2, 3].Content = "ﾎｰﾑﾄﾞｱ支障";
+                        rectangles[2, 3].Visibility = Visibility.Visible;
+                        labels[2, 3].Visibility = Visibility.Visible;
 
-	}
+                        labels[2, 5].Content = "起動試験";
+                        rectangles[2, 5].Visibility = Visibility.Visible;
+                        labels[2, 5].Visibility = Visibility.Visible;
+                        break;
+
+                    /// SEB
+                    case 4:
+                        comp.Content = "西武";
+                        comp.Visibility = Visibility.Visible;
+                        break;
+
+                    /// SOT
+                    case 5:
+                        comp.Content = "相鉄";
+                        comp.Visibility = Visibility.Visible;
+                        break;
+
+                    /// SOT
+                    case 6:
+                        comp.Content = "JR";
+                        comp.Visibility = Visibility.Visible;
+                        break;
+
+                    /// SOT
+                    case 7:
+                        comp.Content = "小田急";
+                        comp.Visibility = Visibility.Visible;
+                        break;
+
+                    /// TOY
+                    case 8:
+                        comp.Content = "東葉";
+                        comp.Visibility = Visibility.Visible;
+                        break;
+                }
+            }
+            else
+            {
+                comp.Content = "";
+                comp.Visibility = Visibility.Hidden;
+            }
+        }
+
+        /// <summary>
+        /// 表示更新
+        /// </summary>
+        /// <param name="rectangle">変更する長方形</param>
+        /// <param name="label">変更する文字</param>
+        /// <param name="color">塗りつぶし色</param>
+        /// <param name="status">状態</param>
+        private void ChangeDisplay(Rectangle rectangle, Label label, Color color, bool status = false)
+        {
+            if (status)
+            {
+                rectangle.Fill = new SolidColorBrush(color);
+                rectangle.Stroke = new SolidColorBrush(Colors.Transparent);
+                if (color != colorEmergency) label.Foreground = new SolidColorBrush(Colors.Black);
+                else label.Foreground = new SolidColorBrush(Colors.White);
+            }
+            else
+            {
+                rectangle.Fill = new SolidColorBrush(Colors.Transparent);
+                rectangle.Stroke = new SolidColorBrush(Colors.White);
+                label.Foreground = new SolidColorBrush(Colors.White);
+            }
+        }
+
+    }
 }
