@@ -51,19 +51,59 @@
                     <Rectangle x:Name="R_P3" Grid.Row="12" Stroke="White" StrokeThickness="2"/>
                     <Rectangle x:Name="R_P4" Grid.Row="13" Stroke="White" StrokeThickness="2"/>
 
-                    <Label x:Name="L_EB" Content="EB" FontSize="40" Foreground="White" Grid.Row="0" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="L_B7" Content="B7" FontSize="40" Foreground="White" Grid.Row="1" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="L_B6" Content="B6" FontSize="40" Foreground="White" Grid.Row="2" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="L_B5" Content="B5" FontSize="40" Foreground="White" Grid.Row="3" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="L_B4" Content="B4" FontSize="40" Foreground="White" Grid.Row="4" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="L_B3" Content="B3" FontSize="40" Foreground="White" Grid.Row="5" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="L_B2" Content="B2" FontSize="40" Foreground="White" Grid.Row="6" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="L_B1" Content="B1" FontSize="40" Foreground="White" Grid.Row="7" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="L_EB" Content="E B" FontSize="40" Foreground="White" Grid.Row="0" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="L_B7" Content="B 7" FontSize="40" Foreground="White" Grid.Row="1" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="L_B6" Content="B 6" FontSize="40" Foreground="White" Grid.Row="2" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="L_B5" Content="B 5" FontSize="40" Foreground="White" Grid.Row="3" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="L_B4" Content="B 4" FontSize="40" Foreground="White" Grid.Row="4" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="L_B3" Content="B 3" FontSize="40" Foreground="White" Grid.Row="5" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="L_B2" Content="B 2" FontSize="40" Foreground="White" Grid.Row="6" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="L_B1" Content="B 1" FontSize="40" Foreground="White" Grid.Row="7" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     <Label x:Name="L_N0" Content="N" FontSize="40" Foreground="White" Grid.Row="8" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="L_P1" Content="P1" FontSize="40" Foreground="White" Grid.Row="9" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="L_P2" Content="P2" FontSize="40" Foreground="White" Grid.Row="10" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="L_P3" Content="P3" FontSize="40" Foreground="White" Grid.Row="11" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="L_P4" Content="P4" FontSize="40" Foreground="White" Grid.Row="12" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="L_P1" Content="P 1" FontSize="40" Foreground="White" Grid.Row="9" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="L_P2" Content="P 2" FontSize="40" Foreground="White" Grid.Row="10" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="L_P3" Content="P 3" FontSize="40" Foreground="White" Grid.Row="11" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="L_P4" Content="P 4" FontSize="40" Foreground="White" Grid.Row="12" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Grid>
+                <Grid Margin="0, 100, 10, 0" Height="900" Width="790" HorizontalAlignment="Right">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="1" Grid.Row="1" Stroke="White"/>
+                    <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="非常運転" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
                 </Grid>
             </Grid>
             <Grid x:Name="TKK" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
