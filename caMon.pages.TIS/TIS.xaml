@@ -8,6 +8,7 @@
       Title="TIS">
 
     <Viewbox>
+        <!-- <Grid Background="Black" Height="640" Width="480"> -->
         <Grid Background="Black" Height="1200" Width="1600">
             <Grid x:Name="displayTop" Margin="0,0" Height="100" VerticalAlignment="Top">
                 <Rectangle Height="100" VerticalAlignment="Top" Fill="DodgerBlue" />
