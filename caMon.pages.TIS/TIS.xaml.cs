@@ -906,8 +906,6 @@ namespace caMon.pages.TIS
             }
             else
             {
-                comp.Content = "";
-                comp.Visibility = Visibility.Hidden;
             }
         }
 
