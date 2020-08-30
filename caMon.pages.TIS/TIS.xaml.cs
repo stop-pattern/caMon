@@ -51,6 +51,7 @@ namespace caMon.pages.TIS
                 {l20,l22,l24,l26,l28,l210,l212,l214,l216,l218,l220,l222},
                 {l40,l42,l44,l46,l48,l410,l412,l414,l416,l418,l420,l422}
             };
+            panel = new int[256];
         }
 
         bool BIDSSMemIsEnabled = false;
