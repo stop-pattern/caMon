@@ -397,6 +397,169 @@ namespace caMon.pages.TIS
                     case 2:
                         comp.Content = "東武";
                         comp.Visibility = Visibility.Visible;
+
+                        labels[0, 0].Content = "ATS非常運転";
+                        labels[0, 0].FontSize = 40;
+                        rectangles[0, 0].Visibility = Visibility.Visible;
+                        labels[0, 0].Visibility = Visibility.Visible;
+
+                        labels[0, 1].Content = "ATC非常運転";
+                        labels[0, 1].FontSize = 40;
+                        rectangles[0, 1].Visibility = Visibility.Visible;
+                        labels[0, 1].Visibility = Visibility.Visible;
+
+                        labels[0, 2].Content = "ＴＡＳＣ";
+                        ChangeDisplay(rectangles[0, 2], labels[0, 2], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[136]));
+                        rectangles[0, 2].Visibility = Visibility.Visible;
+                        labels[0, 2].Visibility = Visibility.Visible;
+
+                        labels[0, 3].Content = "東武ATS";
+                        ChangeDisplay(rectangles[0, 3], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[41]));
+                        rectangles[0, 3].Visibility = Visibility.Visible;
+                        labels[0, 3].Visibility = Visibility.Visible;
+
+                        labels[0, 4].Content = "ＡＴＣ";
+                        ChangeDisplay(rectangles[0, 4], labels[0, 4], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[74]));
+                        rectangles[0, 4].Visibility = Visibility.Visible;
+                        labels[0, 4].Visibility = Visibility.Visible;
+
+                        labels[0, 5].Content = "入換";
+                        ChangeDisplay(rectangles[0, 5], labels[0, 5], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[75]));
+                        rectangles[0, 5].Visibility = Visibility.Visible;
+                        labels[0, 5].Visibility = Visibility.Visible;
+
+                        labels[0, 6].Content = "次駅停車";
+                        ChangeDisplay(rectangles[0, 6], labels[0, 6], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[252]));
+                        rectangles[0, 6].Visibility = Visibility.Visible;
+                        labels[0, 6].Visibility = Visibility.Visible;
+
+                        labels[0, 7].Content = "";
+                        rectangles[0, 7].Visibility = Visibility.Hidden;
+                        labels[0, 7].Visibility = Visibility.Hidden;
+
+                        labels[0, 8].Content = "ハイビーム";
+                        ChangeDisplay(rectangles[0, 8], labels[0, 8], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[18]));
+                        rectangles[0, 8].Visibility = Visibility.Visible;
+                        labels[0, 8].Visibility = Visibility.Visible;
+
+                        labels[0, 9].Content = "";
+                        rectangles[0, 9].Visibility = Visibility.Hidden;
+                        labels[0, 9].Visibility = Visibility.Hidden;
+
+                        labels[0, 10].Content = "";
+                        rectangles[0, 10].Visibility = Visibility.Hidden;
+                        labels[0, 10].Visibility = Visibility.Hidden;
+
+                        labels[0, 11].Content = "";
+                        rectangles[0, 11].Visibility = Visibility.Hidden;
+                        labels[0, 11].Visibility = Visibility.Hidden;
+
+                        labels[1, 0].Content = "保安非常";
+                        ChangeDisplay(rectangles[1, 0], labels[1, 0], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[76]));
+                        rectangles[1, 0].Visibility = Visibility.Visible;
+                        labels[1, 0].Visibility = Visibility.Visible;
+
+                        labels[1, 1].Content = "保安常用";
+                        ChangeDisplay(rectangles[1, 1], labels[1, 1], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[77]));
+                        rectangles[1, 1].Visibility = Visibility.Visible;
+                        labels[1, 1].Visibility = Visibility.Visible;
+
+                        labels[1, 2].Content = "TASC制御";
+                        ChangeDisplay(rectangles[1, 2], labels[1, 2], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[138]));
+                        rectangles[1, 2].Visibility = Visibility.Visible;
+                        labels[1, 2].Visibility = Visibility.Visible;
+
+                        labels[1, 3].Content = "耐雪ﾌﾞﾚｰｷ";
+                        ChangeDisplay(rectangles[1, 3], labels[1, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[176]));
+                        rectangles[1, 3].Visibility = Visibility.Visible;
+                        labels[1, 3].Visibility = Visibility.Visible;
+
+                        labels[1, 4].Content = "回生開放";
+                        //ChangeDisplay(rectangles[1, 4], labels[1, 4], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[171]));	// 廃止
+                        rectangles[1, 4].Visibility = Visibility.Visible;
+                        labels[1, 4].Visibility = Visibility.Visible;
+
+                        labels[1, 5].Content = "非常ﾌﾞﾚｰｷ";
+                        ChangeDisplay(rectangles[1, 5], labels[1, 5], colorEmergency, (SharedFuncs.SML.PanelA[51] >= 8));
+                        rectangles[1, 5].Visibility = Visibility.Visible;
+                        labels[1, 5].Visibility = Visibility.Visible;
+
+                        labels[1, 6].Content = "制御開放";
+                        rectangles[1, 6].Visibility = Visibility.Visible;
+                        labels[1, 6].Visibility = Visibility.Visible;
+
+                        labels[1, 7].Content = "";
+                        rectangles[1, 7].Visibility = Visibility.Hidden;
+                        labels[1, 7].Visibility = Visibility.Hidden;
+
+                        labels[1, 8].Content = "情報伝送故障";
+                        labels[1, 8].FontSize = 40;
+                        rectangles[1, 8].Visibility = Visibility.Visible;
+                        labels[1, 8].Visibility = Visibility.Visible;
+
+                        labels[1, 9].Content = "TIS試験";
+                        rectangles[1, 9].Visibility = Visibility.Visible;
+                        labels[1, 9].Visibility = Visibility.Visible;
+
+                        labels[1, 10].Content = "確認";
+                        rectangles[1, 10].Visibility = Visibility.Hidden;
+                        labels[1, 10].Visibility = Visibility.Hidden;
+
+                        labels[1, 11].Content = "";
+                        rectangles[1, 11].Visibility = Visibility.Hidden;
+                        labels[1, 11].Visibility = Visibility.Hidden;
+
+                        labels[2, 0].Content = "ﾎｰﾑﾄﾞｱ連動";
+                        labels[2, 0].FontSize = 40;
+                        ChangeDisplay(rectangles[2, 0], labels[2, 0], colorNotice, (SharedFuncs.SML.PanelA[155] == 1));
+                        rectangles[2, 0].Visibility = Visibility.Visible;
+                        labels[2, 0].Visibility = Visibility.Visible;
+
+                        labels[2, 1].Content = "ﾎｰﾑﾄﾞｱ非連動";
+                        labels[2, 1].FontSize = 40;
+                        ChangeDisplay(rectangles[2, 1], labels[2, 1], colorBrake, (SharedFuncs.SML.PanelA[155] == 2));
+                        rectangles[2, 1].Visibility = Visibility.Visible;
+                        labels[2, 1].Visibility = Visibility.Visible;
+
+                        labels[2, 2].Content = "";
+                        rectangles[2, 2].Visibility = Visibility.Hidden;
+                        labels[2, 2].Visibility = Visibility.Hidden;
+
+                        labels[2, 3].Content = "";
+                        rectangles[2, 3].Visibility = Visibility.Hidden;
+                        labels[2, 3].Visibility = Visibility.Hidden;
+
+                        labels[2, 4].Content = "";
+                        rectangles[2, 4].Visibility = Visibility.Hidden;
+                        labels[2, 4].Visibility = Visibility.Hidden;
+
+                        labels[2, 5].Content = "起動試験";
+                        rectangles[2, 5].Visibility = Visibility.Visible;
+                        labels[2, 5].Visibility = Visibility.Visible;
+
+                        labels[2, 6].Content = "";
+                        rectangles[2, 6].Visibility = Visibility.Hidden;
+                        labels[2, 6].Visibility = Visibility.Hidden;
+
+                        labels[2, 7].Content = "";
+                        rectangles[2, 7].Visibility = Visibility.Hidden;
+                        labels[2, 7].Visibility = Visibility.Hidden;
+
+                        labels[2, 8].Content = "";
+                        rectangles[2, 8].Visibility = Visibility.Hidden;
+                        labels[2, 8].Visibility = Visibility.Hidden;
+
+                        labels[2, 9].Content = "";
+                        rectangles[2, 9].Visibility = Visibility.Hidden;
+                        labels[2, 9].Visibility = Visibility.Hidden;
+
+                        labels[2, 10].Content = "";
+                        rectangles[2, 10].Visibility = Visibility.Hidden;
+                        labels[2, 10].Visibility = Visibility.Hidden;
+
+                        labels[2, 11].Content = "";
+                        rectangles[2, 11].Visibility = Visibility.Hidden;
+                        labels[2, 11].Visibility = Visibility.Hidden;
                         break;
 
                     /// TKK
