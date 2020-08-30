@@ -24,6 +24,7 @@ namespace caMon.pages.TIS
         Rectangle[,] rectangles;
         Label[,] labels;
         int[] panel;
+        uint dispStatus;
 
         public TIS(caMonIF arg_camonIF)
         {
@@ -100,9 +101,8 @@ namespace caMon.pages.TIS
         /// </summary>
         private void Timer_Tick(object sender, object e)
         {
-            if (!BIDSSMemIsEnabled)
-            {
-            }
+            if (!BIDSSMemIsEnabled) dispStatus = 0;
+            else dispStatus = 1;
 
             if (TimeVal < TimeOld)
                 Task.Delay(10);
@@ -119,10 +119,27 @@ namespace caMon.pages.TIS
                 timerInterval = 300;
                 TimerStart();
             }
+            switch (dispStatus)
+            {
+                default:
+                    title.Content = "◆　エ ラ ー　◆";
+                    cover.Content = "不明なエラー";
+                    cover.Visibility = Visibility.Visible;
+                    break;
+                case 0:
+                    title.Content = "◆　接 続 エ ラ ー　◆";
+                    cover.Content = "BIDS Shared Memory\n接続未検出\nBIDSSMemを接続してください";
+                    cover.Visibility = Visibility.Visible;
+                    break;
+                case 1:
+                    title.Content = "◆　表　示　灯　◆";
+                    cover.Visibility = Visibility.Collapsed;
+                    DispNotches();
+                    DispRoute();
+                    DispFormDoor();
+                    break;
+            }
 
-                DispNotches();
-                DispRoute();
-                DispFormDoor();
         }
 
         /// <summary>
