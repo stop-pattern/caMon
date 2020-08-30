@@ -250,12 +250,12 @@ namespace caMon.pages.TIS
                         rectangles[0, 2].Visibility = Visibility.Visible;
                         labels[0, 2].Visibility = Visibility.Visible;
 
-                        labels[0, 3].Content = "構内";
+                        labels[0, 3].Content = "構　内";
                         ChangeDisplay(rectangles[0, 3], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[31]));
                         rectangles[0, 3].Visibility = Visibility.Visible;
                         labels[0, 3].Visibility = Visibility.Visible;
 
-                        labels[0, 4].Content = "非設";
+                        labels[0, 4].Content = "非　設";
                         ChangeDisplay(rectangles[0, 4], labels[0, 4], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[29]));
                         rectangles[0, 4].Visibility = Visibility.Hidden;
                         labels[0, 4].Visibility = Visibility.Hidden;
@@ -423,7 +423,7 @@ namespace caMon.pages.TIS
                         rectangles[0, 4].Visibility = Visibility.Visible;
                         labels[0, 4].Visibility = Visibility.Visible;
 
-                        labels[0, 5].Content = "入換";
+                        labels[0, 5].Content = "入　換";
                         ChangeDisplay(rectangles[0, 5], labels[0, 5], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[75]));
                         rectangles[0, 5].Visibility = Visibility.Visible;
                         labels[0, 5].Visibility = Visibility.Visible;
@@ -586,16 +586,16 @@ namespace caMon.pages.TIS
                         rectangles[0, 3].Visibility = Visibility.Visible;
                         labels[0, 3].Visibility = Visibility.Visible;
 
-                        labels[0, 4].Content = "入換";
+                        labels[0, 4].Content = "入　換";
                         ChangeDisplay(rectangles[0, 4], labels[0, 4], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[32]));
                         rectangles[0, 4].Visibility = Visibility.Visible;
                         labels[0, 4].Visibility = Visibility.Visible;
 
-                        labels[0, 5].Content = "構内";
+                        labels[0, 5].Content = "構　内";
                         rectangles[0, 5].Visibility = Visibility.Visible;
                         labels[0, 5].Visibility = Visibility.Visible;
 
-                        labels[0, 6].Content = "非設";
+                        labels[0, 6].Content = "非　設";
                         ChangeDisplay(rectangles[0, 6], labels[0, 6], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[28]));
                         rectangles[0, 6].Visibility = Visibility.Visible;
                         labels[0, 6].Visibility = Visibility.Visible;
@@ -739,27 +739,27 @@ namespace caMon.pages.TIS
                         rectangles[0, 0].Visibility = Visibility.Visible;
                         labels[0, 0].Visibility = Visibility.Visible;
 
-                        labels[0, 1].Content = "動作";
+                        labels[0, 1].Content = "動　作";
                         ChangeDisplay(rectangles[0, 1], labels[0, 1], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[47]));
                         rectangles[0, 1].Visibility = Visibility.Visible;
                         labels[0, 1].Visibility = Visibility.Visible;
 
-                        labels[0, 2].Content = "停車";
+                        labels[0, 2].Content = "停　車";
                         ChangeDisplay(rectangles[0, 2], labels[0, 2], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[253]));
                         rectangles[0, 2].Visibility = Visibility.Visible;
                         labels[0, 2].Visibility = Visibility.Visible;
 
-                        labels[0, 3].Content = "故障";
+                        labels[0, 3].Content = "故　障";
                         ChangeDisplay(rectangles[0, 3], labels[0, 3], colorEmergency, false);
                         rectangles[0, 3].Visibility = Visibility.Visible;
                         labels[0, 3].Visibility = Visibility.Visible;
 
-                        labels[0, 4].Content = "速制";
+                        labels[0, 4].Content = "速　制";
                         ChangeDisplay(rectangles[0, 4], labels[0, 4], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[49]));
                         rectangles[0, 4].Visibility = Visibility.Visible;
                         labels[0, 4].Visibility = Visibility.Visible;
 
-                        labels[0, 5].Content = "確認";
+                        labels[0, 5].Content = "確　認";
                         ChangeDisplay(rectangles[0, 5], labels[0, 5], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[48]));
                         rectangles[0, 5].Visibility = Visibility.Visible;
                         labels[0, 5].Visibility = Visibility.Visible;
@@ -809,12 +809,12 @@ namespace caMon.pages.TIS
                         rectangles[1, 3].Visibility = Visibility.Visible;
                         labels[1, 3].Visibility = Visibility.Visible;
 
-                        labels[1, 4].Content = "構内";
+                        labels[1, 4].Content = "構　内";
                         ChangeDisplay(rectangles[1, 4], labels[1, 4], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[33]));
                         rectangles[1, 4].Visibility = Visibility.Visible;
                         labels[1, 4].Visibility = Visibility.Visible;
 
-                        labels[1, 5].Content = "非設";
+                        labels[1, 5].Content = "非　設";
                         ChangeDisplay(rectangles[1, 5], labels[1, 5], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[30]));
                         rectangles[1, 5].Visibility = Visibility.Visible;
                         labels[1, 5].Visibility = Visibility.Visible;
