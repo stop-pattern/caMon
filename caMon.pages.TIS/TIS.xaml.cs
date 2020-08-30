@@ -253,6 +253,10 @@ namespace caMon.pages.TIS
                         rectangles[0, 0].Visibility = Visibility.Visible;
                         labels[0, 0].Visibility = Visibility.Visible;
 
+                        labels[0, 1].Content = "";
+                        rectangles[0, 1].Visibility = Visibility.Hidden;
+                        labels[0, 1].Visibility = Visibility.Hidden;
+
                         labels[0, 2].Content = "ＴＡＳＣ";
                         ChangeDisplay(rectangles[0, 2], labels[0, 2], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[136]));
                         rectangles[0, 2].Visibility = Visibility.Visible;
@@ -264,7 +268,7 @@ namespace caMon.pages.TIS
                         labels[0, 3].Visibility = Visibility.Visible;
 
                         labels[0, 4].Content = "入換";
-                        ChangeDisplay(rectangles[0, 4], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[32]));
+                        ChangeDisplay(rectangles[0, 4], labels[0, 4], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[32]));
                         rectangles[0, 4].Visibility = Visibility.Visible;
                         labels[0, 4].Visibility = Visibility.Visible;
 
@@ -277,10 +281,26 @@ namespace caMon.pages.TIS
                         rectangles[0, 6].Visibility = Visibility.Visible;
                         labels[0, 6].Visibility = Visibility.Visible;
 
+                        labels[0, 7].Content = "";
+                        rectangles[0, 7].Visibility = Visibility.Hidden;
+                        labels[0, 7].Visibility = Visibility.Hidden;
+
                         labels[0, 8].Content = "ハイビーム";
-                        ChangeDisplay(rectangles[0, 3], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[18]));
+                        ChangeDisplay(rectangles[0, 8], labels[0, 8], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[18]));
                         rectangles[0, 8].Visibility = Visibility.Visible;
                         labels[0, 8].Visibility = Visibility.Visible;
+
+                        labels[0, 9].Content = "";
+                        rectangles[0, 9].Visibility = Visibility.Hidden;
+                        labels[0, 9].Visibility = Visibility.Hidden;
+
+                        labels[0, 10].Content = "";
+                        rectangles[0, 10].Visibility = Visibility.Hidden;
+                        labels[0, 10].Visibility = Visibility.Hidden;
+
+                        labels[0, 11].Content = "";
+                        rectangles[0, 11].Visibility = Visibility.Hidden;
+                        labels[0, 11].Visibility = Visibility.Hidden;
 
                         labels[1, 0].Content = "ＡＴＣ非常";
                         ChangeDisplay(rectangles[1, 0], labels[1, 0], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[22]));
@@ -316,6 +336,10 @@ namespace caMon.pages.TIS
                         rectangles[1, 6].Visibility = Visibility.Visible;
                         labels[1, 6].Visibility = Visibility.Visible;
 
+                        labels[1, 7].Content = "";
+                        rectangles[1, 7].Visibility = Visibility.Hidden;
+                        labels[1, 7].Visibility = Visibility.Hidden;
+
                         labels[1, 8].Content = "情報伝送故障";
                         labels[1, 8].FontSize = 40;
                         rectangles[1, 8].Visibility = Visibility.Visible;
@@ -324,6 +348,14 @@ namespace caMon.pages.TIS
                         labels[1, 9].Content = "TIS試験";
                         rectangles[1, 9].Visibility = Visibility.Visible;
                         labels[1, 9].Visibility = Visibility.Visible;
+
+                        labels[1, 10].Content = "";
+                        rectangles[1, 10].Visibility = Visibility.Hidden;
+                        labels[1, 10].Visibility = Visibility.Hidden;
+
+                        labels[1, 11].Content = "";
+                        rectangles[1, 11].Visibility = Visibility.Hidden;
+                        labels[1, 11].Visibility = Visibility.Hidden;
 
                         labels[2, 0].Content = "ﾎｰﾑﾄﾞｱ連動";
                         labels[2, 0].FontSize = 40;
@@ -337,13 +369,45 @@ namespace caMon.pages.TIS
                         rectangles[2, 1].Visibility = Visibility.Visible;
                         labels[2, 1].Visibility = Visibility.Visible;
 
+                        labels[2, 2].Content = "";
+                        rectangles[2, 2].Visibility = Visibility.Hidden;
+                        labels[2, 2].Visibility = Visibility.Hidden;
+
                         labels[2, 3].Content = "ﾎｰﾑﾄﾞｱ支障";
                         rectangles[2, 3].Visibility = Visibility.Visible;
                         labels[2, 3].Visibility = Visibility.Visible;
 
+                        labels[2, 4].Content = "";
+                        rectangles[2, 4].Visibility = Visibility.Hidden;
+                        labels[2, 4].Visibility = Visibility.Hidden;
+
                         labels[2, 5].Content = "起動試験";
                         rectangles[2, 5].Visibility = Visibility.Visible;
                         labels[2, 5].Visibility = Visibility.Visible;
+
+                        labels[2, 6].Content = "";
+                        rectangles[2, 6].Visibility = Visibility.Hidden;
+                        labels[2, 6].Visibility = Visibility.Hidden;
+
+                        labels[2, 7].Content = "";
+                        rectangles[2, 7].Visibility = Visibility.Hidden;
+                        labels[2, 7].Visibility = Visibility.Hidden;
+
+                        labels[2, 8].Content = "";
+                        rectangles[2, 8].Visibility = Visibility.Hidden;
+                        labels[2, 8].Visibility = Visibility.Hidden;
+
+                        labels[2, 9].Content = "";
+                        rectangles[2, 9].Visibility = Visibility.Hidden;
+                        labels[2, 9].Visibility = Visibility.Hidden;
+
+                        labels[2, 10].Content = "";
+                        rectangles[2, 10].Visibility = Visibility.Hidden;
+                        labels[2, 10].Visibility = Visibility.Hidden;
+
+                        labels[2, 11].Content = "";
+                        rectangles[2, 11].Visibility = Visibility.Hidden;
+                        labels[2, 11].Visibility = Visibility.Hidden;
                         break;
 
                     /// SEB
