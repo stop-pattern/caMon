@@ -143,6 +143,7 @@ namespace caMon.pages.TIS
 
             DispNotches();
             DispRoute();
+            DispFormDoor();
         }
 
         /// <summary>
@@ -928,6 +929,51 @@ namespace caMon.pages.TIS
             {
                 comp.Content = "";
                 comp.Visibility = Visibility.Hidden;
+            }
+        }
+
+        /// <summary>
+        /// FD表示
+        /// </summary>
+        private void DispFormDoor()
+        {
+            Rectangle rectangle = FD_r;
+            Label label = FD_l;
+            if (SharedFuncs.SML.PanelA[155] == 0)   // 非連動判定
+            {
+                rectangle.Visibility = Visibility.Hidden;
+                label.Visibility = Visibility.Hidden;
+                return;
+            }
+            if (SharedFuncs.SML.PanelA[192] == 2)   // ドア状態
+            {
+                rectangle.Stroke = new SolidColorBrush(Colors.White);
+                label.Foreground = new SolidColorBrush(Colors.White);
+                label.Background = new SolidColorBrush(Colors.Transparent);
+                rectangle.Visibility = Visibility.Visible;
+                label.Visibility = Visibility.Visible;
+                return;
+            }
+            switch (SharedFuncs.SML.PanelA[181])    // 定位
+            {
+                case 0:
+                    rectangle.Stroke = new SolidColorBrush(Colors.Transparent);
+                    label.Foreground = new SolidColorBrush(Colors.Black);
+                    label.Background = new SolidColorBrush(colorNotice);
+                    rectangle.Visibility = Visibility.Hidden;
+                    label.Visibility = Visibility.Visible;
+                    break;
+                case 1:
+                    rectangle.Stroke = new SolidColorBrush(colorNotice);
+                    label.Foreground = new SolidColorBrush(colorNotice);
+                    label.Background = new SolidColorBrush(Colors.Transparent);
+                    rectangle.Visibility = Visibility.Visible;
+                    label.Visibility = Visibility.Visible;
+                    break;
+                default:
+                    rectangle.Visibility = Visibility.Hidden;
+                    label.Visibility = Visibility.Hidden;
+                    break;
             }
         }
 

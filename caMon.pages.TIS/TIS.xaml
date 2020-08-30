@@ -178,6 +178,11 @@
                     <Rectangle x:Name="r523" Grid.Column="5" Grid.Row="23" Stroke="White" Visibility="Hidden"/>
                     <Label x:Name="l422" Grid.Column="4" Grid.Row="22" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                 </Grid>
+                <Rectangle x:Name="FD_r" Fill="Black" Stroke="LightGreen" StrokeThickness="5"
+                       Margin="250,710,900,140" Height="150" Width="450" Visibility="Hidden"/>
+                <Label x:Name="FD_l" Content="ホームドア" FontSize="75" Foreground="Black" Background="LightGreen"
+                       Margin="250,710,900,140" Height="150" Width="450" Visibility="Hidden"
+                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 <Label x:Name="comp" Content="" FontSize="60" Foreground="Black" Background="DarkOrange"
                        Height="100" Width="200" HorizontalAlignment="Right" VerticalAlignment="Top"
                        HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
