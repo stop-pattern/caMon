@@ -263,7 +263,7 @@ namespace caMon.pages.TIS
                         labels[0, 2].Visibility = Visibility.Visible;
 
                         labels[0, 3].Content = "ＡＴＣ";
-                        ChangeDisplay(rectangles[0, 3], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[19]));
+                        ChangeDisplay(rectangles[0, 3], labels[0, 3], colorBrake, Convert.ToBoolean(SharedFuncs.SML.PanelA[21]));
                         rectangles[0, 3].Visibility = Visibility.Visible;
                         labels[0, 3].Visibility = Visibility.Visible;
 
