@@ -245,7 +245,8 @@
                 <Label x:Name="comp" Content="" FontSize="60" Foreground="Black" Background="DarkOrange"
                        Height="100" Width="200" HorizontalAlignment="Right" VerticalAlignment="Top"
                        HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <Label x:Name="cover" FontSize="100" Foreground="Red" Background="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Rectangle x:Name="cover" Fill="Black"/>
+                <TextBlock x:Name="error" FontSize="100" Foreground="Red" Background="Black" VerticalAlignment="Center" TextAlignment="Center"/>
             </Grid>
         </Grid>
     </Viewbox>

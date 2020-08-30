@@ -123,16 +123,20 @@ namespace caMon.pages.TIS
             {
                 default:
                     title.Content = "◆　エ ラ ー　◆";
-                    cover.Content = "不明なエラー";
+                    error.Text = "不明なエラー";
+                    error.Visibility = Visibility.Visible;
                     cover.Visibility = Visibility.Visible;
                     break;
                 case 0:
                     title.Content = "◆　接 続 エ ラ ー　◆";
-                    cover.Content = "BIDS Shared Memory\n接続未検出\nBIDSSMemを接続してください";
+                    error.Text = "BIDS Shared Memory\n接続未検出\nBIDSSMemを接続してください";
+                    error.Visibility = Visibility.Visible;
                     cover.Visibility = Visibility.Visible;
+                    error.Visibility = Visibility.Visible;
                     break;
                 case 1:
                     title.Content = "◆　表　示　灯　◆";
+                    error.Visibility = Visibility.Collapsed;
                     cover.Visibility = Visibility.Collapsed;
                     DispNotches();
                     DispRoute();
@@ -140,6 +144,7 @@ namespace caMon.pages.TIS
                     break;
                 case 2:
                     title.Content = "◆　運 転 情 報　◆";
+                    error.Visibility = Visibility.Collapsed;
                     cover.Visibility = Visibility.Collapsed;
                     DispNotches();
                     DispRoute();
