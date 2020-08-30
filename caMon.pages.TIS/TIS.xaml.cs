@@ -497,7 +497,7 @@ namespace caMon.pages.TIS
                         rectangles[1, 8].Visibility = Visibility.Visible;
                         labels[1, 8].Visibility = Visibility.Visible;
 
-                        labels[1, 9].Content = "TIS試験";
+                        labels[1, 9].Content = "ＴＩＳ試験";
                         rectangles[1, 9].Visibility = Visibility.Visible;
                         labels[1, 9].Visibility = Visibility.Visible;
 
@@ -664,7 +664,7 @@ namespace caMon.pages.TIS
                         rectangles[1, 8].Visibility = Visibility.Visible;
                         labels[1, 8].Visibility = Visibility.Visible;
 
-                        labels[1, 9].Content = "TIS試験";
+                        labels[1, 9].Content = "ＴＩＳ試験";
                         rectangles[1, 9].Visibility = Visibility.Visible;
                         labels[1, 9].Visibility = Visibility.Visible;
 
