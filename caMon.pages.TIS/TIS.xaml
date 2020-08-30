@@ -188,15 +188,6 @@
                        Height="100" Width="200" HorizontalAlignment="Right" VerticalAlignment="Top"
                        HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             </Grid>
-            <Grid x:Name="TKK" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
-            </Grid>
-            <Grid x:Name="TRTA" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
-            </Grid>
-            <Grid x:Name="SEB" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
-            </Grid>
-            <Grid x:Name="TOB" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
-                
-            </Grid>
         </Grid>
     </Viewbox>
 </Page>
