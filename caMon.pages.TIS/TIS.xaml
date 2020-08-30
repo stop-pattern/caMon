@@ -12,7 +12,7 @@
         <Grid Background="Black" Height="1200" Width="1600">
             <Grid x:Name="displayTop" Margin="0,0" Height="100" VerticalAlignment="Top">
                 <Rectangle Height="100" VerticalAlignment="Top" Fill="DodgerBlue" />
-                <Label Content="◆ 表示灯 ◆" FontSize="75" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Label Content="◆　表　示　灯　◆" FontSize="75" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <ToggleButton x:Name="Smooth" Content="Smooth" IsChecked="True" Height="50" Width="50" Margin="0,0,100,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                 <Button Click="NextP" Content="Back" Height="50" Width="50" Margin="0,0,50,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             </Grid>
