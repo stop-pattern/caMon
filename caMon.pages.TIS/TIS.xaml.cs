@@ -166,7 +166,7 @@ namespace caMon.pages.TIS
         /// <summary>注意表示で使用する色</summary>
         static readonly Color colorBrake = Colors.Orange;
         /// <summary>通知表示で使用する色</summary>
-        static readonly Color colorNotice = Colors.Lime;
+        static readonly Color colorNotice = Colors.LightGreen;
         /// <summary>有効表示で使用する色</summary>
         static readonly Color colorActive = Colors.Aquamarine;
 
