@@ -104,79 +104,79 @@
                     </Grid.ColumnDefinitions>
                     <!-- Column:1 -->
                     <Rectangle x:Name="r11" Grid.Column="1" Grid.Row="1" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l00" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l00" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r13" Grid.Column="1" Grid.Row="3" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l02" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l02" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r15" Grid.Column="1" Grid.Row="5" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l04" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l04" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r17" Grid.Column="1" Grid.Row="7" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l06" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l06" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r19" Grid.Column="1" Grid.Row="9" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l08" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l08" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r111" Grid.Column="1" Grid.Row="11" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l010" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l010" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r113" Grid.Column="1" Grid.Row="13" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l012" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l012" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r115" Grid.Column="1" Grid.Row="15" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l014" Grid.Column="0" Grid.Row="14" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l014" Grid.Column="0" Grid.Row="14" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r117" Grid.Column="1" Grid.Row="17" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l016" Grid.Column="0" Grid.Row="16" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l016" Grid.Column="0" Grid.Row="16" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r119" Grid.Column="1" Grid.Row="19" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l018" Grid.Column="0" Grid.Row="18" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l018" Grid.Column="0" Grid.Row="18" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r121" Grid.Column="1" Grid.Row="21" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l020" Grid.Column="0" Grid.Row="20" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l020" Grid.Column="0" Grid.Row="20" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r123" Grid.Column="1" Grid.Row="23" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l022" Grid.Column="0" Grid.Row="22" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l022" Grid.Column="0" Grid.Row="22" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <!-- Column:3 -->
                     <Rectangle x:Name="r31" Grid.Column="3" Grid.Row="1" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l20" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l20" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r33" Grid.Column="3" Grid.Row="3" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l22" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l22" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r35" Grid.Column="3" Grid.Row="5" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l24" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l24" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r37" Grid.Column="3" Grid.Row="7" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l26" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l26" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r39" Grid.Column="3" Grid.Row="9" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l28" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l28" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r311" Grid.Column="3" Grid.Row="11" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l210" Grid.Column="2" Grid.Row="10" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l210" Grid.Column="2" Grid.Row="10" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r313" Grid.Column="3" Grid.Row="13" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l212" Grid.Column="2" Grid.Row="12" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l212" Grid.Column="2" Grid.Row="12" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r315" Grid.Column="3" Grid.Row="15" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l214" Grid.Column="2" Grid.Row="14" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l214" Grid.Column="2" Grid.Row="14" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r317" Grid.Column="3" Grid.Row="17" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l216" Grid.Column="2" Grid.Row="16" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l216" Grid.Column="2" Grid.Row="16" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r319" Grid.Column="3" Grid.Row="19" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l218" Grid.Column="2" Grid.Row="18" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l218" Grid.Column="2" Grid.Row="18" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r321" Grid.Column="3" Grid.Row="21" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l220" Grid.Column="2" Grid.Row="20" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l220" Grid.Column="2" Grid.Row="20" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r323" Grid.Column="3" Grid.Row="23" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l222" Grid.Column="2" Grid.Row="22" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l222" Grid.Column="2" Grid.Row="22" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <!-- Column:5 -->
                     <Rectangle x:Name="r51" Grid.Column="5" Grid.Row="1" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l40" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l40" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r53" Grid.Column="5" Grid.Row="3" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l42" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l42" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r55" Grid.Column="5" Grid.Row="5" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l44" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l44" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r57" Grid.Column="5" Grid.Row="7" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l46" Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l46" Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r59" Grid.Column="5" Grid.Row="9" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l48" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l48" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r511" Grid.Column="5" Grid.Row="11" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l410" Grid.Column="4" Grid.Row="10" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l410" Grid.Column="4" Grid.Row="10" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r513" Grid.Column="5" Grid.Row="13" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l412" Grid.Column="4" Grid.Row="12" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l412" Grid.Column="4" Grid.Row="12" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r515" Grid.Column="5" Grid.Row="15" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l414" Grid.Column="4" Grid.Row="14" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l414" Grid.Column="4" Grid.Row="14" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r517" Grid.Column="5" Grid.Row="17" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l416" Grid.Column="4" Grid.Row="16" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l416" Grid.Column="4" Grid.Row="16" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r519" Grid.Column="5" Grid.Row="19" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l418" Grid.Column="4" Grid.Row="18" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l418" Grid.Column="4" Grid.Row="18" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r521" Grid.Column="5" Grid.Row="21" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l420" Grid.Column="4" Grid.Row="20" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l420" Grid.Column="4" Grid.Row="20" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                     <Rectangle x:Name="r523" Grid.Column="5" Grid.Row="23" Stroke="White" Visibility="Hidden"/>
-                    <Label x:Name="l422" Grid.Column="4" Grid.Row="22" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
+                    <Label x:Name="l422" Grid.Column="4" Grid.Row="22" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="" FontSize="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Visibility="Hidden"/>
                 </Grid>
                 <Label x:Name="comp" Content="" FontSize="60" Foreground="Black" Background="DarkOrange"
                        Height="100" Width="200" HorizontalAlignment="Right" VerticalAlignment="Top"
