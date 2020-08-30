@@ -19,7 +19,7 @@
                 <Rectangle Height="100" VerticalAlignment="Bottom" Fill="Cyan" />
             </Grid>
             <Grid x:Name="G" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Grid x:Name="Step" Margin="50, 200, 1400, 50" Height="650" Width="150">
+                <Grid x:Name="Step" Margin="50, 255, 1400, 95" Height="650" Width="150">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
