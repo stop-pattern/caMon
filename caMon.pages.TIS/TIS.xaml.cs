@@ -24,7 +24,7 @@ namespace caMon.pages.TIS
         Rectangle[,] rectangles;
         Label[,] labels;
         int[] panel;
-        uint dispStatus;
+        uint dispStatus = 1;
 
         public TIS(caMonIF arg_camonIF)
         {
@@ -102,7 +102,6 @@ namespace caMon.pages.TIS
         private void Timer_Tick(object sender, object e)
         {
             if (!BIDSSMemIsEnabled) dispStatus = 0;
-            else dispStatus = 1;
 
             if (TimeVal < TimeOld)
                 Task.Delay(10);
@@ -119,6 +118,7 @@ namespace caMon.pages.TIS
                 timerInterval = 300;
                 TimerStart();
             }
+
             switch (dispStatus)
             {
                 default:
@@ -133,6 +133,13 @@ namespace caMon.pages.TIS
                     break;
                 case 1:
                     title.Content = "◆　表　示　灯　◆";
+                    cover.Visibility = Visibility.Collapsed;
+                    DispNotches();
+                    DispRoute();
+                    DispFormDoor();
+                    break;
+                case 2:
+                    title.Content = "◆　運 転 情 報　◆";
                     cover.Visibility = Visibility.Collapsed;
                     DispNotches();
                     DispRoute();
@@ -995,5 +1002,30 @@ namespace caMon.pages.TIS
             }
         }
 
+        private void indicator_Checked(object sender, RoutedEventArgs e)
+        {
+            indicator.IsChecked = false;
+            indicator.Foreground = new SolidColorBrush(Colors.White);
+            indicator.Background = new SolidColorBrush(Colors.DodgerBlue);
+            indicator.IsHitTestVisible = false;
+            drive.IsChecked = false;
+            drive.Foreground = new SolidColorBrush(Colors.Black);
+            drive.Background = new SolidColorBrush(Colors.White);
+            drive.IsHitTestVisible = true;
+            dispStatus = 1;
+        }
+
+        private void drive_Checked(object sender, RoutedEventArgs e)
+        {
+            indicator.IsChecked = false;
+            indicator.Foreground = new SolidColorBrush(Colors.Black);
+            indicator.Background = new SolidColorBrush(Colors.White);
+            indicator.IsHitTestVisible = true;
+            drive.IsChecked = false;
+            drive.Foreground = new SolidColorBrush(Colors.White);
+            drive.Background = new SolidColorBrush(Colors.DodgerBlue);
+            drive.IsHitTestVisible = false;
+            dispStatus = 2;
+        }
     }
 }

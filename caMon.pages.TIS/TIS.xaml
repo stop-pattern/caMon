@@ -17,7 +17,65 @@
                 <Button Click="NextP" Content="Back" Height="50" Width="50" Margin="0,0,50,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             </Grid>
             <Grid x:Name="displayBottom" Margin="0,0" Height="100" VerticalAlignment="Bottom">
-                <Rectangle Height="100" VerticalAlignment="Bottom" Fill="Cyan" />
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Height="100" Grid.ColumnSpan="999" Grid.RowSpan="999" VerticalAlignment="Bottom" Fill="Cyan" />
+                <ToggleButton x:Name="indicator" Grid.Row="1" Grid.Column="1" Checked="indicator_Checked" Foreground="White" Background="DodgerBlue">
+                    <TextBlock TextAlignment="Center">表示<LineBreak/>灯</TextBlock>
+                </ToggleButton>
+                <ToggleButton x:Name="drive" Content="運転" Grid.Row="1" Grid.Column="2" Checked="drive_Checked" Background="White"/>
+                <ToggleButton Content="出庫" Grid.Row="1" Grid.Column="3" Background="White" IsHitTestVisible="False"/>
+                <ToggleButton Grid.Row="1" Grid.Column="4" Background="White" IsHitTestVisible="False">
+                    <TextBlock TextAlignment="Center">メニュー<LineBreak/>放送</TextBlock>
+                </ToggleButton>
+                <ToggleButton Grid.Row="1" Grid.Column="5" Background="White" IsHitTestVisible="False">
+                    <TextBlock TextAlignment="Center">確認<LineBreak/>調査</TextBlock>
+                </ToggleButton>
+                <ToggleButton Content="空調" Grid.Row="1" Grid.Column="6" Background="White" IsHitTestVisible="False"/>
+                <ToggleButton Content="行先" Grid.Row="1" Grid.Column="7" Background="White" IsHitTestVisible="False"/>
+                <ToggleButton Grid.Row="1" Grid.Column="8" Background="White" IsHitTestVisible="False">
+                    <TextBlock TextAlignment="Center">放送<LineBreak/>設定</TextBlock>
+                </ToggleButton>
+                <ToggleButton Grid.Row="1" Grid.Column="9" Background="White" IsHitTestVisible="False">
+                    <TextBlock TextAlignment="Center">ドア<LineBreak/>方向</TextBlock>
+                </ToggleButton>
+                <ToggleButton Grid.Row="1" Grid.Column="10" Background="White" IsHitTestVisible="False">
+                    <TextBlock TextAlignment="Center">運行<LineBreak/>情報</TextBlock>
+                </ToggleButton>
+                <ToggleButton Grid.Row="1" Grid.Column="17" Background="White" IsHitTestVisible="False">
+                    <TextBlock TextAlignment="Center">明度<LineBreak/>暗</TextBlock>
+                </ToggleButton>
+                <ToggleButton Grid.Row="1" Grid.Column="18" Background="White" IsHitTestVisible="False">
+                    <TextBlock TextAlignment="Center">明度<LineBreak/>明</TextBlock>
+                </ToggleButton>
+                <ToggleButton Content="右端" Grid.Row="1" Grid.Column="99" Background="White" IsHitTestVisible="False"/>
             </Grid>
             <Grid x:Name="G" Margin="0, 100, 0, 100" Height="1000" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Grid x:Name="Step" Margin="50, 255, 1400, 95" Height="650" Width="150">
