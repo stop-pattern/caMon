@@ -25,7 +25,7 @@
             <TextBlock x:Name="errorFrame" FontSize="50" Foreground="Red" Grid.Row="1"
                        TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
                 ページ表示エラー<LineBreak/>
-                mainFrameが描写できません<LineBreak/>
+                mainFrameが表示できません<LineBreak/>
                 rootページのみを表示しています
             </TextBlock>
 
