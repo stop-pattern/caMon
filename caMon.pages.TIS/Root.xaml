@@ -57,12 +57,12 @@
                     <ColumnDefinition Width="20"/>
                 </Grid.ColumnDefinitions>
                 <Rectangle x:Name="displayBottom" Fill="Cyan" Grid.RowSpan="3" Grid.ColumnSpan="17"/>
-                <Button x:Name="Indicator" Grid.Row="1" Grid.Column="1" Background="White">
+                <ToggleButton x:Name="Indicator" Grid.Row="1" Grid.Column="1" Background="White" Click="Indicator_Click">
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">表示<LineBreak/>灯</TextBlock>
-                </Button>
-                <Button x:Name="Driving" Grid.Row="1" Grid.Column="2" Background="White">
+                </ToggleButton>
+                <ToggleButton x:Name="Driving" Grid.Row="1" Grid.Column="2" Background="White" Click="Driving_Click">
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">運転</TextBlock>
-                </Button>
+                </ToggleButton>
                 <Button x:Name="BrightnessUp" Grid.Row="1" Grid.Column="13" Background="White" IsHitTestVisible="False">
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">明度<LineBreak/>暗</TextBlock>
                 </Button>

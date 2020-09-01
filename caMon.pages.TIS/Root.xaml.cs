@@ -191,5 +191,32 @@ namespace caMon.pages.TIS
                     break;
             }
         }
+
+
+        private void Indicator_Click(object sender, RoutedEventArgs e)
+        {
+            status = PageStatus.Indicator;
+            Botton_Reset();
+            Indicator.Foreground = new SolidColorBrush(Colors.White);
+            Indicator.Background = new SolidColorBrush(Colors.DodgerBlue);
+        }
+
+        private void Driving_Click(object sender, RoutedEventArgs e)
+        {
+            status = PageStatus.Driver;
+            Botton_Reset();
+            Driving.Foreground = new SolidColorBrush(Colors.White);
+            Driving.Background = new SolidColorBrush(Colors.DodgerBlue);
+        }
+
+        private void Botton_Reset()
+        {
+            Indicator.IsChecked = false;
+            Indicator.Foreground = new SolidColorBrush(Colors.Black);
+            Indicator.Background = new SolidColorBrush(Colors.White);
+            Driving.IsChecked = false;
+            Driving.Foreground = new SolidColorBrush(Colors.Black);
+            Driving.Background = new SolidColorBrush(Colors.White);
+        }
     }
 }
