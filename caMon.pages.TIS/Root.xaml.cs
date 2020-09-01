@@ -36,9 +36,9 @@ namespace caMon.pages.TIS
         /// <summary>OpenBveから渡される情報</summary>
         OpenD obve;
         /// <summary>panelの状態</summary>
-        public static int[] panel;
+        public static List<int> panel = new List<int>();
         /// <summary>soundの状態</summary>
-        public static int[] sound;
+        public static List<int> sound = new List<int>();
         /// <summary>表示状態</summary>
         PageStatus status = new PageStatus();
 
@@ -67,8 +67,8 @@ namespace caMon.pages.TIS
             SharedFuncs.SML.SMC_PanelDChanged += SMemLib_PanelChanged;
             SharedFuncs.SML.SMC_SoundDChanged += SMemLib_SoundChanged;
 
-            panel = new int[256];
-            panel = new int[256];
+            panel = new List<int>();
+            sound = new List<int>();
 
             timer.Tick += Timer_Tick;
             timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
@@ -124,7 +124,7 @@ namespace caMon.pages.TIS
         /// </summary>
         private void SMemLib_PanelChanged(object sender, ValueChangedEventArgs<int[]> p)
         {
-            panel = p.NewValue;
+            panel = new List<int>(p.NewValue);
         }
 
         /// <summary> 
@@ -132,7 +132,7 @@ namespace caMon.pages.TIS
         /// </summary>
         private void SMemLib_SoundChanged(object sender, ValueChangedEventArgs<int[]> s)
         {
-            sound = s.NewValue;
+            sound = new List<int>(s.NewValue);
         }
 
 
@@ -178,7 +178,7 @@ namespace caMon.pages.TIS
                 case PageStatus.Indicator:
                     mainFrameCover.Visibility = Visibility.Collapsed;
                     textMessage.Visibility = Visibility.Collapsed;
-                    contentLabel.Content = "◆　Ｔ　Ｉ　Ｓ　◆";
+                    contentLabel.Content = "◆　" + PageStatus.Indicator + "　◆";
                     mainFrame.Visibility = Visibility.Visible;
                     //mainFrame.Source = new Uri(@"Pages\Indicator.xaml", UriKind.Relative);
                     break;
