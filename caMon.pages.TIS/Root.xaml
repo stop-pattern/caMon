@@ -19,10 +19,16 @@
             <Rectangle x:Name="displayTop" Fill="DodgerBlue"/>
             <Label x:Name="contentLabel" Content="◆　Ｔ　Ｉ　Ｓ　◆" FontSize="20" Foreground="White"
                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="0"/>
-            
+
             <!-- 画面中央 -->
             <Frame x:Name="mainFrame" Grid.Row="1" Source=""/>
-            
+            <TextBlock x:Name="errorFrame" FontSize="50" Foreground="Red" Grid.Row="1"
+                       TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
+                ページ表示エラー<LineBreak/>
+                mainFrameが描写できません<LineBreak/>
+                rootページのみを表示しています
+            </TextBlock>
+
             <!-- 画面下部 -->
             <Grid Grid.Row="2">
                 <Grid.RowDefinitions>
