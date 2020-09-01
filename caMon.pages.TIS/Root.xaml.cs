@@ -24,11 +24,11 @@ namespace caMon.pages.TIS
     public partial class Root : Page
     {
         /// <summary>ループタイマー</summary>
-        DispatcherTimer timer = new DispatcherTimer();
+        static readonly DispatcherTimer timer = new DispatcherTimer();
         /// <summary>  </summary>
-        caMonIF camonIF;
+        readonly caMonIF camonIF;
         /// <summary>ループ間隔[ms]</summary>
-        int timerInterval = 300;
+        readonly int timerInterval = 300;
         /// <summary>BIDS Shared Memoryの状態</summary>
         bool BIDSSMemIsEnabled = false;
         /// <summary>Bve5から渡される情報</summary>
@@ -36,9 +36,9 @@ namespace caMon.pages.TIS
         /// <summary>OpenBveから渡される情報</summary>
         OpenD obve;
         /// <summary>panelの状態</summary>
-        int[] panel;
+        public static int[] panel;
         /// <summary>soundの状態</summary>
-        int[] sound;
+        public static int[] sound;
         /// <summary>表示状態</summary>
         PageStatus status = new PageStatus();
 
