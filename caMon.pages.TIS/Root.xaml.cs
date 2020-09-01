@@ -39,6 +39,21 @@ namespace caMon.pages.TIS
         int[] panel;
         /// <summary>soundの状態</summary>
         int[] sound;
+        /// <summary>表示状態</summary>
+        PageStatus status = new PageStatus();
+
+        /// <summary>
+        /// 表示状態
+        /// </summary>
+        enum PageStatus
+        {
+            CannotLoadPages = -3,
+            SMemDisable = -2,
+            Unknown = -1,
+            Root = 0,
+            Indicator,
+            Driver,
+        }
 
 
         public Root(caMonIF arg_camonIF)
@@ -73,12 +88,12 @@ namespace caMon.pages.TIS
         /// <summary> 
         /// mod選択画面へ戻る
         /// </summary>
-        private void back_home(object sender, RoutedEventArgs e) => camonIF.BackToHomeDo();
+        private void Back_home(object sender, RoutedEventArgs e) => camonIF.BackToHomeDo();
 
         /// <summary> 
         /// アプリケーションを終了
         /// </summary>
-        private void close_app(object sender, RoutedEventArgs e) => camonIF.CloseAppDo();
+        private void Close_app(object sender, RoutedEventArgs e) => camonIF.CloseAppDo();
 
         /// <summary> 
         /// mainFrameにPage.xamlの内容を描画
@@ -91,6 +106,7 @@ namespace caMon.pages.TIS
         /// </summary>
         private void SMemLib_BIDSSMemChanged(object sender, ValueChangedEventArgs<BIDSSharedMemoryData> e)
         {
+            if (!e.NewValue.IsEnabled) status = PageStatus.SMemDisable;
             BIDSSMemIsEnabled = e.NewValue.IsEnabled;
             bve5 = e.NewValue;
         }
@@ -125,6 +141,55 @@ namespace caMon.pages.TIS
         /// </summary>
         private void Timer_Tick(object sender, object e)
         {
+            TimerStart();
+
+            switch (status)
+            {
+                case PageStatus.CannotLoadPages:
+                    mainFrameCover.Visibility = Visibility.Visible;
+                    textMessage.Text = "ページ表示エラー\nmainFrameが表示できません\nrootページのみを表示しています";
+                    contentLabel.Content = "◆　表 示 エ ラ ー　◆";
+                    mainFrame.Visibility = Visibility.Collapsed;
+                    break;
+                case PageStatus.SMemDisable:
+                    mainFrameCover.Visibility = Visibility.Visible;
+                    textMessage.Text = "BIDS Shared Memory\n接続未検出\nBIDSSMemを接続してください";
+                    contentLabel.Content = "◆　接 続 エ ラ ー　◆";
+                    mainFrame.Visibility = Visibility.Collapsed;
+                    break;
+                case PageStatus.Unknown:
+                    mainFrameCover.Visibility = Visibility.Visible;
+                    textMessage.Text = "不明なエラー";
+                    contentLabel.Content = "◆　エ ラ ー　◆";
+                    mainFrame.Visibility = Visibility.Collapsed;
+                    break;
+                default:
+                    mainFrameCover.Visibility = Visibility.Collapsed;
+                    textMessage.Text = "表示する画面を選択してください";
+                    contentLabel.Content = "◆　Ｔ　Ｉ　Ｓ　◆";
+                    mainFrame.Visibility = Visibility.Collapsed;
+                    break;
+                case PageStatus.Root:
+                    mainFrameCover.Visibility = Visibility.Collapsed;
+                    textMessage.Visibility = Visibility.Collapsed;
+                    contentLabel.Content = "◆　Ｔ　Ｉ　Ｓ　◆";
+                    mainFrame.Visibility = Visibility.Collapsed;
+                    break;
+                case PageStatus.Indicator:
+                    mainFrameCover.Visibility = Visibility.Collapsed;
+                    textMessage.Visibility = Visibility.Collapsed;
+                    contentLabel.Content = "◆　Ｔ　Ｉ　Ｓ　◆";
+                    mainFrame.Visibility = Visibility.Visible;
+                    //mainFrame.Source = new Uri(@"Pages\Indicator.xaml", UriKind.Relative);
+                    break;
+                case PageStatus.Driver:
+                    mainFrameCover.Visibility = Visibility.Collapsed;
+                    textMessage.Visibility = Visibility.Collapsed;
+                    contentLabel.Content = "◆　" + PageStatus.Driver + "　◆";
+                    mainFrame.Visibility = Visibility.Visible;
+                    //mainFrame.Source = new Uri(@"Pages\Driver.xaml", UriKind.Relative);
+                    break;
+            }
         }
     }
 }
