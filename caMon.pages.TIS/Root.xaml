@@ -15,13 +15,15 @@
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
 
+            <!-- 埋め込み画面 -->
+            <Frame x:Name="mainFrame" Grid.Row="0" Grid.RowSpan="2" Source=""/>
+
             <!-- 画面上部 -->
             <Rectangle x:Name="displayTop" Fill="DodgerBlue"/>
             <Label x:Name="contentLabel" Content="◆　Ｔ　Ｉ　Ｓ　◆" FontSize="20" Foreground="White"
                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="0"/>
 
             <!-- 画面中央 -->
-            <Frame x:Name="mainFrame" Grid.Row="1" Source=""/>
             <Rectangle x:Name="mainFrameCover" Grid.Row="1" Fill="Black"/>
             <TextBlock x:Name="textMessage" FontSize="50" Foreground="Red" Grid.Row="1"
                        TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
