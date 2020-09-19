@@ -11,8 +11,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="85"/>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="125"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="150"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
@@ -71,9 +71,10 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="5"/>
                     </Grid.RowDefinitions>
-                    <Rectangle Fill="White" Grid.Column="1" Grid.Row="1"/>
-                    <TextBlock Text="和光市" FontSize="20" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-                    <!-- {Binding Source=}, Path=} -->
+                    <Border Background="White" Grid.Column="1" Grid.Row="1">
+                        <TextBlock Text="和光市" FontSize="20" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                        <!-- {Binding Source=}, Path=} -->
+                    </Border>
                 </Grid>
             </Grid>
 
@@ -92,10 +93,12 @@
                 </Grid.RowDefinitions>
                 <Rectangle Stroke="Green" Grid.ColumnSpan="3" Grid.RowSpan="5" RadiusX="5" RadiusY="5"/>
 
-                <Rectangle Fill="Yellow" Grid.Column="1" Grid.Row="1"/>
-                <TextBlock Text="回生" FontSize="20" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-                <Rectangle Fill="MediumPurple" Grid.Column="1" Grid.Row="2"/>
-                <TextBlock Text="定速" FontSize="20" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                <Border Background="Yellow" Grid.Column="1" Grid.Row="1">
+                    <TextBlock Text="回生" FontSize="20" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Background="MediumPurple" Grid.Column="1" Grid.Row="2">
+                    <TextBlock Text="定速" FontSize="20" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                </Border>
             </Grid>
 
             <!-- 運行番号 -->
@@ -114,13 +117,107 @@
                 <TextBlock Foreground="White" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
                     運行<LineBreak/>番号
                 </TextBlock>
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="White" Grid.Column="1" Grid.Row="1">
+                        <TextBlock FontSize="20" FontWeight="Black" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Center">
+                            99K
+                        </TextBlock>
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Column="1" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Background="Aquamarine" Grid.Column="1">
+                        <TextBlock Text="ｵﾝﾗｲﾝ" FontSize="15" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                    </Border>
+                    <Border Background="Yellow" Grid.Column="1">
+                        <TextBlock Text="ｵﾌﾗｲﾝ" FontSize="15" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                    </Border>
+                </Grid>
             </Grid>
         </Grid>
 
 
         <!-- 1 -->
         <Grid Grid.Row="1" Background="DodgerBlue">
-            <TextBlock Text="◇　運　転　情　報　◇" FontSize="25" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Text="◇　運　転　情　報　◇" FontSize="25" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+        </Grid>
+
+
+        <!-- 2 -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Column="1" Grid.Row="1">
+                    <TextBlock Text="ノッチ" FontSize="20" Foreground="GreenYellow" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="2" Grid.Row="1">
+                    <TextBlock Text="MNU - N" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+            </Grid>
+            
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Background="Orange">
+                    <TextBlock Text="TKK" FontSize="20" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+            </Grid>
+        </Grid>
+
+
+        <!-- 3 -->
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Column="1" Grid.Row="1" BorderBrush="White" BorderThickness="5,5,5,5">
+                <TextBlock Text="各　　停"  FontSize="65" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+            </Border>
+        </Grid>
+
+
+        <!-- 4 -->
+        <Grid Grid.Row="4">
+
         </Grid>
     </Grid>
 </Page>
