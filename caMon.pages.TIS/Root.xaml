@@ -15,9 +15,6 @@
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
 
-            <!-- 埋め込み画面 -->
-            <Frame x:Name="mainFrame" Grid.Row="0" Grid.RowSpan="2" Source=""/>
-
             <!-- 画面上部 -->
             <Rectangle x:Name="displayTop" Fill="DodgerBlue"/>
             <Label x:Name="contentLabel" Content="◆　Ｔ　Ｉ　Ｓ　◆" FontSize="20" Foreground="White"
@@ -31,6 +28,9 @@
                 mainFrameが表示できません<LineBreak/>
                 rootページのみを表示しています
             </TextBlock>
+
+            <!-- 埋め込み画面 -->
+            <Frame x:Name="mainFrame" Grid.Row="0" Grid.RowSpan="2" Source="pages/Driving.xaml"/>
 
             <!-- 画面下部 -->
             <Grid Grid.Row="2">

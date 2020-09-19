@@ -167,13 +167,13 @@ namespace caMon.pages.TIS
                     mainFrameCover.Visibility = Visibility.Collapsed;
                     textMessage.Text = "表示する画面を選択してください";
                     contentLabel.Content = "◆　Ｔ　Ｉ　Ｓ　◆";
-                    mainFrame.Visibility = Visibility.Collapsed;
+                    mainFrame.Visibility = Visibility.Visible;
                     break;
                 case PageStatus.Root:
                     mainFrameCover.Visibility = Visibility.Collapsed;
                     textMessage.Visibility = Visibility.Collapsed;
                     contentLabel.Content = "◆　Ｔ　Ｉ　Ｓ　◆";
-                    mainFrame.Visibility = Visibility.Collapsed;
+                    mainFrame.Visibility = Visibility.Visible;
                     break;
                 case PageStatus.Indicator:
                     mainFrameCover.Visibility = Visibility.Collapsed;
