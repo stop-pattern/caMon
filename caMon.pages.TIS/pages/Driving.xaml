@@ -93,10 +93,10 @@
                 </Grid.RowDefinitions>
                 <Rectangle Stroke="Green" Grid.ColumnSpan="3" Grid.RowSpan="5" RadiusX="5" RadiusY="5"/>
 
-                <Border Background="Yellow" Grid.Column="1" Grid.Row="1">
+                <Border x:Name="Regeneration" Background="Yellow" Grid.Column="1" Grid.Row="1">
                     <TextBlock Text="回生" FontSize="20" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
                 </Border>
-                <Border Background="MediumPurple" Grid.Column="1" Grid.Row="2">
+                <Border x:Name="ConstantSpeed" Background="MediumPurple" Grid.Column="1" Grid.Row="2">
                     <TextBlock Text="定速" FontSize="20" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
                 </Border>
             </Grid>
@@ -140,10 +140,10 @@
                         <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="3*"/>
                     </Grid.ColumnDefinitions>
-                    <Border Background="Aquamarine" Grid.Column="1">
+                    <Border x:Name="Online" Background="Aquamarine" Grid.Column="1">
                         <TextBlock Text="ｵﾝﾗｲﾝ" FontSize="15" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
                     </Border>
-                    <Border Background="Yellow" Grid.Column="1">
+                    <Border x:Name="Offline" Background="Yellow" Grid.Column="1">
                         <TextBlock Text="ｵﾌﾗｲﾝ" FontSize="15" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
                     </Border>
                 </Grid>
