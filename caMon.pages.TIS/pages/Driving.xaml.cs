@@ -22,6 +22,7 @@ namespace caMon.pages.TIS.pages
         enum panelIndex : uint
         {
             Regeneration = 52,      /// <summary> 回生 </summary>
+            Key = 92,               /// <summary> マスコンキー </summary>
             TrainKind = 152,        /// <summary> 列車種別表示 </summary>
             ServiceNumber10 = 153,  /// <summary> 運行番号表示(10の桁) </summary>
             ServiceNumber1 = 154,   /// <summary> 運行番号表示(1の桁) </summary>
@@ -219,6 +220,10 @@ namespace caMon.pages.TIS.pages
                 /// 定速
                 ConstantSpeed.Visibility = constantSpeed ? Visibility.Visible : Visibility.Collapsed;
 
+                /// マスコンキー
+                KeyDisplay.Visibility = Visibility.Visible;
+                Key.Text = keyKind[panel[(int)panelIndex.Key]];
+
                 /// 運行番号
                 ServiceNumber.Visibility = Visibility.Visible;
                 ServiceNumber.Text = panel[(int)panelIndex.ServiceNumber10].ToString() + panel[(int)panelIndex.ServiceNumber1].ToString() + "K";
@@ -239,6 +244,9 @@ namespace caMon.pages.TIS.pages
 
                 /// 定速
                 ConstantSpeed.Visibility = Visibility.Collapsed;
+
+                /// マスコンキー
+                KeyDisplay.Visibility = Visibility.Collapsed;
 
                 /// 運行番号
                 ServiceNumber.Visibility = Visibility.Collapsed;
