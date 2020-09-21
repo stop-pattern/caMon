@@ -33,7 +33,7 @@ namespace caMon.pages.TIS.pages
         List<int> panel;
         List<int> sound;
 
-        public Driving(caMonIF arg_camonIF)
+        public Driving()
         {
             InitializeComponent();
 
