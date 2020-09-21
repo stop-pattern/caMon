@@ -44,6 +44,10 @@ namespace caMon.pages.TIS.pages
 
             panel = new List<int>();
             sound = new List<int>();
+
+            timer.Tick += Timer_Tick;
+            timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
+            timer.Start();
         }
 
         /// <summary> 
