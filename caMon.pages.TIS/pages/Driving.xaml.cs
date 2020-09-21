@@ -23,6 +23,8 @@ namespace caMon.pages.TIS.pages
         {
             Regeneration = 52,  /// 回生
             TrainKind = 152,    /// 列車種別表示
+            ServiceNumber10 = 153,  /// <summary> 運行番号表示(10の桁) </summary>
+            ServiceNumber1 = 154,   /// <summary> 運行番号表示(1の桁) </summary>
             Max = 256           /// 最大値
         }
 
@@ -216,6 +218,10 @@ namespace caMon.pages.TIS.pages
                 /// 定速
                 ConstantSpeed.Visibility = constantSpeed ? Visibility.Visible : Visibility.Collapsed;
 
+                /// 運行番号
+                ServiceNumber.Visibility = Visibility.Visible;
+                ServiceNumber.Text = panel[(int)panelIndex.ServiceNumber10].ToString() + panel[(int)panelIndex.ServiceNumber1].ToString() + "K";
+
                 /// 種別
                 TrainKind.Visibility = Visibility.Visible;
                 TrainKindText.Text = trainKind[panel[(int)panelIndex.TrainKind]].Item1;
@@ -232,6 +238,9 @@ namespace caMon.pages.TIS.pages
 
                 /// 定速
                 ConstantSpeed.Visibility = Visibility.Collapsed;
+
+                /// 運行番号
+                ServiceNumber.Visibility = Visibility.Collapsed;
 
                 /// 種別
                 TrainKind.Visibility = Visibility.Collapsed;

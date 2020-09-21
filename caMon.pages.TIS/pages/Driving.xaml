@@ -128,8 +128,8 @@
                         <RowDefinition Height="4*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Border Background="White" Grid.Column="1" Grid.Row="1">
-                        <TextBlock FontSize="20" FontWeight="Black" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Center">
+                    <Border Grid.Column="1" Grid.Row="1">
+                        <TextBlock x:Name="ServiceNumber" FontSize="20" FontWeight="Black" Foreground="Black" Background="White" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Center">
                             99K
                         </TextBlock>
                     </Border>
