@@ -15,6 +15,9 @@ namespace caMon.pages.TIS.pages
     /// </summary>
     public partial class Driving : Page
     {
+        /// <summary>
+        /// panelのインデックス
+        /// </summary>
         enum panelIndex : int
         {
             Regeneration = 52,  /// 回生
