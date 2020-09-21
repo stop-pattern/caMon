@@ -104,15 +104,30 @@ namespace caMon.pages.TIS.pages
         /// </summary>
         private void Timer_Tick(object sender, object e)
         {
-            /// 接続
-            Online.Visibility = BIDSSMemIsEnabled ? Visibility.Visible : Visibility.Collapsed;
-            Offline.Visibility = !BIDSSMemIsEnabled ? Visibility.Visible : Visibility.Collapsed;
+            if (BIDSSMemIsEnabled)
+            {
+                /// 接続
+                Online.Visibility = Visibility.Visible;
+                Offline.Visibility = Visibility.Collapsed;
 
-            /// 回生
-            Regeneration.Visibility = panel[(int)panelIndex.Regeneration] != 0 ? Visibility.Visible : Visibility.Collapsed;
+                /// 回生
+                Regeneration.Visibility = panel[(int)panelIndex.Regeneration] != 0 ? Visibility.Visible : Visibility.Collapsed;
 
-            /// 定速
-            ConstantSpeed.Visibility = constantSpeed ? Visibility.Visible : Visibility.Collapsed;
+                /// 定速
+                ConstantSpeed.Visibility = constantSpeed ? Visibility.Visible : Visibility.Collapsed;
+            }
+            else
+            {
+                /// 接続
+                Online.Visibility = Visibility.Collapsed;
+                Offline.Visibility = Visibility.Visible;
+
+                /// 回生
+                Regeneration.Visibility = Visibility.Collapsed;
+
+                /// 定速
+                ConstantSpeed.Visibility = Visibility.Collapsed;
+            }
         }
 
         /// <summary>
