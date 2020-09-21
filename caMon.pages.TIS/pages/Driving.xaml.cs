@@ -88,7 +88,7 @@ namespace caMon.pages.TIS.pages
         /// </summary>
         private void SMemLib_PanelChanged(object sender, ValueChangedEventArgs<int[]> p)
         {
-            panel = new List<int>(p.NewValue);
+            panel = p.NewValue.ToList();
         }
 
         /// <summary> 
@@ -96,7 +96,7 @@ namespace caMon.pages.TIS.pages
         /// </summary>
         private void SMemLib_SoundChanged(object sender, ValueChangedEventArgs<int[]> s)
         {
-            sound = new List<int>(s.NewValue);
+            sound = s.NewValue.ToList();
         }
 
         /// <summary> 
