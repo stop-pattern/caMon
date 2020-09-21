@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows;
+using System.Linq;
+using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Threading;
 
@@ -13,6 +15,11 @@ namespace caMon.pages.TIS.pages
     /// </summary>
     public partial class Driving : Page
     {
+        enum panelIndex : int
+        {
+            Regeneration = 52,  /// 回生
+        }
+
         /// <summary> ループタイマー </summary>
         DispatcherTimer timer = new DispatcherTimer();
         int timerInterval = 300;
@@ -22,8 +29,9 @@ namespace caMon.pages.TIS.pages
         int reverserPosition;
         bool constantSpeed;
         bool door = false;
-        int[] panel;
-        int[] sound;
+
+        List<int> panel;
+        List<int> sound;
 
         public Driving(caMonIF arg_camonIF)
         {
@@ -34,8 +42,8 @@ namespace caMon.pages.TIS.pages
             SharedFuncs.SML.SMC_PanelDChanged += SMemLib_PanelChanged;
             SharedFuncs.SML.SMC_SoundDChanged += SMemLib_SoundChanged;
 
-            panel = new int[256];
-            sound = new int[256];
+            panel = new List<int>();
+            sound = new List<int>();
         }
 
         /// <summary> 
@@ -76,7 +84,7 @@ namespace caMon.pages.TIS.pages
         /// </summary>
         private void SMemLib_PanelChanged(object sender, ValueChangedEventArgs<int[]> p)
         {
-            panel = p.NewValue;
+            panel = new List<int>(p.NewValue);
         }
 
         /// <summary> 
@@ -84,7 +92,7 @@ namespace caMon.pages.TIS.pages
         /// </summary>
         private void SMemLib_SoundChanged(object sender, ValueChangedEventArgs<int[]> s)
         {
-            sound = s.NewValue;
+            sound = new List<int>(s.NewValue);
         }
 
         /// <summary> 
@@ -93,24 +101,14 @@ namespace caMon.pages.TIS.pages
         private void Timer_Tick(object sender, object e)
         {
             /// 接続
-            if (BIDSSMemIsEnabled)
-            {
-                Online.Visibility = Visibility.Visible;
-                Offline.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                Online.Visibility = Visibility.Collapsed;
-                Offline.Visibility = Visibility.Visible;
-            }
+            Online.Visibility = BIDSSMemIsEnabled ? Visibility.Visible : Visibility.Collapsed;
+            Offline.Visibility = !BIDSSMemIsEnabled ? Visibility.Visible : Visibility.Collapsed;
 
             /// 回生
-            if (panel[52] != 0) Regeneration.Visibility = Visibility.Visible;
-            else Regeneration.Visibility = Visibility.Collapsed;
+            Regeneration.Visibility = panel[(int)panelIndex.Regeneration] != 0 ? Visibility.Visible : Visibility.Collapsed;
 
             /// 定速
-            if (constantSpeed) ConstantSpeed.Visibility = Visibility.Visible;
-            else ConstantSpeed.Visibility = Visibility.Collapsed;
+            ConstantSpeed.Visibility = constantSpeed ? Visibility.Visible : Visibility.Collapsed;
         }
 
         /// <summary>
