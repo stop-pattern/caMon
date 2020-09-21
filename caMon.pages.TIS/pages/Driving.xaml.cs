@@ -30,8 +30,8 @@ namespace caMon.pages.TIS.pages
         bool constantSpeed;
         bool door = false;
 
-        List<int> panel;
-        List<int> sound;
+        List<int> panel = new List<int>();
+        List<int> sound = new List<int>();
 
         public Driving()
         {
