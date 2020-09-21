@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Linq;
 using System.Collections.Generic;
+using System.Windows.Media;
 using System.Windows.Controls;
 using System.Windows.Threading;
 
@@ -18,9 +19,11 @@ namespace caMon.pages.TIS.pages
         /// <summary>
         /// panelのインデックス
         /// </summary>
-        enum panelIndex : int
+        enum panelIndex : uint
         {
             Regeneration = 52,  /// 回生
+            TrainKind = 152,    /// 列車種別表示
+            Max = 256           /// 最大値
         }
 
         /// <summary>
@@ -43,49 +46,49 @@ namespace caMon.pages.TIS.pages
         /// 列車種別（一般）
         /// F系統は+20
         /// </summary>
-        readonly List<String> trainKind = new List<String>
+        readonly List<Tuple<String, Color>> trainKind = new List<Tuple<String, Color>>
         {
-            "",
-            "普　通",
-            "急　行",
-            "快　速",
-            "区間準急",
-            "通勤準急",
-            "準　急",
-            "特　急",
-            "土休急行",
-            "通勤急行",
-            "臨　時",
-            "各　停",
-            "平日急行",
-            "直　通",
-            "快速急行",
-            "ライナー",
-            "通勤特急",
-            "Ｇ各停",
-            "区間急行",
-            "区間快速",
-            "",
-            "Ｆ普通",
-            "Ｆ急行",
-            "Ｆ快速",
-            "Ｆ区間準急",
-            "Ｆ通勤準急",
-            "Ｆ準急",
-            "Ｆ特急",
-            "Ｆ土休急行",
-            "Ｆ通勤急行",
-            "Ｆ臨時",
-            "Ｆ各停",
-            "Ｆ平日急行",
-            "Ｆ直通",
-            "Ｆ快速急行",
-            "Ｆライナー",
-            "Ｆ通勤特急",
-            "ＦＧ各停",
-            "Ｆ区間急行",
-            "Ｆ区間快速",
-            ""
+            new Tuple<String, Color>("", Colors.White),
+            new Tuple<String, Color>("普　通", Colors.White),
+            new Tuple<String, Color>("急　行", Colors.Red),
+            new Tuple<String, Color>("快　速", Colors.Orange),
+            new Tuple<String, Color>("区間準急", Colors.LawnGreen),
+            new Tuple<String, Color>("通勤準急", Colors.Red),
+            new Tuple<String, Color>("準　急", Colors.LawnGreen),
+            new Tuple<String, Color>("特　急", Colors.DeepSkyBlue),
+            new Tuple<String, Color>("土休急行", Colors.Red),
+            new Tuple<String, Color>("通勤急行", Colors.Red),
+            new Tuple<String, Color>("臨　時", Colors.White),
+            new Tuple<String, Color>("各　停", Colors.White),
+            new Tuple<String, Color>("平日急行", Colors.Red),
+            new Tuple<String, Color>("直　通", Colors.LawnGreen),
+            new Tuple<String, Color>("快速急行", Colors.Aqua),
+            new Tuple<String, Color>("ライナー", Colors.White),
+            new Tuple<String, Color>("通勤特急", Colors.Aqua),
+            new Tuple<String, Color>("Ｇ各停", Colors.LawnGreen),
+            new Tuple<String, Color>("区間急行", Colors.Red),
+            new Tuple<String, Color>("区間快速", Colors.Aqua),
+            new Tuple<String, Color>("", Colors.White),
+            new Tuple<String, Color>("Ｆ普通", Colors.White),
+            new Tuple<String, Color>("Ｆ急行", Colors.Red),
+            new Tuple<String, Color>("Ｆ快速", Colors.Yellow),
+            new Tuple<String, Color>("Ｆ区間準急", Colors.Green),
+            new Tuple<String, Color>("Ｆ通勤準急", Colors.Red),
+            new Tuple<String, Color>("Ｆ準急", Colors.Green),
+            new Tuple<String, Color>("Ｆ特急", Colors.Blue),
+            new Tuple<String, Color>("Ｆ土休急行", Colors.Red),
+            new Tuple<String, Color>("Ｆ通勤急行", Colors.Red),
+            new Tuple<String, Color>("Ｆ臨時", Colors.White),
+            new Tuple<String, Color>("Ｆ各停", Colors.White),
+            new Tuple<String, Color>("Ｆ平日急行", Colors.Red),
+            new Tuple<String, Color>("Ｆ直通", Colors.Green),
+            new Tuple<String, Color>("Ｆ快速急行", Colors.Blue),
+            new Tuple<String, Color>("Ｆライナー", Colors.White),
+            new Tuple<String, Color>("Ｆ通勤特急", Colors.Blue),
+            new Tuple<String, Color>("ＦＧ各停", Colors.Green),
+            new Tuple<String, Color>("Ｆ区間急行", Colors.Red),
+            new Tuple<String, Color>("Ｆ区間快速", Colors.Blue),
+            new Tuple<String, Color>("", Colors.White)
         };
 
         /// <summary>
@@ -212,6 +215,11 @@ namespace caMon.pages.TIS.pages
 
                 /// 定速
                 ConstantSpeed.Visibility = constantSpeed ? Visibility.Visible : Visibility.Collapsed;
+
+                /// 種別
+                TrainKind.Visibility = Visibility.Visible;
+                TrainKindText.Text = trainKind[panel[(int)panelIndex.TrainKind]].Item1;
+                TrainKindText.Foreground = new SolidColorBrush(trainKind[panel[(int)panelIndex.TrainKind]].Item2);
             }
             else
             {
@@ -224,6 +232,9 @@ namespace caMon.pages.TIS.pages
 
                 /// 定速
                 ConstantSpeed.Visibility = Visibility.Collapsed;
+
+                /// 種別
+                TrainKind.Visibility = Visibility.Collapsed;
             }
         }
 
