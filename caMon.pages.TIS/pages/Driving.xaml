@@ -179,7 +179,7 @@
                     <TextBlock Text="ノッチ" FontSize="20" Foreground="GreenYellow" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
                 </Border>
                 <Border Grid.Column="2" Grid.Row="1">
-                    <TextBlock Text="MNU - N" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <TextBlock Text="MNU - OFF" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
                 </Border>
             </Grid>
             
