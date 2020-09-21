@@ -132,6 +132,7 @@ namespace caMon.pages.TIS.pages
         int reverserPosition;
         bool constantSpeed;
         bool door = false;
+        Spec spec;
 
         List<int> panel = new List<int>();
         List<int> sound = new List<int>();
@@ -177,6 +178,8 @@ namespace caMon.pages.TIS.pages
                     break;
             }
 
+            spec = e.NewValue.SpecData;
+
             door = e.NewValue.IsDoorClosed;
         }
 
@@ -214,6 +217,16 @@ namespace caMon.pages.TIS.pages
                 Online.Visibility = Visibility.Visible;
                 Offline.Visibility = Visibility.Collapsed;
 
+                /// ハンドル
+                String handle = "MNU - ";
+                if (panel[(int)panelIndex.Key] == 0) handle = "　　――　　";
+                else
+                {
+                    if (brakeNotch == 0) handle = powerNotch == 0 ? "MNU - OFF" : "MNU - P" + powerNotch.ToString();
+                    else handle = brakeNotch == spec.B + 1 ? "MNU - EB" : "MNU - B" + brakeNotch.ToString();
+                }
+                Handle.Text = handle;
+
                 /// 回生
                 Regeneration.Visibility = panel[(int)panelIndex.Regeneration] != 0 ? Visibility.Visible : Visibility.Collapsed;
 
@@ -238,6 +251,9 @@ namespace caMon.pages.TIS.pages
                 /// 接続
                 Online.Visibility = Visibility.Collapsed;
                 Offline.Visibility = Visibility.Visible;
+
+                /// ハンドル
+                Handle.Text = "　　――　　";
 
                 /// 回生
                 Regeneration.Visibility = Visibility.Collapsed;
