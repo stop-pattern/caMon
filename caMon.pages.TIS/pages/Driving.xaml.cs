@@ -24,6 +24,22 @@ namespace caMon.pages.TIS.pages
         }
 
         /// <summary>
+        /// 鍵種別
+        /// </summary>
+        readonly List<String> keyKind = new List<String>
+        {
+            "", /// 切
+            "地下鉄",
+            "東武",
+            "東急・横高",
+            "西武",
+            "相鉄",
+            "ＪＲ",
+            "小田急",
+            "東葉"
+        };
+
+        /// <summary>
         /// 列車種別（一般）
         /// F系統は+20
         /// </summary>
