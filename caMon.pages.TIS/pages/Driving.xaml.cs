@@ -21,11 +21,11 @@ namespace caMon.pages.TIS.pages
         /// </summary>
         enum panelIndex : uint
         {
-            Regeneration = 52,  /// 回生
-            TrainKind = 152,    /// 列車種別表示
+            Regeneration = 52,      /// <summary> 回生 </summary>
+            TrainKind = 152,        /// <summary> 列車種別表示 </summary>
             ServiceNumber10 = 153,  /// <summary> 運行番号表示(10の桁) </summary>
             ServiceNumber1 = 154,   /// <summary> 運行番号表示(1の桁) </summary>
-            Max = 256           /// 最大値
+            Max = 256               /// <summary> 最大値 </summary>
         }
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace caMon.pages.TIS.pages
             "",
         };
 
-        /// <summary> ループタイマー </summary>
-        DispatcherTimer timer = new DispatcherTimer();
+
+        DispatcherTimer timer = new DispatcherTimer();  /// <summary> ループタイマー </summary>
         int timerInterval = 300;
         bool BIDSSMemIsEnabled = false;
         int brakeNotch;
@@ -134,6 +134,7 @@ namespace caMon.pages.TIS.pages
 
         List<int> panel = new List<int>();
         List<int> sound = new List<int>();
+
 
         public Driving()
         {
