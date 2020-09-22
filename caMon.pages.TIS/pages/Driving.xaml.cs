@@ -24,7 +24,9 @@ namespace caMon.pages.TIS.pages
             OdoMeter1000 = 13,      /// <summary> 駅間走行距離(1kmの桁) </summary>
             OdoMeter100 = 14,       /// <summary> 駅間走行距離(0.1kmの桁) </summary>
             OdoMeter10 = 15,        /// <summary> 駅間走行距離(0.01kmの桁) </summary>
+            BrakeNotch = 51,        /// <summary> ブレーキ指令計 </summary>
             Regeneration = 52,      /// <summary> 回生 </summary>
+            PowerNotch = 66,        /// <summary> 力行表示灯 </summary>
             Key = 92,               /// <summary> マスコンキー </summary>
             TrainKind = 152,        /// <summary> 列車種別表示 </summary>
             ServiceNumber10 = 153,  /// <summary> 運行番号表示(10の桁) </summary>
@@ -134,26 +136,26 @@ namespace caMon.pages.TIS.pages
         readonly List<String> trainDestination = new List<String>
         {
             "",
-			"浅　草",
-			"業平橋",
-			"竹ノ塚",
-			"北越谷",
-			"北春日部",
-			"東武動物公園",
-			"久　喜",
-			"館　林",
-			"太　田",
-			"南栗橋",
-			"新栃木",
-			"成　増",
-			"志　木",
-			"上福岡",
-			"川越市",
-			"森林公園",
-			"小川町",
-			"寄　居",
-			"池　袋",
-			"",
+            "浅　草",
+            "業平橋",
+            "竹ノ塚",
+            "北越谷",
+            "北春日部",
+            "東武動物公園",
+            "久　喜",
+            "館　林",
+            "太　田",
+            "南栗橋",
+            "新栃木",
+            "成　増",
+            "志　木",
+            "上福岡",
+            "川越市",
+            "森林公園",
+            "小川町",
+            "寄　居",
+            "池　袋",
+            "",
             "豊島園",
             "保　谷",
             "清　瀬",
@@ -308,8 +310,8 @@ namespace caMon.pages.TIS.pages
                 if (panel[(int)panelIndex.Key] == 0) handle = "　　――　　";
                 else
                 {
-                    if (brakeNotch == 0) handle = powerNotch == 0 ? "MNU - OFF" : "MNU - P" + powerNotch.ToString();
-                    else handle = brakeNotch == spec.B + 1 ? "MNU - EB" : "MNU - B" + brakeNotch.ToString();
+                    if (panel[(int)panelIndex.BrakeNotch] == 0) handle = panel[(int)panelIndex.PowerNotch] == 0 ? "MNU - OFF" : "MNU - P" + panel[(int)panelIndex.PowerNotch].ToString();
+                    else handle = panel[(int)panelIndex.BrakeNotch] == spec.B + 1 ? "MNU - EB" : "MNU - B" + panel[(int)panelIndex.BrakeNotch].ToString();
                 }
                 Handle.Text = handle;
 
@@ -324,8 +326,8 @@ namespace caMon.pages.TIS.pages
                 Key.Text = keyKind[panel[(int)panelIndex.Key]];
 
                 /// キロ程
-                String odo = panel[(int)panelIndex.OdoMeter1000].ToString() + "　.　" + 
-                    panel[(int)panelIndex.OdoMeter100].ToString() + "　" + 
+                String odo = panel[(int)panelIndex.OdoMeter1000].ToString() + "　.　" +
+                    panel[(int)panelIndex.OdoMeter100].ToString() + "　" +
                     panel[(int)panelIndex.OdoMeter10].ToString() + "　" + "km";
                 OdoMeter.Text = odo;
 
