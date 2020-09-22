@@ -1056,7 +1056,7 @@ namespace caMon.pages.TIS.pages
                 else
                 {
                     if (panel[(int)panelIndex.BrakeNotch] == 0) handle = panel[(int)panelIndex.PowerNotch] == 0 ? "MNU - OFF" : "MNU - P" + panel[(int)panelIndex.PowerNotch].ToString();
-                    else handle = panel[(int)panelIndex.BrakeNotch] == spec.B + 1 ? "MNU - EB" : "MNU - B" + panel[(int)panelIndex.BrakeNotch].ToString();
+                    else handle = panel[(int)panelIndex.BrakeNotch] == 9 /*spec.B + 1*/ ? "MNU - EB" : "MNU - B" + panel[(int)panelIndex.BrakeNotch].ToString();
                 }
                 Handle.Text = handle;
 
