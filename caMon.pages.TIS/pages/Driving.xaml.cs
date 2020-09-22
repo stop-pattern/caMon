@@ -129,7 +129,7 @@ namespace caMon.pages.TIS.pages
 
         /// <summary>
         /// 列車種別（特殊）
-        /// 5号線・大井町線用
+        /// 5号線・大井町線
         /// </summary>
         readonly List<String> trainKindSpecial = new List<String>
         {
@@ -158,7 +158,7 @@ namespace caMon.pages.TIS.pages
 
         /// <summary>
         /// 列車行先（一般）
-        /// 5号線・大井町線用
+        /// 2・8・11・13号線
         /// </summary>
         readonly List<String> trainDestination = new List<String>
         {
@@ -240,7 +240,7 @@ namespace caMon.pages.TIS.pages
 
         /// <summary>
         /// 列車行先（特殊）
-        /// 5号線・9号線用
+        /// 5号線・9号線
         /// </summary>
         readonly List<String> trainDestinationSpecial = new List<String>
         {
