@@ -1083,6 +1083,7 @@ namespace caMon.pages.TIS.pages
                     }
                     else                                        /// 走行表示
                     {
+                        if (displayStations[i][panel[(int)stations[i].Item2]] == "" && displayStations[i][panel[(int)stations[i].Item3]] == "") continue;
                         StationLast.Text = displayStations[i][panel[(int)stations[i].Item2]]; ;
                         StationNext.Text = displayStations[i][panel[(int)stations[i].Item3]]; ;
                         StationNow.Visibility = Visibility.Collapsed;
