@@ -21,6 +21,9 @@ namespace caMon.pages.TIS.pages
         /// </summary>
         enum panelIndex : uint
         {
+            OdoMeter1000 = 13,      /// <summary> 駅間走行距離(1kmの桁) </summary>
+            OdoMeter100 = 14,       /// <summary> 駅間走行距離(0.1kmの桁) </summary>
+            OdoMeter10 = 15,        /// <summary> 駅間走行距離(0.01kmの桁) </summary>
             Regeneration = 52,      /// <summary> 回生 </summary>
             Key = 92,               /// <summary> マスコンキー </summary>
             TrainKind = 152,        /// <summary> 列車種別表示 </summary>
@@ -320,6 +323,12 @@ namespace caMon.pages.TIS.pages
                 KeyDisplay.Visibility = Visibility.Visible;
                 Key.Text = keyKind[panel[(int)panelIndex.Key]];
 
+                /// キロ程
+                String odo = panel[(int)panelIndex.OdoMeter1000].ToString() + "　.　" + 
+                    panel[(int)panelIndex.OdoMeter100].ToString() + "　" + 
+                    panel[(int)panelIndex.OdoMeter10].ToString() + "　" + "km";
+                OdoMeter.Text = odo;
+
                 /// 行先
                 String dist = trainDestination[panel[(int)panelIndex.Destination]];
                 if (dist != "")
@@ -355,6 +364,9 @@ namespace caMon.pages.TIS.pages
 
                 /// "マスコンキー",
                 KeyDisplay.Visibility = Visibility.Collapsed;
+
+                /// キロ程
+                OdoMeter.Text = "0　.　0　0　km";
 
                 /// 行先
                 DestinationDisplay.Visibility = Visibility.Collapsed;
