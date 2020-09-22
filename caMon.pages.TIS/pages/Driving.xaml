@@ -49,6 +49,18 @@
                 <TextBlock Text="区間" FontSize="15" Foreground="White" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <TextBlock Text="キロ程" FontSize="15" Foreground="White" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <TextBlock x:Name="OdoMeter" Text="0　.　0　0　km" FontSize="15" Foreground="White" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="StationNow" FontSize="15" Foreground="White" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
+                    <TextBlock x:Name="StationLast" Text="小竹向原" FontSize="15" Foreground="White" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible"/>
+                    <TextBlock x:Name="StationNext" Text="小竹向原" FontSize="15" Foreground="White" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible"/>
+                    <TextBlock x:Name="StationArrow" Text="→" FontSize="15" Foreground="White" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible"/>
+                </Grid>
             </Grid>
 
             <!-- 行先 -->

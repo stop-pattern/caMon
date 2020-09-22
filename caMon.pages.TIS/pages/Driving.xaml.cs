@@ -31,9 +31,36 @@ namespace caMon.pages.TIS.pages
             TrainKind = 152,        /// <summary> 列車種別表示 </summary>
             ServiceNumber10 = 153,  /// <summary> 運行番号表示(10の桁) </summary>
             ServiceNumber1 = 154,   /// <summary> 運行番号表示(1の桁) </summary>
+            StationNow_old = 167,   /// <summary> 駅名表示(旧方式停車時) </summary>
+            StationLast_old = 168,  /// <summary> 駅名表示(旧方式走行時自駅) </summary>
+            StationNext_old = 169,  /// <summary> 駅名表示(旧方式走行時至駅) </summary>
             Destination = 172,      /// <summary> 行先表示 </summary>
+            StationNow_TOB = 236,   /// <summary> 駅名表示(東武各線停車時) </summary>
+            StationLast_TOB = 237,  /// <summary> 駅名表示(東武各線走行時自駅) </summary>
+            StationNext_TOB = 238,  /// <summary> 駅名表示(東武各線走行時至駅) </summary>
+            StationNow_SEB = 239,   /// <summary> 駅名表示(西武各線停車時) </summary>
+            StationLast_SEB = 240,  /// <summary> 駅名表示(西武各線走行時自駅) </summary>
+            StationNext_SEB = 241,  /// <summary> 駅名表示(西武各線走行時至駅) </summary>
+            StationNow_TKK = 245,   /// <summary> 駅名表示(東急各線停車時) </summary>
+            StationLast_TKK = 246,  /// <summary> 駅名表示(東急各線走行時自駅) </summary>
+            StationNext_TKK = 247,  /// <summary> 駅名表示(東急各線走行時至駅) </summary>
+            StationNow_TRTA = 248,  /// <summary> 駅名表示(営団各線停車時) </summary>
+            StationLast_TRTA = 249, /// <summary> 駅名表示(営団各線走行時自駅) </summary>
+            StationNext_TRTA = 250, /// <summary> 駅名表示(営団各線走行時至駅) </summary>
             Max = 256               /// <summary> 最大値 </summary>
         }
+
+        /// <summary>
+        /// 駅名表示
+        /// </summary>
+        readonly List<Tuple<panelIndex, panelIndex, panelIndex>> stations = new List<Tuple<panelIndex, panelIndex, panelIndex>>
+        {
+            new Tuple<panelIndex, panelIndex, panelIndex>(panelIndex.StationNow_old, panelIndex.StationLast_old, panelIndex.StationNext_old),
+            new Tuple<panelIndex, panelIndex, panelIndex>(panelIndex.StationNow_TOB, panelIndex.StationLast_TOB, panelIndex.StationNext_TOB),
+            new Tuple<panelIndex, panelIndex, panelIndex>(panelIndex.StationNow_SEB, panelIndex.StationLast_SEB, panelIndex.StationNext_SEB),
+            new Tuple<panelIndex, panelIndex, panelIndex>(panelIndex.StationNow_TKK, panelIndex.StationLast_TKK, panelIndex.StationNext_TKK),
+            new Tuple<panelIndex, panelIndex, panelIndex>(panelIndex.StationNow_TRTA, panelIndex.StationLast_TRTA, panelIndex.StationNext_TRTA),
+        };
 
         /// <summary>
         /// "鍵種別",
@@ -325,6 +352,29 @@ namespace caMon.pages.TIS.pages
                 KeyDisplay.Visibility = Visibility.Visible;
                 Key.Text = keyKind[panel[(int)panelIndex.Key]];
 
+                /// 区間
+                foreach (var item in stations)
+                {
+                    if (panel[(int)item.Item1] != 0)    /// 停車表示
+                    {
+                        StationNow.Text = "";
+                        StationNow.Visibility = Visibility.Visible;
+                        StationLast.Visibility = Visibility.Collapsed;
+                        StationNext.Visibility = Visibility.Collapsed;
+                        StationArrow.Visibility = Visibility.Collapsed;
+                    }
+                    else                                /// 走行表示
+                    {
+                        StationLast.Text = "";
+                        StationNext.Text = "";
+                        StationNow.Visibility = Visibility.Collapsed;
+                        StationLast.Visibility = Visibility.Visible;
+                        StationNext.Visibility = Visibility.Visible;
+                        StationArrow.Visibility = Visibility.Visible;
+                    }
+                }
+
+
                 /// キロ程
                 String odo = panel[(int)panelIndex.OdoMeter1000].ToString() + "　.　" +
                     panel[(int)panelIndex.OdoMeter100].ToString() + "　" +
@@ -366,6 +416,12 @@ namespace caMon.pages.TIS.pages
 
                 /// "マスコンキー",
                 KeyDisplay.Visibility = Visibility.Collapsed;
+
+                /// 区間
+                StationNow.Visibility = Visibility.Collapsed;
+                StationLast.Visibility = Visibility.Collapsed;
+                StationNext.Visibility = Visibility.Collapsed;
+                StationArrow.Visibility = Visibility.Collapsed;
 
                 /// キロ程
                 OdoMeter.Text = "0　.　0　0　km";
