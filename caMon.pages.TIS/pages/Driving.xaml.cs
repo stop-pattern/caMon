@@ -1044,7 +1044,7 @@ namespace caMon.pages.TIS.pages
         /// </summary>
         private void Timer_Tick(object sender, object e)
         {
-            if (BIDSSMemIsEnabled)
+            if (BIDSSMemIsEnabled && panel?.Count > 0 && sound?.Count > 0)
             {
                 /// 接続
                 Online.Visibility = Visibility.Visible;
