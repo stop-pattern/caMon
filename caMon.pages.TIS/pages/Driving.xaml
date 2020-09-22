@@ -71,9 +71,8 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="5"/>
                     </Grid.RowDefinitions>
-                    <Border Background="White" Grid.Column="1" Grid.Row="1">
-                        <TextBlock Text="和光市" FontSize="20" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-                        <!-- {Binding Source=}, Path=} -->
+                    <Border x:Name="DestinationDisplay" Background="White" Grid.Column="1" Grid.Row="1" Visibility="Collapsed">
+                        <TextBlock x:Name="Destination" Text="不　明" FontSize="20" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
                     </Border>
                 </Grid>
             </Grid>

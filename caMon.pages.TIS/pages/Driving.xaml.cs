@@ -12,12 +12,12 @@ using TR.BIDSSMemLib;
 namespace caMon.pages.TIS.pages
 {
     /// <summary>
-    /// Driving.xaml の相互作用ロジック
+    /// Driving.xaml "の相互作用ロジック",
     /// </summary>
     public partial class Driving : Page
     {
         /// <summary>
-        /// panelのインデックス
+        /// panel"のインデックス",
         /// </summary>
         enum panelIndex : uint
         {
@@ -26,15 +26,16 @@ namespace caMon.pages.TIS.pages
             TrainKind = 152,        /// <summary> 列車種別表示 </summary>
             ServiceNumber10 = 153,  /// <summary> 運行番号表示(10の桁) </summary>
             ServiceNumber1 = 154,   /// <summary> 運行番号表示(1の桁) </summary>
+            Destination = 172,      /// <summary> 行先表示 </summary>
             Max = 256               /// <summary> 最大値 </summary>
         }
 
         /// <summary>
-        /// 鍵種別
+        /// "鍵種別",
         /// </summary>
         readonly List<String> keyKind = new List<String>
         {
-            "", /// 切
+            "", /// "切",
             "地下鉄",
             "東武",
             "東急・横高",
@@ -46,7 +47,7 @@ namespace caMon.pages.TIS.pages
         };
 
         /// <summary>
-        /// 列車種別（一般）
+        /// "列車種別（一般）",
         /// F系統は+20
         /// </summary>
         readonly List<Tuple<String, Color>> trainKind = new List<Tuple<String, Color>>
@@ -95,8 +96,8 @@ namespace caMon.pages.TIS.pages
         };
 
         /// <summary>
-        /// 列車種別（特殊）
-        /// 5号線・大井町線用
+        /// "列車種別（特殊）",
+        /// 5"号線・大井町線用",
         /// </summary>
         readonly List<String> trainKindSpecial = new List<String>
         {
@@ -123,9 +124,91 @@ namespace caMon.pages.TIS.pages
             "",
         };
 
+        /// <summary>
+        /// "列車行先（特殊）",
+        /// 5"号線・大井町線用",
+        /// </summary>
+        readonly List<String> trainDestination = new List<String>
+        {
+            "",
+			"浅　草",
+			"業平橋",
+			"竹ノ塚",
+			"北越谷",
+			"北春日部",
+			"東武動物公園",
+			"久　喜",
+			"館　林",
+			"太　田",
+			"南栗橋",
+			"新栃木",
+			"成　増",
+			"志　木",
+			"上福岡",
+			"川越市",
+			"森林公園",
+			"小川町",
+			"寄　居",
+			"池　袋",
+			"",
+            "豊島園",
+            "保　谷",
+            "清　瀬",
+            "所　沢",
+            "西武球場前",
+            "小手指",
+            "飯　能",
+            "西武秩父",
+            "西武新宿",
+            "田　無",
+            "小　平",
+            "新所沢",
+            "本川越",
+            "西武遊園地",
+            "拝　島",
+            "",
+            "和光市",
+            "小竹向原",
+            "新線池袋",
+            "新木場",
+            "新宿三丁目",
+            "半蔵門",
+            "清澄白河",
+            "押上",
+            "北千住",
+            "南千住",
+            "霞ヶ関",
+            "中目黒",
+            "渋　谷",
+            "",
+            "奥　沢",
+            "武蔵小杉",
+            "元住吉",
+            "日　吉",
+            "菊　名",
+            "元町・中華街",
+            "桜木町",
+            "二子玉川",
+            "溝の口",
+            "大井町",
+            "鷺　沼",
+            "長津田",
+            "中央林間",
+            "こどもの国",
+            "",
+            "新横浜",
+            "横　浜",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+        };
+
 
         DispatcherTimer timer = new DispatcherTimer();  /// <summary> ループタイマー </summary>
-        int timerInterval = 300;
+        int timerInterval = 10;
         bool BIDSSMemIsEnabled = false;
         int brakeNotch;
         int powerNotch;
@@ -156,7 +239,7 @@ namespace caMon.pages.TIS.pages
         }
 
         /// <summary> 
-        /// SharedMemに更新があったときに呼ばれる関数
+        /// SharedMem"に更新があったときに呼ばれる関数",
         /// </summary>
         private void SMemLib_BIDSSMemChanged(object sender, ValueChangedEventArgs<BIDSSharedMemoryData> e)
         {
@@ -184,14 +267,14 @@ namespace caMon.pages.TIS.pages
         }
 
         /// <summary> 
-        /// Openに更新があったときに呼ばれる関数
+        /// Open"に更新があったときに呼ばれる関数",
         /// </summary>
         private void SMemLib_OpenChanged(object sender, ValueChangedEventArgs<OpenD> e)
         {
         }
 
         /// <summary> 
-        /// Panelに更新があったときに呼ばれる関数
+        /// Panel"に更新があったときに呼ばれる関数",
         /// </summary>
         private void SMemLib_PanelChanged(object sender, ValueChangedEventArgs<int[]> p)
         {
@@ -199,7 +282,7 @@ namespace caMon.pages.TIS.pages
         }
 
         /// <summary> 
-        /// Soundに更新があったときに呼ばれる関数
+        /// Sound"に更新があったときに呼ばれる関数",
         /// </summary>
         private void SMemLib_SoundChanged(object sender, ValueChangedEventArgs<int[]> s)
         {
@@ -207,17 +290,17 @@ namespace caMon.pages.TIS.pages
         }
 
         /// <summary> 
-        /// タイマで呼ばれる関数
+        /// "タイマで呼ばれる関数",
         /// </summary>
         private void Timer_Tick(object sender, object e)
         {
             if (BIDSSMemIsEnabled)
             {
-                /// 接続
+                /// "接続",
                 Online.Visibility = Visibility.Visible;
                 Offline.Visibility = Visibility.Collapsed;
 
-                /// ハンドル
+                /// "ハンドル",
                 String handle = "MNU - ";
                 if (panel[(int)panelIndex.Key] == 0) handle = "　　――　　";
                 else
@@ -227,53 +310,65 @@ namespace caMon.pages.TIS.pages
                 }
                 Handle.Text = handle;
 
-                /// 回生
+                /// "回生",
                 Regeneration.Visibility = panel[(int)panelIndex.Regeneration] != 0 ? Visibility.Visible : Visibility.Collapsed;
 
-                /// 定速
+                /// "定速",
                 ConstantSpeed.Visibility = constantSpeed ? Visibility.Visible : Visibility.Collapsed;
 
-                /// マスコンキー
+                /// "マスコンキー",
                 KeyDisplay.Visibility = Visibility.Visible;
                 Key.Text = keyKind[panel[(int)panelIndex.Key]];
 
-                /// 運行番号
+                /// 行先
+                String dist = trainDestination[panel[(int)panelIndex.Destination]];
+                if (dist != "")
+                {
+                    DestinationDisplay.Visibility = Visibility.Visible;
+                    Destination.Text = dist;
+                }
+                else DestinationDisplay.Visibility = Visibility.Collapsed;
+
+                /// "運行番号",
                 ServiceNumber.Visibility = Visibility.Visible;
                 ServiceNumber.Text = panel[(int)panelIndex.ServiceNumber10].ToString() + panel[(int)panelIndex.ServiceNumber1].ToString() + "K";
 
-                /// 種別
+                /// "種別",
                 TrainKind.Visibility = Visibility.Visible;
                 TrainKindText.Text = trainKind[panel[(int)panelIndex.TrainKind]].Item1;
                 TrainKindText.Foreground = new SolidColorBrush(trainKind[panel[(int)panelIndex.TrainKind]].Item2);
             }
             else
             {
-                /// 接続
+                /// "接続",
                 Online.Visibility = Visibility.Collapsed;
                 Offline.Visibility = Visibility.Visible;
 
-                /// ハンドル
+                /// "ハンドル",
                 Handle.Text = "　　――　　";
 
-                /// 回生
+                /// "回生",
                 Regeneration.Visibility = Visibility.Collapsed;
 
-                /// 定速
+                /// "定速",
                 ConstantSpeed.Visibility = Visibility.Collapsed;
 
-                /// マスコンキー
+                /// "マスコンキー",
                 KeyDisplay.Visibility = Visibility.Collapsed;
 
-                /// 運行番号
+                /// 行先
+                DestinationDisplay.Visibility = Visibility.Collapsed;
+
+                /// "運行番号",
                 ServiceNumber.Visibility = Visibility.Collapsed;
 
-                /// 種別
+                /// "種別",
                 TrainKind.Visibility = Visibility.Collapsed;
             }
         }
 
         /// <summary>
-        /// タイマー更新
+        /// "タイマー更新",
         /// </summary>
         private void TimerStart()
         {
