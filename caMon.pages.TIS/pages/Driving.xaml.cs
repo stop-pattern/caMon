@@ -1050,25 +1050,11 @@ namespace caMon.pages.TIS.pages
                 Online.Visibility = Visibility.Visible;
                 Offline.Visibility = Visibility.Collapsed;
 
-                /// ハンドル
-                String handle = "MNU - ";
-                if (panel[(int)panelIndex.Key] == 0) handle = "　　――　　";
-                else
-                {
-                    if (panel[(int)panelIndex.BrakeNotch] == 0) handle = panel[(int)panelIndex.PowerNotch] == 0 ? "MNU - OFF" : "MNU - P" + panel[(int)panelIndex.PowerNotch].ToString();
-                    else handle = panel[(int)panelIndex.BrakeNotch] == 9 /*spec.B + 1*/ ? "MNU - EB" : "MNU - B" + panel[(int)panelIndex.BrakeNotch].ToString();
-                }
-                Handle.Text = handle;
-
                 /// 回生
                 Regeneration.Visibility = panel[(int)panelIndex.Regeneration] != 0 ? Visibility.Visible : Visibility.Collapsed;
 
                 /// 定速
                 ConstantSpeed.Visibility = constantSpeed ? Visibility.Visible : Visibility.Collapsed;
-
-                /// マスコンキー
-                KeyDisplay.Visibility = Visibility.Visible;
-                Key.Text = keyKind[panel[(int)panelIndex.Key]];
 
                 /// 区間
                 for (int i = 0; i < stations.Count; i++)
@@ -1111,11 +1097,6 @@ namespace caMon.pages.TIS.pages
                 /// 運行番号
                 ServiceNumber.Visibility = Visibility.Visible;
                 ServiceNumber.Text = panel[(int)panelIndex.ServiceNumber10].ToString() + panel[(int)panelIndex.ServiceNumber1].ToString() + "K";
-
-                /// 種別
-                TrainKind.Visibility = Visibility.Visible;
-                TrainKindText.Text = trainKind[panel[(int)panelIndex.TrainKind]].Item1;
-                TrainKindText.Foreground = new SolidColorBrush(trainKind[panel[(int)panelIndex.TrainKind]].Item2);
             }
             else
             {
@@ -1123,17 +1104,11 @@ namespace caMon.pages.TIS.pages
                 Online.Visibility = Visibility.Collapsed;
                 Offline.Visibility = Visibility.Visible;
 
-                /// ハンドル
-                Handle.Text = "　　――　　";
-
                 /// 回生
                 Regeneration.Visibility = Visibility.Collapsed;
 
                 /// 定速
                 ConstantSpeed.Visibility = Visibility.Collapsed;
-
-                /// マスコンキー
-                KeyDisplay.Visibility = Visibility.Collapsed;
 
                 /// 区間
                 StationNow.Visibility = Visibility.Collapsed;
@@ -1149,9 +1124,6 @@ namespace caMon.pages.TIS.pages
 
                 /// 運行番号
                 ServiceNumber.Visibility = Visibility.Collapsed;
-
-                /// 種別
-                TrainKind.Visibility = Visibility.Collapsed;
             }
         }
 
