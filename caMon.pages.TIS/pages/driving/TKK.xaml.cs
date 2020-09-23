@@ -30,47 +30,13 @@ namespace caMon.pages.TIS.pages.driving
         /// </summary>
         enum panelIndex : uint
         {
-            OdoMeter1000 = 13,      /// <summary> 駅間走行距離(1kmの桁) </summary>
-            OdoMeter100 = 14,       /// <summary> 駅間走行距離(0.1kmの桁) </summary>
-            OdoMeter10 = 15,        /// <summary> 駅間走行距離(0.01kmの桁) </summary>
             BrakeNotch = 51,        /// <summary> ブレーキ指令計 </summary>
             Regeneration = 52,      /// <summary> 回生 </summary>
             PowerNotch = 66,        /// <summary> 力行表示灯 </summary>
             Key = 92,               /// <summary> マスコンキー </summary>
             TrainKind = 152,        /// <summary> 列車種別表示 </summary>
-            ServiceNumber10 = 153,  /// <summary> 運行番号表示(10の桁) </summary>
-            ServiceNumber1 = 154,   /// <summary> 運行番号表示(1の桁) </summary>
-            StationNow_old = 167,   /// <summary> 駅名表示(旧方式停車時) </summary>
-            StationLast_old = 168,  /// <summary> 駅名表示(旧方式走行時自駅) </summary>
-            StationNext_old = 169,  /// <summary> 駅名表示(旧方式走行時至駅) </summary>
-            Destination = 172,      /// <summary> 行先表示 </summary>
-            StationNow_TOB = 236,   /// <summary> 駅名表示(東武各線停車時) </summary>
-            StationLast_TOB = 237,  /// <summary> 駅名表示(東武各線走行時自駅) </summary>
-            StationNext_TOB = 238,  /// <summary> 駅名表示(東武各線走行時至駅) </summary>
-            StationNow_SEB = 239,   /// <summary> 駅名表示(西武各線停車時) </summary>
-            StationLast_SEB = 240,  /// <summary> 駅名表示(西武各線走行時自駅) </summary>
-            StationNext_SEB = 241,  /// <summary> 駅名表示(西武各線走行時至駅) </summary>
-            StationNow_TKK = 245,   /// <summary> 駅名表示(東急各線停車時) </summary>
-            StationLast_TKK = 246,  /// <summary> 駅名表示(東急各線走行時自駅) </summary>
-            StationNext_TKK = 247,  /// <summary> 駅名表示(東急各線走行時至駅) </summary>
-            StationNow_TRTA = 248,  /// <summary> 駅名表示(営団各線停車時) </summary>
-            StationLast_TRTA = 249, /// <summary> 駅名表示(営団各線走行時自駅) </summary>
-            StationNext_TRTA = 250, /// <summary> 駅名表示(営団各線走行時至駅) </summary>
             Max = 256               /// <summary> 最大値 </summary>
         }
-
-        /// <summary>
-        /// 駅名表示
-        /// 
-        /// </summary>
-        readonly List<Tuple<panelIndex, panelIndex, panelIndex>> stations = new List<Tuple<panelIndex, panelIndex, panelIndex>>
-        {
-            new Tuple<panelIndex, panelIndex, panelIndex>(panelIndex.StationNow_old, panelIndex.StationLast_old, panelIndex.StationNext_old),
-            new Tuple<panelIndex, panelIndex, panelIndex>(panelIndex.StationNow_TOB, panelIndex.StationLast_TOB, panelIndex.StationNext_TOB),
-            new Tuple<panelIndex, panelIndex, panelIndex>(panelIndex.StationNow_SEB, panelIndex.StationLast_SEB, panelIndex.StationNext_SEB),
-            new Tuple<panelIndex, panelIndex, panelIndex>(panelIndex.StationNow_TKK, panelIndex.StationLast_TKK, panelIndex.StationNext_TKK),
-            new Tuple<panelIndex, panelIndex, panelIndex>(panelIndex.StationNow_TRTA, panelIndex.StationLast_TRTA, panelIndex.StationNext_TRTA),
-        };
 
         /// <summary>
         /// 鍵種別
@@ -170,11 +136,6 @@ namespace caMon.pages.TIS.pages.driving
         DispatcherTimer timer = new DispatcherTimer();  /// <summary> ループタイマー </summary>
         int timerInterval = 10;
         bool BIDSSMemIsEnabled = false;
-        int brakeNotch;
-        int powerNotch;
-        int reverserPosition;
-        bool constantSpeed;
-        bool door = false;
         Spec spec;
 
         List<int> panel = new List<int>();
@@ -203,25 +164,7 @@ namespace caMon.pages.TIS.pages.driving
         {
             BIDSSMemIsEnabled = e.NewValue.IsEnabled;
 
-            brakeNotch = e.NewValue.HandleData.B;
-            powerNotch = e.NewValue.HandleData.P;
-            reverserPosition = e.NewValue.HandleData.R;
-            switch (e.NewValue.HandleData.C)
-            {
-                case 1:
-                    constantSpeed = true;
-                    break;
-                case 2:
-                    constantSpeed = false;
-                    break;
-                case 0:
-                default:
-                    break;
-            }
-
             spec = e.NewValue.SpecData;
-
-            door = e.NewValue.IsDoorClosed;
         }
 
         /// <summary> 

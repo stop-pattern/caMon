@@ -24,11 +24,7 @@ namespace caMon.pages.TIS.pages
             OdoMeter1000 = 13,      /// <summary> 駅間走行距離(1kmの桁) </summary>
             OdoMeter100 = 14,       /// <summary> 駅間走行距離(0.1kmの桁) </summary>
             OdoMeter10 = 15,        /// <summary> 駅間走行距離(0.01kmの桁) </summary>
-            BrakeNotch = 51,        /// <summary> ブレーキ指令計 </summary>
             Regeneration = 52,      /// <summary> 回生 </summary>
-            PowerNotch = 66,        /// <summary> 力行表示灯 </summary>
-            Key = 92,               /// <summary> マスコンキー </summary>
-            TrainKind = 152,        /// <summary> 列車種別表示 </summary>
             ServiceNumber10 = 153,  /// <summary> 運行番号表示(10の桁) </summary>
             ServiceNumber1 = 154,   /// <summary> 運行番号表示(1の桁) </summary>
             StationNow_old = 167,   /// <summary> 駅名表示(旧方式停車時) </summary>
@@ -61,100 +57,6 @@ namespace caMon.pages.TIS.pages
             new Tuple<panelIndex, panelIndex, panelIndex>(panelIndex.StationNow_SEB, panelIndex.StationLast_SEB, panelIndex.StationNext_SEB),
             new Tuple<panelIndex, panelIndex, panelIndex>(panelIndex.StationNow_TKK, panelIndex.StationLast_TKK, panelIndex.StationNext_TKK),
             new Tuple<panelIndex, panelIndex, panelIndex>(panelIndex.StationNow_TRTA, panelIndex.StationLast_TRTA, panelIndex.StationNext_TRTA),
-        };
-
-        /// <summary>
-        /// 鍵種別
-        /// </summary>
-        readonly List<String> keyKind = new List<String>
-        {
-            "", /// 切
-            "地下鉄",
-            "東武",
-            "東急・横高",
-            "西武",
-            "相鉄",
-            "ＪＲ",
-            "小田急",
-            "東葉"
-        };
-
-        /// <summary>
-        /// 列車種別（一般）
-        /// F系統は+20
-        /// </summary>
-        readonly List<Tuple<String, Color>> trainKind = new List<Tuple<String, Color>>
-        {
-            new Tuple<String, Color>("", Colors.White),
-            new Tuple<String, Color>("普　通", Colors.White),
-            new Tuple<String, Color>("急　行", Colors.Red),
-            new Tuple<String, Color>("快　速", Colors.Orange),
-            new Tuple<String, Color>("区間準急", Colors.LawnGreen),
-            new Tuple<String, Color>("通勤準急", Colors.Red),
-            new Tuple<String, Color>("準　急", Colors.LawnGreen),
-            new Tuple<String, Color>("特　急", Colors.DeepSkyBlue),
-            new Tuple<String, Color>("土休急行", Colors.Red),
-            new Tuple<String, Color>("通勤急行", Colors.Red),
-            new Tuple<String, Color>("臨　時", Colors.White),
-            new Tuple<String, Color>("各　停", Colors.White),
-            new Tuple<String, Color>("平日急行", Colors.Red),
-            new Tuple<String, Color>("直　通", Colors.LawnGreen),
-            new Tuple<String, Color>("快速急行", Colors.Aqua),
-            new Tuple<String, Color>("ライナー", Colors.White),
-            new Tuple<String, Color>("通勤特急", Colors.Aqua),
-            new Tuple<String, Color>("Ｇ各停", Colors.LawnGreen),
-            new Tuple<String, Color>("区間急行", Colors.Red),
-            new Tuple<String, Color>("区間快速", Colors.Aqua),
-            new Tuple<String, Color>("", Colors.White),
-            new Tuple<String, Color>("Ｆ普通", Colors.White),
-            new Tuple<String, Color>("Ｆ急行", Colors.Red),
-            new Tuple<String, Color>("Ｆ快速", Colors.Yellow),
-            new Tuple<String, Color>("Ｆ区間準急", Colors.Green),
-            new Tuple<String, Color>("Ｆ通勤準急", Colors.Red),
-            new Tuple<String, Color>("Ｆ準急", Colors.Green),
-            new Tuple<String, Color>("Ｆ特急", Colors.Blue),
-            new Tuple<String, Color>("Ｆ土休急行", Colors.Red),
-            new Tuple<String, Color>("Ｆ通勤急行", Colors.Red),
-            new Tuple<String, Color>("Ｆ臨時", Colors.White),
-            new Tuple<String, Color>("Ｆ各停", Colors.White),
-            new Tuple<String, Color>("Ｆ平日急行", Colors.Red),
-            new Tuple<String, Color>("Ｆ直通", Colors.Green),
-            new Tuple<String, Color>("Ｆ快速急行", Colors.Blue),
-            new Tuple<String, Color>("Ｆライナー", Colors.White),
-            new Tuple<String, Color>("Ｆ通勤特急", Colors.Blue),
-            new Tuple<String, Color>("ＦＧ各停", Colors.Green),
-            new Tuple<String, Color>("Ｆ区間急行", Colors.Red),
-            new Tuple<String, Color>("Ｆ区間快速", Colors.Blue),
-            new Tuple<String, Color>("", Colors.White)
-        };
-
-        /// <summary>
-        /// 列車種別（特殊）
-        /// 5号線・大井町線
-        /// </summary>
-        readonly List<String> trainKindSpecial = new List<String>
-        {
-            "",
-            "普　通",
-            "急　行",
-            "快　速",
-            "通　快",
-            "Ａ快速",
-            "準　急",
-            "東　快",
-            "土休急行",
-            "通勤急行",
-            "試運転",
-            "Ｂ各停",
-            "平日急行",
-            "直　通",
-            "快速急行",
-            "ライナー",
-            "通勤特急",
-            "Ｇ各停",
-            "区間急行",
-            "区間快速",
-            "",
         };
 
         /// <summary>
