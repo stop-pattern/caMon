@@ -25,6 +25,7 @@ namespace caMon.pages.TIS.pages
             OdoMeter100 = 14,       /// <summary> 駅間走行距離(0.1kmの桁) </summary>
             OdoMeter10 = 15,        /// <summary> 駅間走行距離(0.01kmの桁) </summary>
             Regeneration = 52,      /// <summary> 回生 </summary>
+            Key = 92,               /// <summary> マスコンキー </summary>
             ServiceNumber10 = 153,  /// <summary> 運行番号表示(10の桁) </summary>
             ServiceNumber1 = 154,   /// <summary> 運行番号表示(1の桁) </summary>
             StationNow_old = 167,   /// <summary> 駅名表示(旧方式停車時) </summary>
@@ -999,6 +1000,24 @@ namespace caMon.pages.TIS.pages
                 /// 運行番号
                 ServiceNumber.Visibility = Visibility.Visible;
                 ServiceNumber.Text = panel[(int)panelIndex.ServiceNumber10].ToString() + panel[(int)panelIndex.ServiceNumber1].ToString() + "K";
+
+                /// 運転画面
+                switch (panel[(int)panelIndex.Key])
+                {
+                    case 3: /// TKK
+                        MainFrame.Source = new Uri(@"driving\TKK.xaml", UriKind.Relative);
+                        break;
+                    case 1: /// TRTA
+                    case 2: /// TOB
+                    case 4: /// SEB
+                    case 5: /// SOT
+                    case 6: /// JR
+                    case 7: /// OER
+                    case 8: /// TOY
+                    case 0:
+                    default:
+                        break;
+                }
             }
             else
             {
