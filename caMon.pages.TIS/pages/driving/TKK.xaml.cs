@@ -198,7 +198,7 @@ namespace caMon.pages.TIS.pages.driving
             if (BIDSSMemIsEnabled && panel?.Count > 0 && sound?.Count > 0)
             {
                 /// ハンドル
-                String handle = "MNU - ";
+                String handle;
                 if (panel[(int)panelIndex.Key] == 0) handle = "　　――　　";
                 else
                 {
