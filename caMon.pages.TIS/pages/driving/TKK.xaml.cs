@@ -195,7 +195,7 @@ namespace caMon.pages.TIS.pages.driving
         /// </summary>
         private void Timer_Tick(object sender, object e)
         {
-            if (BIDSSMemIsEnabled && panel?.Count > 0 && sound?.Count > 0)
+            if (BIDSSMemIsEnabled && panel?.Count > 0/* && sound?.Count > 0*/)
             {
                 /// ハンドル
                 String handle;
