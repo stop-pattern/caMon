@@ -859,7 +859,7 @@ namespace caMon.pages.TIS.pages
             },
         };
 
-        DispatcherTimer timer = new DispatcherTimer();  /// <summary> ループタイマー </summary>
+        readonly DispatcherTimer timer = new DispatcherTimer();  /// <summary> ループタイマー </summary>
         int timerInterval = 10;
         bool BIDSSMemIsEnabled = false;
         int brakeNotch;
@@ -1032,7 +1032,7 @@ namespace caMon.pages.TIS.pages
         /// <summary>
         /// タイマー更新
         /// </summary>
-        private void TimerStart()
+        private void TimerReStart()
         {
             timer.Stop();
             timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);

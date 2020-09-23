@@ -133,8 +133,8 @@ namespace caMon.pages.TIS.pages.driving
         };
 
 
-        DispatcherTimer timer = new DispatcherTimer();  /// <summary> ループタイマー </summary>
-        int timerInterval = 10;
+        readonly DispatcherTimer timer = new DispatcherTimer();  /// <summary> ループタイマー </summary>
+        const int timerInterval = 10;
         bool BIDSSMemIsEnabled = false;
         Spec spec;
 
@@ -227,16 +227,6 @@ namespace caMon.pages.TIS.pages.driving
                 /// 種別
                 TrainKind.Visibility = Visibility.Collapsed;
             }
-        }
-
-        /// <summary>
-        /// タイマー更新
-        /// </summary>
-        private void TimerStart()
-        {
-            timer.Stop();
-            timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
-            timer.Start();
         }
     }
 }
