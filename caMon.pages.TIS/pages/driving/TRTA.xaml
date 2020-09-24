@@ -8,5 +8,16 @@
       Title="TRTA">
 
     <Grid Height="335" Width="640" Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.75*"/>
+        </Grid.RowDefinitions>
     </Grid>
 </Page>
