@@ -1004,10 +1004,12 @@ namespace caMon.pages.TIS.pages
                 /// 運転画面
                 switch (panel[(int)panelIndex.Key])
                 {
+                    case 1: /// TRTA
+                        MainFrame.Source = new Uri(@"driving\TRTA.xaml", UriKind.Relative);
+                        break;
                     case 3: /// TKK
                         MainFrame.Source = new Uri(@"driving\TKK.xaml", UriKind.Relative);
                         break;
-                    case 1: /// TRTA
                     case 2: /// TOB
                     case 4: /// SEB
                     case 5: /// SOT
