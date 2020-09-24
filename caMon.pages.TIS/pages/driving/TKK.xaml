@@ -43,6 +43,10 @@
                 </Border>
             </Grid>
 
+            <Border x:Name="TascBrake" Grid.Column="1">
+                <TextBlock Text="ＴＡＳＣブレーキ" FontSize="25" Foreground="Yellow" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+            </Border>
+
             <Grid Grid.Column="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25"/>

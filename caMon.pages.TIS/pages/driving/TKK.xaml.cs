@@ -34,6 +34,7 @@ namespace caMon.pages.TIS.pages.driving
             Regeneration = 52,      /// <summary> 回生 </summary>
             PowerNotch = 66,        /// <summary> 力行表示灯 </summary>
             Key = 92,               /// <summary> マスコンキー </summary>
+            TascC = 138,            /// <summary> TASC制御 </summary>
             TrainKind = 152,        /// <summary> 列車種別表示 </summary>
             Max = 256               /// <summary> 最大値 </summary>
         }
@@ -207,6 +208,9 @@ namespace caMon.pages.TIS.pages.driving
                 }
                 Handle.Text = handle;
 
+                /// TASC
+                TascBrake.Visibility = panel[(int)panelIndex.TascC] != 0 ?  Visibility.Visible : Visibility.Collapsed;
+
                 /// マスコンキー
                 KeyDisplay.Visibility = Visibility.Visible;
                 Key.Text = keyKind[panel[(int)panelIndex.Key]];
@@ -220,6 +224,9 @@ namespace caMon.pages.TIS.pages.driving
             {
                 /// ハンドル
                 Handle.Text = "　　――　　";
+
+                /// TASC
+                TascBrake.Visibility = Visibility.Collapsed;
 
                 /// マスコンキー
                 KeyDisplay.Visibility = Visibility.Collapsed;
