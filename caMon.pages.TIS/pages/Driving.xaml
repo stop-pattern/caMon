@@ -161,7 +161,14 @@
 
         <!-- 1 -->
         <Grid Grid.Row="1" Background="DodgerBlue">
-            <TextBlock Text="◇　運　転　情　報　◇" FontSize="25" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Grid.Column="1" Stretch="Fill">
+                <TextBlock Text="◇　運　転　情　報　◇" FontSize="25" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+            </Viewbox>
         </Grid>
 
         <Frame x:Name="MainFrame" Grid.Row="2"/>
