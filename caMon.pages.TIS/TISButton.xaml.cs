@@ -11,14 +11,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Windows.Controls.Primitives;
+
 namespace caMon.pages.TIS
 {
     /// <summary>
-    /// Button.xaml の相互作用ロジック
+    /// TISButton.xaml の相互作用ロジック
     /// </summary>
-    public partial class Button : UserControl
+    public partial class TISButton : ToggleButton
     {
-        public Button()
+        public TISButton()
         {
             InitializeComponent();
         }
