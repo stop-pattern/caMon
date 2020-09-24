@@ -68,9 +68,9 @@
                 <Button x:Name="BrightnessUp" Grid.Row="1" Grid.Column="13" Background="White" IsHitTestVisible="False">
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">明度<LineBreak/>暗</TextBlock>
                 </Button>
-                <Button x:Name="BrightnessDown" Grid.Row="1" Grid.Column="14" Background="White" IsHitTestVisible="False">
+                <local:TISButton x:Name="BrightnessDown" Grid.Row="1" Grid.Column="14" Background="White" IsHitTestVisible="False">
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">明度<LineBreak/>明</TextBlock>
-                </Button>
+                </local:TISButton>
                 <Button x:Name="back" Content="back" Click="Back_home" Grid.Row="2" Grid.Column="0" Background="Transparent"/>
                 <Button x:Name="close" Content="close" Click="Close_app" Grid.Row="2" Grid.Column="16" Background="Transparent"/>
             </Grid>
