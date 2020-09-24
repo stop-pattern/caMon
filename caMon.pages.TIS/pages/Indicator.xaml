@@ -5,10 +5,32 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:caMon.pages.TIS.pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
       Title="Indicator">
 
-    <Grid>
+    <Grid Height="420" Width="640" Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
         
+        <!-- タイトル -->
+        <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Background="DodgerBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Grid.Column="1" Stretch="Fill">
+                <TextBlock Text="◇　運　転　情　報　◇" FontSize="25" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+            </Viewbox>
+        </Grid>
+        
+        
+
     </Grid>
 </Page>
