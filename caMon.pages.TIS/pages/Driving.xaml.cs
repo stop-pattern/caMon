@@ -878,6 +878,13 @@ namespace caMon.pages.TIS.pages
         {
             InitializeComponent();
 
+            /*
+            /// soundの更新頻度を5[ms]に変更
+            /// 単打系動作音を全て確実に拾うにはdtの2.5倍以上に設定
+            SharedFuncs.SML.ReadStop(7);
+            SharedFuncs.SML.ReadStart(7, 5);
+            */
+
             SharedFuncs.SML.SMC_BSMDChanged += SMemLib_BIDSSMemChanged;
             SharedFuncs.SML.SMC_OpenDChanged += SMemLib_OpenChanged;
             SharedFuncs.SML.SMC_PanelDChanged += SMemLib_PanelChanged;
