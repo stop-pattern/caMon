@@ -40,26 +40,78 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="15*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Column="1" Grid.Row="3" Grid.RowSpan="15"/>
+            <Grid Grid.Column="1" Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--#region ハンドル -->
+                <Border Grid.Row="0" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="EB" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Row="1" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="B8" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Row="2" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="B7" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Row="3" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="B6" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Row="4" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="B5" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Row="5" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="B4" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Row="6" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="B3" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Row="7" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="B2" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Row="8" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="B1" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Row="9" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="N" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Row="10" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="P1" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Row="11" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="P2" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Row="12" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="P3" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Row="13" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="P4" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <Border Grid.Row="14" Background="Black" BorderBrush="White" BorderThickness="1,1,1,1">
+                    <TextBlock Text="P5" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </Border>
+                <!--#endregion-->
+                
+            </Grid>
         </Grid>
 
     </Grid>
