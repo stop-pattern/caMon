@@ -873,6 +873,7 @@ namespace caMon.pages.TIS.pages
         List<int> panel = new List<int>();
         List<int> sound = new List<int>();
 
+        List<CustomIndicator> customIndicators;
 
         public Driving()
         {
@@ -924,6 +925,32 @@ namespace caMon.pages.TIS.pages
             spec = e.NewValue.SpecData;
 
             door = e.NewValue.IsDoorClosed;
+
+
+            // コントロール生成
+            customIndicators = new List<CustomIndicator>{
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
+                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White)
+            };
+            // 上から順に置いていく
+            for (int i = 0; i < customIndicators.Count; i++)
+            {
+                cells.Children.Add(customIndicators[i]);
+                customIndicators[i].SetValue(Grid.RowProperty, i);
+            }
         }
 
         /// <summary> 
