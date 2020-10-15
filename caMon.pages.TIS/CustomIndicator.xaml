@@ -31,7 +31,7 @@
     <Grid Width="300" Height="100" Background="Black">
         <Border x:Name="back" Padding="0">
             <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" StretchDirection="DownOnly">
-                <TextBlock x:Name="front" FontSize="75" TextAlignment="Center"/>
+                <TextBlock x:Name="front" Text="{Binding dispText}" FontSize="75" TextAlignment="Center"/>
             </Viewbox>
         </Border>
     </Grid>
