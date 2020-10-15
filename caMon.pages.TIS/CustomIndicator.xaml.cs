@@ -53,6 +53,7 @@ namespace caMon.pages.TIS
             color_disable = Colors.White;
             previous = !status;
 
+            front.Text = this.text;
             back.Background = new SolidColorBrush(this.color_back);
             back.BorderThickness = new Thickness(0);
 
@@ -80,7 +81,7 @@ namespace caMon.pages.TIS
             color_disable = d;  // Colors.White
             previous = !status;
 
-            this.DataContext = new { dispText = text };
+            // this.DataContext = new { dispText = text };
 
             ChangeStatus(st, true);
 
@@ -137,6 +138,7 @@ namespace caMon.pages.TIS
         /// </summary>
         protected void SetDisplay(bool disp)
         {
+            front.Text = this.text;
             if (disp)
             {   // 有効
             //this.Style = (Style)(this.Resources["true"]);
