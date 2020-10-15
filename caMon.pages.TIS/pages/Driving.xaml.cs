@@ -873,8 +873,6 @@ namespace caMon.pages.TIS.pages
         List<int> panel = new List<int>();
         List<int> sound = new List<int>();
 
-        CustomIndicator custom;
-
         public Driving()
         {
             InitializeComponent();
@@ -925,19 +923,6 @@ namespace caMon.pages.TIS.pages
             spec = e.NewValue.SpecData;
 
             door = e.NewValue.IsDoorClosed;
-
-            try
-            {
-            // コントロール生成
-            custom = new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White);
-            cells.Children.Add(custom);
-            custom.SetValue(Grid.RowProperty, 0);
-            }
-            catch (Exception er)
-            {
-                Console.Error.WriteLine(er.Message);
-                throw;
-            }
         }
 
         /// <summary> 
@@ -968,6 +953,7 @@ namespace caMon.pages.TIS.pages
         /// </summary>
         private void Timer_Tick(object sender, object e)
         {
+            ind.status = !ind.status;
             if (BIDSSMemIsEnabled && panel?.Count > 0/* && sound?.Count > 0*/)
             {
                 /// 接続
