@@ -26,7 +26,21 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <local:CustomIndicator x:Name="ind" Grid.Row="0" status="False" text="試験" color_back="Red" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_e" Grid.Row="0" status="True" text="EB" color_back="Red" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_b8" Grid.Row="1" status="True" text="B8" color_back="Orange" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_b7" Grid.Row="2" status="True" text="B7" color_back="Orange" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_b6" Grid.Row="3" status="True" text="B6" color_back="Orange" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_b5" Grid.Row="4" status="True" text="B5" color_back="Orange" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_b4" Grid.Row="5" status="True" text="B4" color_back="Orange" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_b3" Grid.Row="6" status="True" text="B3" color_back="Orange" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_b2" Grid.Row="7" status="True" text="B2" color_back="Orange" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_b1" Grid.Row="8" status="True" text="B1" color_back="Orange" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_n" Grid.Row="9" status="True" text="N" color_back="LimeGreen" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_p1" Grid.Row="10" status="True" text="P1" color_back="SkyBlue" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_p2" Grid.Row="11" status="True" text="P2" color_back="SkyBlue" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_p3" Grid.Row="12" status="True" text="P3" color_back="SkyBlue" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_p4" Grid.Row="13" status="True" text="P4" color_back="SkyBlue" color_text="Black" color_disable="White"/>
+            <local:CustomIndicator x:Name="ind_p5" Grid.Row="14" status="True" text="P5" color_back="SkyBlue" color_text="Black" color_disable="White"/>
         </Grid>
     </Viewbox>
 </Page>
