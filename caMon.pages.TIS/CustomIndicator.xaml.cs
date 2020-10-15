@@ -24,7 +24,7 @@ namespace caMon.pages.TIS
         /// <summary> ループタイマー </summary>
         readonly DispatcherTimer timer = new DispatcherTimer();
         /// <summary> タイマー周期 </summary>
-        const int timerInterval = 100;
+        const int timerInterval = 10;
 
         /// <summary> 表示状態 </summary>
         public bool status { get; set; }
