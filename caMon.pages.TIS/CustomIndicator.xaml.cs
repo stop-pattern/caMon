@@ -39,6 +39,9 @@ namespace caMon.pages.TIS
         /// <summary> 表示状態(差分取得用) </summary>
         protected bool previous;
 
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public CustomIndicator()
         {
             InitializeComponent();
@@ -94,11 +97,11 @@ namespace caMon.pages.TIS
         }
 
         /// <summary>
-        /// 表示状態変更
+        /// 状態変更
         /// </summary>
         /// <param name="update">強制表示更新</param>
         /// <returns>実行結果</returns>
-        public int CheckChange(bool st = false, bool update = false)
+        public int CheckChange(bool update = false)
         {
             if (previous != status || update)
             {
