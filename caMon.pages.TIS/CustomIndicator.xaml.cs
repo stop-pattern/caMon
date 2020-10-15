@@ -57,6 +57,8 @@ namespace caMon.pages.TIS
             back.Background = new SolidColorBrush(this.color_back);
             back.BorderThickness = new Thickness(0);
 
+            // this.DataContext = new { dispText = text };
+
             timer.Tick += Timer_Tick;
             timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
             timer.Start();
@@ -80,6 +82,10 @@ namespace caMon.pages.TIS
             color_text = t;     // Colors.Black
             color_disable = d;  // Colors.White
             previous = !status;
+
+            front.Text = this.text;
+            back.Background = new SolidColorBrush(this.color_back);
+            back.BorderThickness = new Thickness(0);
 
             // this.DataContext = new { dispText = text };
 
