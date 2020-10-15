@@ -26,6 +26,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <local:CustomIndicator x:Name="ind" Grid.Row="0" status="False" text="試験" color_back="Red" color_text="Black" color_disable="White"/>
         </Grid>
     </Viewbox>
 </Page>
