@@ -107,8 +107,7 @@ namespace caMon.pages.TIS
             if (previous != status || update)
             {
                 previous = status;
-                if (status) setEnable();
-                else setDisable();
+                SetDisplay(status);
                 return 0;
             }
             //else return 1;
@@ -126,8 +125,7 @@ namespace caMon.pages.TIS
             if (st != status || update)
             {
                 status = st;
-                if (st) setEnable();
-                else setDisable();
+                SetDisplay(st);
                 return 0;
             }
             //else return 1;
@@ -135,27 +133,26 @@ namespace caMon.pages.TIS
         }
 
         /// <summary>
-        /// 有効表示
+        /// 表示変更
         /// </summary>
-        protected void setEnable()
+        protected void SetDisplay(bool disp)
         {
+            if (disp)
+            {   // 有効
             //this.Style = (Style)(this.Resources["true"]);
             back.Background = new SolidColorBrush(color_back);
             back.BorderBrush = new SolidColorBrush(Colors.Transparent);
             back.BorderThickness = new Thickness(0);
             front.Foreground = new SolidColorBrush(color_text);
-        }
-
-        /// <summary>
-        /// 無効表示
-        /// </summary>
-        protected void setDisable()
-        {
+            }
+            else
+            {   // 無効
             //this.Style = (Style)(this.Resources["false"]);
             back.Background = new SolidColorBrush(Colors.Transparent);
             back.BorderBrush = new SolidColorBrush(color_disable);
             back.BorderThickness = new Thickness(5);
             front.Foreground = new SolidColorBrush(color_disable);
+            }
         }
     }
 }
