@@ -6,14 +6,25 @@
              xmlns:local="clr-namespace:caMon.pages.TIS"
              mc:Ignorable="d">
     <UserControl.Resources>
-        <Style x:Key="true">
-            <Setter Property="Border.Background" Value="{Binding }"/>
-            <Setter Property="Border.BorderThickness" Value="0,0"/>
-            <Setter Property="TextBlock.Foreground" Value="Black"/>
+        <SolidColorBrush x:Key="r" Color="Red"/>
+        <SolidColorBrush x:Key="o" Color="Orange"/>
+        <SolidColorBrush x:Key="g" Color="Green"/>
+        <SolidColorBrush x:Key="w" Color="White"/>
+
+        <Style TargetType="Border">
+            <Setter Property="BorderBrush" Value="{StaticResource w}"/>
         </Style>
-        <Style x:Key="false">
-            <Setter Property="Border.Background" Value="{Binding }"/>
-            <Setter Property="Border.BorderThickness" Value="5,5"/>
+        <Style TargetType="TextBox">
+            <Setter Property="Foreground" Value="{StaticResource w}"/>
+        </Style>
+        <Style x:Key="Warning" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource r}"/>
+        </Style>
+        <Style x:Key="Caution" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource o}"/>
+        </Style>
+        <Style x:Key="Notice" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource g}"/>
         </Style>
     </UserControl.Resources>
 
@@ -21,7 +32,6 @@
         <Border x:Name="back" Padding="0">
             <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" StretchDirection="DownOnly">
                 <TextBlock x:Name="front" FontSize="75" TextAlignment="Center"/>
-                <!-- Style="{StaticResource true}" -->
             </Viewbox>
         </Border>
     </Grid>
