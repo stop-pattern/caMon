@@ -953,7 +953,6 @@ namespace caMon.pages.TIS.pages
         /// </summary>
         private void Timer_Tick(object sender, object e)
         {
-            ind.status = !ind.status;
             if (BIDSSMemIsEnabled && panel?.Count > 0/* && sound?.Count > 0*/)
             {
                 /// 接続
