@@ -45,29 +45,6 @@ namespace caMon.pages.TIS
 
             panel = new List<int>();
 
-            // コントロール生成
-            customIndicators = new List<CustomIndicator>{
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White),
-                new CustomIndicator("試験", Colors.Orange, Colors.White, Colors.White)
-            };
-            // 上から順に置いていく
-            for (int i = 0; i < customIndicators.Count; i++)
-            {
-                customIndicators[i].SetValue(Grid.RowProperty, i);
-            }
 
             timer.Tick += Timer_Tick;
             timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
