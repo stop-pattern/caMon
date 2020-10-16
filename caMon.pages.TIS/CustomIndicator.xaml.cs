@@ -83,24 +83,6 @@ namespace caMon.pages.TIS
         }
 
         /// <summary>
-        /// 表示状態変更
-        /// </summary>
-        /// <param name="st">表示状態</param>
-        /// <param name="update">強制表示更新</param>
-        /// <returns>実行結果</returns>
-        public int ChangeStatus(bool st = false, bool update = false)
-        {
-            if (st != status || update)
-            {
-                status = st;
-                SetDisplay(st);
-                return 0;
-            }
-            //else return 1;
-            return -1;
-        }
-
-        /// <summary>
         /// 表示変更
         /// </summary>
         protected void SetDisplay(bool disp)
