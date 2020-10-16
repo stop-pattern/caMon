@@ -64,38 +64,6 @@ namespace caMon.pages.TIS
             timer.Start();
         }
 
-        /// <summary>
-        /// コンストラクタ
-        /// </summary>
-        /// <param name="str">表示内容</param>
-        /// <param name="b">表示色（背景）</param>
-        /// <param name="t">表示色（文字）</param>
-        /// <param name="d">表示色（無効時）</param>
-        /// <param name="st">表示状態</param>
-        public CustomIndicator(string str = "", Color b = default, Color t = default, Color d = default, bool st = false)
-        {
-            InitializeComponent();
-
-            status = st;
-            text = str;
-            color_back = b;     // Colors.Red
-            color_text = t;     // Colors.Black
-            color_disable = d;  // Colors.White
-            previous = !status;
-
-            front.Text = this.text;
-            back.Background = new SolidColorBrush(this.color_back);
-            back.BorderThickness = new Thickness(0);
-
-            // this.DataContext = new { dispText = text };
-
-            ChangeStatus(st, true);
-
-            timer.Tick += Timer_Tick;
-            timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
-            timer.Start();
-        }
-
         /// <summary> 
         /// タイマで呼ばれる関数
         /// </summary>
