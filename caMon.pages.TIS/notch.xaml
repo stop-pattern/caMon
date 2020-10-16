@@ -18,6 +18,26 @@
             <Setter Property="BorderThickness" Value="2.5"/>
             <Setter Property="Padding" Value="0"/>
         </Style>
+
+        <Style TargetType="local:CustomIndicator">
+            <Setter Property="Foreground" Value="{StaticResource cW}"/>
+            <!--
+            <Setter Property="color_text" Value="{StaticResource cB}"/>
+            <Setter Property="status" Value="False"/>
+            -->
+        </Style>
+        <Style x:Key="Warning" TargetType="local:CustomIndicator">
+            <Setter Property="Background" Value="{StaticResource cR}"/>
+        </Style>
+        <Style x:Key="Caution" TargetType="local:CustomIndicator">
+            <Setter Property="Background" Value="{StaticResource cY}"/>
+        </Style>
+        <Style x:Key="Available" TargetType="local:CustomIndicator">
+            <Setter Property="Background" Value="{StaticResource cG}"/>
+        </Style>
+        <Style x:Key="Notice" TargetType="local:CustomIndicator">
+            <Setter Property="Background" Value="{StaticResource cN}"/>
+        </Style>
     </Page.Resources>
 
     <Viewbox>
