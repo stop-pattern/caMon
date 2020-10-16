@@ -48,16 +48,13 @@ namespace caMon.pages.TIS
 
             previous = !status;
 
-            front.Text = this.text;
-            back.Background = this.Background;
+            CheckChange(true);
 
             // this.DataContext = new { dispText = text };
 
             timer.Tick += Timer_Tick;
             timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
             timer.Start();
-
-            CheckChange(true);
         }
 
         /// <summary> 
