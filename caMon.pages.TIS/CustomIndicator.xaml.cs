@@ -56,6 +56,8 @@ namespace caMon.pages.TIS
             timer.Tick += Timer_Tick;
             timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
             timer.Start();
+
+            CheckChange(true);
         }
 
         /// <summary> 
