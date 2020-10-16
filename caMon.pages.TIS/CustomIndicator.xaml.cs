@@ -31,11 +31,11 @@ namespace caMon.pages.TIS
         /// <summary> 表示内容 </summary>
         public string text { get; set; }
         /// <summary> 表示色（背景） </summary>
-        public Color color_back { get; set; }
+        public Brush color_back { get; set; }
         /// <summary> 表示色（文字） </summary>
-        public Color color_text { get; set; }
+        public Brush color_text { get; set; }
         /// <summary> 表示色（無効時） </summary>
-        public Color color_disable { get; set; }
+        public Brush color_disable { get; set; }
         /// <summary> 表示状態(差分取得用) </summary>
         protected bool previous;
 
@@ -48,13 +48,13 @@ namespace caMon.pages.TIS
 
             status = false;
             text = "";
-            color_back = Colors.Red;
-            color_text = Colors.Black;
-            color_disable = Colors.White;
+            color_back = new SolidColorBrush(Colors.Red);
+            color_text = new SolidColorBrush(Colors.Black);
+            color_disable = new SolidColorBrush(Colors.White);
             previous = !status;
 
             front.Text = this.text;
-            back.Background = new SolidColorBrush(this.color_back);
+            back.Background = this.color_back;
             back.BorderThickness = new Thickness(0);
 
             // this.DataContext = new { dispText = text };
@@ -115,19 +115,19 @@ namespace caMon.pages.TIS
             front.Text = this.text;
             if (disp)
             {   // 有効
-            //this.Style = (Style)(this.Resources["true"]);
-            back.Background = new SolidColorBrush(color_back);
-            back.BorderBrush = new SolidColorBrush(Colors.Transparent);
-            back.BorderThickness = new Thickness(0);
-            front.Foreground = new SolidColorBrush(color_text);
+                //this.Style = (Style)(this.Resources["true"]);
+                back.Background = this.color_back;
+                back.BorderBrush = new SolidColorBrush(Colors.Transparent);
+                back.BorderThickness = new Thickness(0);
+                front.Foreground = color_text;
             }
             else
             {   // 無効
-            //this.Style = (Style)(this.Resources["false"]);
-            back.Background = new SolidColorBrush(Colors.Transparent);
-            back.BorderBrush = new SolidColorBrush(color_disable);
-            back.BorderThickness = new Thickness(5);
-            front.Foreground = new SolidColorBrush(color_disable);
+                //this.Style = (Style)(this.Resources["false"]);
+                back.Background = new SolidColorBrush(Colors.Transparent);
+                back.BorderBrush = this.color_disable;
+                back.BorderThickness = new Thickness(5);
+                front.Foreground = this.color_disable;
             }
         }
     }
