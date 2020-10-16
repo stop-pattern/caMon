@@ -82,7 +82,22 @@ namespace caMon.pages.TIS
         {
             if (BIDSSMemIsEnabled && panel?.Count > 0/* && sound?.Count > 0*/)
             {
-
+                ind_off.status = (panel[92] == 0 || panel[56] == 1) ? true : false;
+                ind_e.status = (panel[55] >= 9) ? true : false;
+                ind_b8.status = (panel[55] >= 8) ? true : false;
+                ind_b7.status = (panel[55] >= 7) ? true : false;
+                ind_b6.status = (panel[55] >= 6) ? true : false;
+                ind_b5.status = (panel[55] >= 5) ? true : false;
+                ind_b4.status = (panel[55] >= 4) ? true : false;
+                ind_b3.status = (panel[55] >= 3) ? true : false;
+                ind_b2.status = (panel[55] >= 2) ? true : false;
+                ind_b1.status = (panel[55] >= 1) ? true : false;
+                ind_n.status = (panel[55] == 0 || panel[66] == 0) ? true : false;
+                ind_p1.status = (panel[66] >= 1) ? true : false;
+                ind_p2.status = (panel[66] >= 2) ? true : false;
+                ind_p3.status = (panel[66] >= 3) ? true : false;
+                ind_p4.status = (panel[66] >= 4) ? true : false;
+                ind_p5.status = (panel[66] >= 5) ? true : false;
             }
         }
 
