@@ -27,17 +27,17 @@ namespace caMon.pages.TIS
         const int timerInterval = 10;
 
         /// <summary> 表示状態 </summary>
-        public bool status { get; set; }
+        public bool status { get; set; } = false;
         /// <summary> 表示内容 </summary>
-        public string text { get; set; }
+        public string text { get; set; } = "";
         /// <summary> 表示色（背景） </summary>
-        public Brush color_back { get; set; }
+        public Brush color_back { get; set; } = new SolidColorBrush(Colors.Transparent);
         /// <summary> 表示色（文字） </summary>
-        public Brush color_text { get; set; }
+        public Brush color_text { get; set; } = new SolidColorBrush(Colors.Transparent);
         /// <summary> 表示色（無効時） </summary>
-        public Brush color_disable { get; set; }
+        public Brush color_disable { get; set; } = new SolidColorBrush(Colors.Transparent);
         /// <summary> 表示状態(差分取得用) </summary>
-        protected bool previous;
+        protected bool previous { get; set; } = false;
 
         /// <summary>
         /// コンストラクタ
@@ -46,11 +46,6 @@ namespace caMon.pages.TIS
         {
             InitializeComponent();
 
-            status = false;
-            text = "";
-            color_back = new SolidColorBrush(Colors.Red);
-            color_text = new SolidColorBrush(Colors.Black);
-            color_disable = new SolidColorBrush(Colors.White);
             previous = !status;
 
             front.Text = this.text;
