@@ -50,7 +50,6 @@ namespace caMon.pages.TIS
 
             front.Text = this.text;
             back.Background = this.Background;
-            back.BorderThickness = new Thickness(0);
 
             // this.DataContext = new { dispText = text };
 
@@ -113,7 +112,6 @@ namespace caMon.pages.TIS
                 //this.Style = (Style)(this.Resources["true"]);
                 back.Background = this.Background;
                 back.BorderBrush = new SolidColorBrush(Colors.Transparent);
-                back.BorderThickness = new Thickness(0);
                 front.Foreground = color_text;
             }
             else
@@ -121,7 +119,6 @@ namespace caMon.pages.TIS
                 //this.Style = (Style)(this.Resources["false"]);
                 back.Background = this.Background;
                 back.BorderBrush = this.Foreground;
-                back.BorderThickness = new Thickness(5);
                 front.Foreground = this.Foreground;
             }
         }
