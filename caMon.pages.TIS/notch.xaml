@@ -9,7 +9,8 @@
     <Page.Resources>
         <SolidColorBrush x:Key="cR" Color="Red"/>
         <SolidColorBrush x:Key="cY" Color="Orange"/>
-        <SolidColorBrush x:Key="cG" Color="LimeGreen"/>
+        <SolidColorBrush x:Key="cG" Color="SkyBlue"/>
+        <SolidColorBrush x:Key="cN" Color="LimeGreen"/>
         <SolidColorBrush x:Key="cW" Color="White"/>
         <Style TargetType="Border" >
             <Setter Property="BorderBrush" Value="Transparent"/>
@@ -21,52 +22,52 @@
     <Viewbox>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="750">
             <Border>
-                <local:CustomIndicator x:Name="ind_off" status="False" text="OFF" color_back="Red" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_off" status="False" text="OFF" Background="{StaticResource cR}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_e" status="False" text="EB" color_back="Red" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_e" status="False" text="EB" Background="{StaticResource cR}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b8" status="False" text="B8" color_back="Orange" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_b8" status="False" text="B8" Background="{StaticResource cY}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b7" status="False" text="B7" color_back="Orange" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_b7" status="False" text="B7" Background="{StaticResource cY}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b6" status="False" text="B6" color_back="Orange" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_b6" status="False" text="B6" Background="{StaticResource cY}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b5" status="False" text="B5" color_back="Orange" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_b5" status="False" text="B5" Background="{StaticResource cY}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b4" status="False" text="B4" color_back="Orange" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_b4" status="False" text="B4" Background="{StaticResource cY}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b3" status="False" text="B3" color_back="Orange" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_b3" status="False" text="B3" Background="{StaticResource cY}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b2" status="False" text="B2" color_back="Orange" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_b2" status="False" text="B2" Background="{StaticResource cY}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b1" status="False" text="B1" color_back="Orange" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_b1" status="False" text="B1" Background="{StaticResource cY}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_n" status="False" text="N" color_back="LimeGreen" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_n" status="False" text="N" Background="{StaticResource cN}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_p1" Grid.Row="10" status="False" text="P1" color_back="SkyBlue" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_p1" Grid.Row="10" status="False" text="P1" Background="{StaticResource cG}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_p2" Grid.Row="11" status="False" text="P2" color_back="SkyBlue" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_p2" Grid.Row="11" status="False" text="P2" Background="{StaticResource cG}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_p3" Grid.Row="12" status="False" text="P3" color_back="SkyBlue" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_p3" Grid.Row="12" status="False" text="P3" Background="{StaticResource cG}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_p4" Grid.Row="13" status="False" text="P4" color_back="SkyBlue" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_p4" Grid.Row="13" status="False" text="P4" Background="{StaticResource cG}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_p5" Grid.Row="14" status="False" text="P5" color_back="SkyBlue" color_text="Black" color_disable="White"/>
+                <local:CustomIndicator x:Name="ind_p5" Grid.Row="14" status="False" text="P5" Background="{StaticResource cG}" color_text="Black" Foreground="{StaticResource cW}"/>
             </Border>
         </StackPanel>
     </Viewbox>

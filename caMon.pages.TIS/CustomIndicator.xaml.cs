@@ -49,7 +49,7 @@ namespace caMon.pages.TIS
             previous = !status;
 
             front.Text = this.text;
-            back.Background = this.color_back;
+            back.Background = this.Background;
             back.BorderThickness = new Thickness(0);
 
             // this.DataContext = new { dispText = text };
@@ -111,7 +111,7 @@ namespace caMon.pages.TIS
             if (disp)
             {   // 有効
                 //this.Style = (Style)(this.Resources["true"]);
-                back.Background = this.color_back;
+                back.Background = this.Background;
                 back.BorderBrush = new SolidColorBrush(Colors.Transparent);
                 back.BorderThickness = new Thickness(0);
                 front.Foreground = color_text;
@@ -119,10 +119,10 @@ namespace caMon.pages.TIS
             else
             {   // 無効
                 //this.Style = (Style)(this.Resources["false"]);
-                back.Background = new SolidColorBrush(Colors.Transparent);
-                back.BorderBrush = this.color_disable;
+                back.Background = this.Background;
+                back.BorderBrush = this.Foreground;
                 back.BorderThickness = new Thickness(5);
-                front.Foreground = this.color_disable;
+                front.Foreground = this.Foreground;
             }
         }
     }
