@@ -7,6 +7,10 @@
       mc:Ignorable="d" 
       Title="notch">
     <Page.Resources>
+        <SolidColorBrush x:Key="cR" Color="Red"/>
+        <SolidColorBrush x:Key="cY" Color="Orange"/>
+        <SolidColorBrush x:Key="cG" Color="LimeGreen"/>
+        <SolidColorBrush x:Key="cW" Color="White"/>
         <Style TargetType="Border" >
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="2.5"/>
