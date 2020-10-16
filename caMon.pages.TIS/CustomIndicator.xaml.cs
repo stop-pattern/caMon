@@ -119,7 +119,7 @@ namespace caMon.pages.TIS
             else
             {   // 無効
                 //this.Style = (Style)(this.Resources["false"]);
-                back.Background = this.Background;
+                back.Background = new SolidColorBrush(Colors.Transparent);
                 back.BorderBrush = this.Foreground;
                 front.Foreground = this.Foreground;
             }
