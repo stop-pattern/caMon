@@ -84,41 +84,41 @@ namespace caMon.pages.TIS
             {
                 if (panel[92] != 0 && panel[56] == 0)
                 {   // 通常時
-                    ind_off.status = false;
-                    ind_e.status = (panel[55] >= 9) ? true : false;
-                    ind_b8.status = (panel[55] >= 8) ? true : false;
-                    ind_b7.status = (panel[55] >= 7) ? true : false;
-                    ind_b6.status = (panel[55] >= 6) ? true : false;
-                    ind_b5.status = (panel[55] >= 5) ? true : false;
-                    ind_b4.status = (panel[55] >= 4) ? true : false;
-                    ind_b3.status = (panel[55] >= 3) ? true : false;
-                    ind_b2.status = (panel[55] >= 2) ? true : false;
-                    ind_b1.status = (panel[55] >= 1) ? true : false;
-                    ind_n.status = (panel[55] == 0 || panel[66] == 0) ? true : false;
-                    ind_p1.status = (panel[66] >= 1) ? true : false;
-                    ind_p2.status = (panel[66] >= 2) ? true : false;
-                    ind_p3.status = (panel[66] >= 3) ? true : false;
-                    ind_p4.status = (panel[66] >= 4) ? true : false;
-                    ind_p5.status = (panel[66] >= 5) ? true : false;
+                    ind_off.Status = false;
+                    ind_e.Status = (panel[55] >= 9) ? true : false;
+                    ind_b8.Status = (panel[55] >= 8) ? true : false;
+                    ind_b7.Status = (panel[55] >= 7) ? true : false;
+                    ind_b6.Status = (panel[55] >= 6) ? true : false;
+                    ind_b5.Status = (panel[55] >= 5) ? true : false;
+                    ind_b4.Status = (panel[55] >= 4) ? true : false;
+                    ind_b3.Status = (panel[55] >= 3) ? true : false;
+                    ind_b2.Status = (panel[55] >= 2) ? true : false;
+                    ind_b1.Status = (panel[55] >= 1) ? true : false;
+                    ind_n.Status = (panel[55] == 0 || panel[66] == 0) ? true : false;
+                    ind_p1.Status = (panel[66] >= 1) ? true : false;
+                    ind_p2.Status = (panel[66] >= 2) ? true : false;
+                    ind_p3.Status = (panel[66] >= 3) ? true : false;
+                    ind_p4.Status = (panel[66] >= 4) ? true : false;
+                    ind_p5.Status = (panel[66] >= 5) ? true : false;
                 }
                 else
                 {   // 鍵抜取
-                    ind_off.status = true;
-                    ind_e.status = false;
-                    ind_b8.status = false;
-                    ind_b7.status = false;
-                    ind_b6.status = false;
-                    ind_b5.status = false;
-                    ind_b4.status = false;
-                    ind_b3.status = false;
-                    ind_b2.status = false;
-                    ind_b1.status = false;
-                    ind_n.status = false;
-                    ind_p1.status = false;
-                    ind_p2.status = false;
-                    ind_p3.status = false;
-                    ind_p4.status = false;
-                    ind_p5.status = false;
+                    ind_off.Status = true;
+                    ind_e.Status = false;
+                    ind_b8.Status = false;
+                    ind_b7.Status = false;
+                    ind_b6.Status = false;
+                    ind_b5.Status = false;
+                    ind_b4.Status = false;
+                    ind_b3.Status = false;
+                    ind_b2.Status = false;
+                    ind_b1.Status = false;
+                    ind_n.Status = false;
+                    ind_p1.Status = false;
+                    ind_p2.Status = false;
+                    ind_p3.Status = false;
+                    ind_p4.Status = false;
+                    ind_p5.Status = false;
                 }
             }
         }

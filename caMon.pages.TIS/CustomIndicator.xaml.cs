@@ -27,17 +27,86 @@ namespace caMon.pages.TIS
         const int timerInterval = 10;
 
         /// <summary> 表示状態 </summary>
-        public bool status { get; set; } = false;
+        //public bool Status { get; set; } = false;
         /// <summary> 表示内容 </summary>
-        public string text { get; set; } = "";
+        //public string Text { get; set; } = "";
         /// <summary> 表示色（背景） </summary>
-        public Brush color_back { get; set; } = new SolidColorBrush(Colors.Transparent);
+        //public Brush color_back { get; set; } = new SolidColorBrush(Colors.Transparent);
         /// <summary> 表示色（文字） </summary>
         public Brush color_text { get; set; } = new SolidColorBrush(Colors.Transparent);
         /// <summary> 表示色（無効時） </summary>
         public Brush color_disable { get; set; } = new SolidColorBrush(Colors.Transparent);
         /// <summary> 表示状態(差分取得用) </summary>
         protected bool previous { get; set; } = false;
+        
+        // 1. 依存プロパティの作成
+        public static readonly DependencyProperty BackgroundColorProperty =
+            DependencyProperty.Register("BackgroundColor",
+                                        typeof(Brush),
+                                        typeof(CustomIndicator),
+                                        new FrameworkPropertyMetadata("BackgroundColor", new PropertyChangedCallback(OnBackgroundColorChanged)));
+        // 2. CLI用プロパティを提供するラッパー
+        public Brush BackgroundColor
+        {
+            get { return (Brush)GetValue(BackgroundColorProperty); }
+            set { SetValue(BackgroundColorProperty, value); }
+        }
+        // 3. 依存プロパティが変更されたとき呼ばれるコールバック関数の定義
+        private static void OnBackgroundColorChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
+        {
+            // オブジェクトを取得して処理する
+            CustomIndicator ctrl = obj as CustomIndicator;
+            if (ctrl != null)
+            {
+                //ctrl.BackgroundColor = ctrl.BackgroundColor;
+            }
+        }
+
+        // 1. 依存プロパティの作成
+        public static readonly DependencyProperty TextProperty =
+            DependencyProperty.Register("Text",
+                                        typeof(string),
+                                        typeof(CustomIndicator),
+                                        new FrameworkPropertyMetadata("Text", new PropertyChangedCallback(OnTextChanged)));
+        // 2. CLI用プロパティを提供するラッパー
+        public string Text
+        {
+            get { return (string)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
+        }
+        // 3. 依存プロパティが変更されたとき呼ばれるコールバック関数の定義
+        private static void OnTextChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
+        {
+            // オブジェクトを取得して処理する
+            CustomIndicator ctrl = obj as CustomIndicator;
+            if (ctrl != null)
+            {
+                ctrl.front.Text = ctrl.Text;
+            }
+        }
+
+        // 1. 依存プロパティの作成
+        public static readonly DependencyProperty StatusProperty =
+            DependencyProperty.Register("Status",
+                                        typeof(bool),
+                                        typeof(CustomIndicator),
+                                        new FrameworkPropertyMetadata("Status", new PropertyChangedCallback(OnStatusChanged)));
+        // 2. CLI用プロパティを提供するラッパー
+        public bool Status
+        {
+            get { return (bool)GetValue(StatusProperty); }
+            set { SetValue(StatusProperty, value); }
+        }
+        // 3. 依存プロパティが変更されたとき呼ばれるコールバック関数の定義
+        private static void OnStatusChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
+        {
+            // オブジェクトを取得して処理する
+            CustomIndicator ctrl = obj as CustomIndicator;
+            if (ctrl != null)
+            {
+                ctrl.SetDisplay(ctrl.Status);
+            }
+        }
 
         /// <summary>
         /// コンストラクタ
@@ -46,7 +115,7 @@ namespace caMon.pages.TIS
         {
             InitializeComponent();
 
-            previous = !status;
+            previous = !Status;
 
             CheckChange(true);
 
@@ -72,10 +141,10 @@ namespace caMon.pages.TIS
         /// <returns>実行結果</returns>
         public int CheckChange(bool update = false)
         {
-            if (previous != status || update)
+            if (previous != Status || update)
             {
-                previous = status;
-                SetDisplay(status);
+                previous = Status;
+                SetDisplay(Status);
                 return 0;
             }
             //else return 1;
@@ -87,15 +156,15 @@ namespace caMon.pages.TIS
         /// </summary>
         protected void SetDisplay(bool disp)
         {
-            front.Text = this.text;
+            front.Text = this.Text;
             if (disp)
             {   // 有効
                 //this.Style = (Style)(this.Resources["true"]);
                 back_on.Visibility = Visibility.Visible;
                 back_off.Visibility = Visibility.Collapsed;
-                back.Background = this.Background;
-                back.BorderBrush = new SolidColorBrush(Colors.Transparent);
-                back.BorderThickness = new Thickness(0);
+                //back.Background = this.Background;
+                //back.BorderBrush = new SolidColorBrush(Colors.Transparent);
+                //back.BorderThickness = new Thickness(0);
                 front.Foreground = color_text;
             }
             else
@@ -103,9 +172,9 @@ namespace caMon.pages.TIS
                 //this.Style = (Style)(this.Resources["false"]);
                 back_on.Visibility = Visibility.Collapsed;
                 back_off.Visibility = Visibility.Visible;
-                back.Background = new SolidColorBrush(Colors.Transparent);
-                back.BorderBrush = new SolidColorBrush(Colors.White);
-                back.BorderThickness = new Thickness(5);
+                //back.Background = new SolidColorBrush(Colors.Transparent);
+                //back.BorderBrush = new SolidColorBrush(Colors.White);
+                //back.BorderThickness = new Thickness(5);
                 front.Foreground = new SolidColorBrush(Colors.White);
             }
         }

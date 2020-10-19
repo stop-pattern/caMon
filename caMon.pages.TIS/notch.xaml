@@ -22,8 +22,8 @@
         <Style TargetType="local:CustomIndicator">
             <Setter Property="Foreground" Value="{StaticResource cW}"/>
             <!--
-            <Setter Property="color_text" Value="{StaticResource cB}"/>
-            <Setter Property="status" Value="True"/>
+            <Setter Property="color_Text" Value="{StaticResource cB}"/>
+            <Setter Property="Status" Value="True"/>
             -->
         </Style>
         <Style x:Key="Warning" TargetType="local:CustomIndicator">
@@ -43,52 +43,52 @@
     <Viewbox>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="750">
             <Border>
-                <local:CustomIndicator x:Name="ind_off" status="True" text="OFF" Background="{StaticResource cR}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_off" Status="True" Text="OFF" Background="{StaticResource cR}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_e" status="True" text="EB" Background="{StaticResource cR}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_e" Status="False" Text="EB" Background="{StaticResource cR}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b8" status="True" text="B8" Background="{StaticResource cY}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_b8" Status="True" Text="B8" Background="{StaticResource cY}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b7" status="True" text="B7" Background="{StaticResource cY}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_b7" Status="True" Text="B7" Background="{StaticResource cY}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b6" status="True" text="B6" Background="{StaticResource cY}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_b6" Status="True" Text="B6" Background="{StaticResource cY}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b5" status="True" text="B5" Background="{StaticResource cY}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_b5" Status="True" Text="B5" Background="{StaticResource cY}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b4" status="True" text="B4" Background="{StaticResource cY}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_b4" Status="True" Text="B4" Background="{StaticResource cY}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b3" status="True" text="B3" Background="{StaticResource cY}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_b3" Status="True" Text="B3" Background="{StaticResource cY}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b2" status="True" text="B2" Background="{StaticResource cY}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_b2" Status="True" Text="B2" Background="{StaticResource cY}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_b1" status="True" text="B1" Background="{StaticResource cY}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_b1" Status="False" Text="B1" Background="{StaticResource cY}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_n" status="True" text="N" Background="{StaticResource cN}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_n" Status="True" Text="N" Background="{StaticResource cN}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_p1" status="True" text="P1" Background="{StaticResource cG}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_p1" Status="False" Text="P1" Background="{StaticResource cG}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_p2" status="True" text="P2" Background="{StaticResource cG}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_p2" Status="True" Text="P2" Background="{StaticResource cG}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_p3" status="True" text="P3" Background="{StaticResource cG}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_p3" Status="True" Text="P3" Background="{StaticResource cG}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_p4" status="True" text="P4" Background="{StaticResource cG}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_p4" Status="True" Text="P4" Background="{StaticResource cG}" Foreground="{StaticResource cW}"/>
             </Border>
             <Border>
-                <local:CustomIndicator x:Name="ind_p5" status="True" text="P5" Background="{StaticResource cG}" color_text="{StaticResource cB}" Foreground="{StaticResource cW}"/>
+                <local:CustomIndicator x:Name="ind_p5" Status="True" Text="P5" Background="{StaticResource cG}" Foreground="{StaticResource cW}"/>
             </Border>
         </StackPanel>
     </Viewbox>
