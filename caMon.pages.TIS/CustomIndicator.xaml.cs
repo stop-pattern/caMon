@@ -93,14 +93,16 @@ namespace caMon.pages.TIS
                 //this.Style = (Style)(this.Resources["true"]);
                 back.Background = this.Background;
                 back.BorderBrush = new SolidColorBrush(Colors.Transparent);
+                back.BorderThickness = new Thickness(0);
                 front.Foreground = color_text;
             }
             else
             {   // 無効
                 //this.Style = (Style)(this.Resources["false"]);
                 back.Background = new SolidColorBrush(Colors.Transparent);
-                back.BorderBrush = this.Foreground;
-                front.Foreground = this.Foreground;
+                back.BorderBrush = new SolidColorBrush(Colors.White);
+                back.BorderThickness = new Thickness(5);
+                front.Foreground = new SolidColorBrush(Colors.White);
             }
         }
     }

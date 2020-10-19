@@ -29,10 +29,10 @@
     </UserControl.Resources>
 
     <Viewbox Stretch="Fill">
-        <Grid Width="300" Height="100" Background="Black">
-            <Border x:Name="back" BorderThickness="5" Padding="0">
+        <Grid Width="300" Height="100" Background="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl},Path=Background}">
+            <Border x:Name="back" BorderBrush="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl},Path=Foreground}" BorderThickness="5" Padding="0">
                 <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" StretchDirection="DownOnly">
-                    <TextBlock x:Name="front" Text="{Binding dispText}" FontSize="75" TextAlignment="Center"/>
+                    <TextBlock x:Name="front" Text="0" FontSize="75" Foreground="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl},Path=Foreground}" TextAlignment="Center"/>
                 </Viewbox>
             </Border>
         </Grid>
