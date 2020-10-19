@@ -91,15 +91,21 @@ namespace caMon.pages.TIS
             if (disp)
             {   // 有効
                 //this.Style = (Style)(this.Resources["true"]);
-                //back_on.Visibility = Visibility.Visible;
-                //back_off.Visibility = Visibility.Collapsed;
+                back_on.Visibility = Visibility.Visible;
+                back_off.Visibility = Visibility.Collapsed;
+                back.Background = this.Background;
+                back.BorderBrush = new SolidColorBrush(Colors.Transparent);
+                back.BorderThickness = new Thickness(0);
                 front.Foreground = color_text;
             }
             else
             {   // 無効
                 //this.Style = (Style)(this.Resources["false"]);
-                //back_on.Visibility = Visibility.Collapsed;
-                //back_off.Visibility = Visibility.Visible;
+                back_on.Visibility = Visibility.Collapsed;
+                back_off.Visibility = Visibility.Visible;
+                back.Background = new SolidColorBrush(Colors.Transparent);
+                back.BorderBrush = new SolidColorBrush(Colors.White);
+                back.BorderThickness = new Thickness(5);
                 front.Foreground = new SolidColorBrush(Colors.White);
             }
         }
