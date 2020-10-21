@@ -38,7 +38,7 @@ namespace caMon.pages.TIS
         public Brush color_disable { get; set; } = new SolidColorBrush(Colors.Transparent);
         /// <summary> 表示状態(差分取得用) </summary>
         protected bool previous { get; set; } = false;
-        
+
         /// <summary>
         /// 背景色
         /// 依存プロパティ
@@ -67,7 +67,35 @@ namespace caMon.pages.TIS
                 //ctrl.BackgroundColor = ctrl.BackgroundColor;
             }
         }
-        
+
+        /// <summary>
+        /// 前景色
+        /// 依存プロパティ
+        /// </summary>
+        public static readonly DependencyProperty ForegroundColorProperty =
+            DependencyProperty.Register("ForegroundColor",
+                                        typeof(Brush),
+                                        typeof(CustomIndicator),
+                                        new FrameworkPropertyMetadata(new SolidColorBrush(Colors.White), new PropertyChangedCallback(OnForegroundColorChanged)));
+        /// <summary>
+        /// 前景色
+        /// ラッパー(CLI用プロパティ)
+        /// </summary>
+        public Brush ForegroundColor
+        {
+            get { return (Brush)GetValue(ForegroundColorProperty); }
+            set { SetValue(ForegroundColorProperty, value); }
+        }
+        /// <summary> 値変更時に呼ばれるコールバック関数 </summary>
+        private static void OnForegroundColorChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
+        {
+            // オブジェクトを取得して処理する
+            CustomIndicator ctrl = obj as CustomIndicator;
+            if (ctrl != null)
+            {
+            }
+        }
+
         /// <summary>
         /// 表示文字
         /// 依存プロパティ
