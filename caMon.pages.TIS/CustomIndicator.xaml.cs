@@ -39,19 +39,25 @@ namespace caMon.pages.TIS
         /// <summary> 表示状態(差分取得用) </summary>
         protected bool previous { get; set; } = false;
         
-        // 1. 依存プロパティの作成
+        /// <summary>
+        /// 背景色
+        /// 依存プロパティ
+        /// </summary>
         public static readonly DependencyProperty BackgroundColorProperty =
             DependencyProperty.Register("BackgroundColor",
                                         typeof(Brush),
                                         typeof(CustomIndicator),
                                         new FrameworkPropertyMetadata(new SolidColorBrush(Colors.Transparent), new PropertyChangedCallback(OnBackgroundColorChanged)));
-        // 2. CLI用プロパティを提供するラッパー
+        /// <summary>
+        /// 背景色
+        /// ラッパー(CLI用プロパティ)
+        /// </summary>
         public Brush BackgroundColor
         {
             get { return (Brush)GetValue(BackgroundColorProperty); }
             set { SetValue(BackgroundColorProperty, value); }
         }
-        // 3. 依存プロパティが変更されたとき呼ばれるコールバック関数の定義
+        /// <summary> 値変更時に呼ばれるコールバック関数 </summary>
         private static void OnBackgroundColorChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
             // オブジェクトを取得して処理する
@@ -61,20 +67,26 @@ namespace caMon.pages.TIS
                 //ctrl.BackgroundColor = ctrl.BackgroundColor;
             }
         }
-
-        // 1. 依存プロパティの作成
+        
+        /// <summary>
+        /// 表示文字
+        /// 依存プロパティ
+        /// </summary>
         public static readonly DependencyProperty TextProperty =
             DependencyProperty.Register("Text",
                                         typeof(string),
                                         typeof(CustomIndicator),
                                         new FrameworkPropertyMetadata("Text", new PropertyChangedCallback(OnTextChanged)));
-        // 2. CLI用プロパティを提供するラッパー
+        /// <summary>
+        /// 表示文字
+        /// ラッパー(CLI用プロパティ)
+        /// </summary>
         public string Text
         {
             get { return (string)GetValue(TextProperty); }
             set { SetValue(TextProperty, value); }
         }
-        // 3. 依存プロパティが変更されたとき呼ばれるコールバック関数の定義
+        /// <summary> 値変更時に呼ばれるコールバック関数 </summary>
         private static void OnTextChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
             // オブジェクトを取得して処理する
@@ -85,19 +97,25 @@ namespace caMon.pages.TIS
             }
         }
 
-        // 1. 依存プロパティの作成
+        /// <summary>
+        /// 表示状態
+        /// 依存プロパティ
+        /// </summary>
         public static readonly DependencyProperty StatusProperty =
             DependencyProperty.Register("Status",
                                         typeof(bool),
                                         typeof(CustomIndicator),
                                         new FrameworkPropertyMetadata(false, new PropertyChangedCallback(OnStatusChanged)));
-        // 2. CLI用プロパティを提供するラッパー
+        /// <summary>
+        /// 表示状態
+        /// ラッパー(CLI用プロパティ)
+        /// </summary>
         public bool Status
         {
             get { return (bool)GetValue(StatusProperty); }
             set { SetValue(StatusProperty, value); }
         }
-        // 3. 依存プロパティが変更されたとき呼ばれるコールバック関数の定義
+        /// <summary> 値変更時に呼ばれるコールバック関数 </summary>
         private static void OnStatusChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
             // オブジェクトを取得して処理する
