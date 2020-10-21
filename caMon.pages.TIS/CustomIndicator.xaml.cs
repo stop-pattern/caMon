@@ -44,7 +44,7 @@ namespace caMon.pages.TIS
             DependencyProperty.Register("BackgroundColor",
                                         typeof(Brush),
                                         typeof(CustomIndicator),
-                                        new FrameworkPropertyMetadata("BackgroundColor", new PropertyChangedCallback(OnBackgroundColorChanged)));
+                                        new FrameworkPropertyMetadata(new SolidColorBrush(Colors.Transparent), new PropertyChangedCallback(OnBackgroundColorChanged)));
         // 2. CLI用プロパティを提供するラッパー
         public Brush BackgroundColor
         {
@@ -90,7 +90,7 @@ namespace caMon.pages.TIS
             DependencyProperty.Register("Status",
                                         typeof(bool),
                                         typeof(CustomIndicator),
-                                        new FrameworkPropertyMetadata("Status", new PropertyChangedCallback(OnStatusChanged)));
+                                        new FrameworkPropertyMetadata(false, new PropertyChangedCallback(OnStatusChanged)));
         // 2. CLI用プロパティを提供するラッパー
         public bool Status
         {
