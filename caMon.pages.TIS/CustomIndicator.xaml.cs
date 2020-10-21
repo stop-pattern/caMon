@@ -97,6 +97,34 @@ namespace caMon.pages.TIS
         }
 
         /// <summary>
+        /// 文字色
+        /// 依存プロパティ
+        /// </summary>
+        public static readonly DependencyProperty TextColorProperty =
+            DependencyProperty.Register("TextColor",
+                                        typeof(Brush),
+                                        typeof(CustomIndicator),
+                                        new FrameworkPropertyMetadata(new SolidColorBrush(Colors.Black), new PropertyChangedCallback(OnTextColorChanged)));
+        /// <summary>
+        /// 文字色
+        /// ラッパー(CLI用プロパティ)
+        /// </summary>
+        public Brush TextColor
+        {
+            get { return (Brush)GetValue(TextColorProperty); }
+            set { SetValue(TextColorProperty, value); }
+        }
+        /// <summary> 値変更時に呼ばれるコールバック関数 </summary>
+        private static void OnTextColorChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
+        {
+            // オブジェクトを取得して処理する
+            CustomIndicator ctrl = obj as CustomIndicator;
+            if (ctrl != null)
+            {
+            }
+        }
+
+        /// <summary>
         /// 表示文字
         /// 依存プロパティ
         /// </summary>

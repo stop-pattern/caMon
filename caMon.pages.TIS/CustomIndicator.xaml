@@ -33,7 +33,7 @@
             <Grid x:Name="On" Visibility="Visible">
                 <Border x:Name="back_on" Visibility="Hidden" Background="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl},Path=BackgroundColor}" Margin="0,2,0,-2"/>
                 <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" StretchDirection="DownOnly">
-                    <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl},Path=Text}" FontSize="75" Foreground="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl},Path=ForegroundColor}" TextAlignment="Center"/>
+                    <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl},Path=Text}" FontSize="75" Foreground="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl},Path=TextColor}" TextAlignment="Center"/>
                 </Viewbox>
             </Grid>
             <Grid x:Name="Off" Visibility="Collapsed">
