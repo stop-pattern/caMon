@@ -121,7 +121,6 @@ namespace caMon.pages.TIS
             CustomIndicator ctrl = obj as CustomIndicator;
             if (ctrl != null)
             {
-                ctrl.front.Text = ctrl.Text;
             }
         }
 
@@ -202,26 +201,15 @@ namespace caMon.pages.TIS
         /// </summary>
         protected void SetDisplay(bool disp)
         {
-            front.Text = this.Text;
             if (disp)
             {   // 有効
-                //this.Style = (Style)(this.Resources["true"]);
-                back_on.Visibility = Visibility.Visible;
-                back_off.Visibility = Visibility.Collapsed;
-                //back.Background = this.Background;
-                //back.BorderBrush = new SolidColorBrush(Colors.Transparent);
-                //back.BorderThickness = new Thickness(0);
-                front.Foreground = color_text;
+                On.Visibility = Visibility.Visible;
+                Off.Visibility = Visibility.Collapsed;
             }
             else
             {   // 無効
-                //this.Style = (Style)(this.Resources["false"]);
-                back_on.Visibility = Visibility.Collapsed;
-                back_off.Visibility = Visibility.Visible;
-                //back.Background = new SolidColorBrush(Colors.Transparent);
-                //back.BorderBrush = new SolidColorBrush(Colors.White);
-                //back.BorderThickness = new Thickness(5);
-                front.Foreground = new SolidColorBrush(Colors.White);
+                On.Visibility = Visibility.Collapsed;
+                Off.Visibility = Visibility.Visible;
             }
         }
     }
