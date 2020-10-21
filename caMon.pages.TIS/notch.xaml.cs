@@ -34,8 +34,6 @@ namespace caMon.pages.TIS
 
         List<int> panel = new List<int>();
 
-        List<CustomIndicator> customIndicators;
-
         public notch()
         {
             InitializeComponent();

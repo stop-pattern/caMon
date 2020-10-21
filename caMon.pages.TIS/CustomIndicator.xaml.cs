@@ -19,26 +19,6 @@ namespace caMon.pages.TIS
     /// </summary>
     public partial class CustomIndicator : UserControl
     {
-        protected readonly Color _c = Colors.Red;
-
-        /// <summary> ループタイマー </summary>
-        readonly DispatcherTimer timer = new DispatcherTimer();
-        /// <summary> タイマー周期 </summary>
-        const int timerInterval = 10;
-
-        /// <summary> 表示状態 </summary>
-        //public bool Status { get; set; } = false;
-        /// <summary> 表示内容 </summary>
-        //public string Text { get; set; } = "";
-        /// <summary> 表示色（背景） </summary>
-        //public Brush color_back { get; set; } = new SolidColorBrush(Colors.Transparent);
-        /// <summary> 表示色（文字） </summary>
-        public Brush color_text { get; set; } = new SolidColorBrush(Colors.Transparent);
-        /// <summary> 表示色（無効時） </summary>
-        public Brush color_disable { get; set; } = new SolidColorBrush(Colors.Transparent);
-        /// <summary> 表示状態(差分取得用) </summary>
-        protected bool previous { get; set; } = false;
-
         /// <summary>
         /// 背景色
         /// 依存プロパティ
@@ -187,41 +167,6 @@ namespace caMon.pages.TIS
         public CustomIndicator()
         {
             InitializeComponent();
-
-            previous = !Status;
-
-            CheckChange(true);
-
-            // this.DataContext = new { dispText = text };
-
-            timer.Tick += Timer_Tick;
-            timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
-            timer.Start();
-        }
-
-        /// <summary> 
-        /// タイマで呼ばれる関数
-        /// </summary>
-        private void Timer_Tick(object sender, object e)
-        {
-            CheckChange();
-        }
-
-        /// <summary>
-        /// 状態変更
-        /// </summary>
-        /// <param name="update">強制表示更新</param>
-        /// <returns>実行結果</returns>
-        public int CheckChange(bool update = false)
-        {
-            if (previous != Status || update)
-            {
-                previous = Status;
-                SetDisplay(Status);
-                return 0;
-            }
-            //else return 1;
-            return -1;
         }
 
         /// <summary>
