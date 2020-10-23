@@ -113,6 +113,18 @@ namespace caMon.pages.TIS.pages
             if (BIDSSMemIsEnabled)
             {
                 KeyDisplay.Text = keyKind[panel[92]];
+                switch (panel[92])
+                {
+                    case 1:
+                        //MainFrame.Source = new Uri("@");
+                        break;
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 0:
+                    default:
+                        break;
+                }
             }
         }
 
