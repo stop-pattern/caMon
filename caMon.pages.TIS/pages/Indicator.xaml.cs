@@ -10,6 +10,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+
+using TR;
+using TR.BIDSSMemLib;
 
 namespace caMon.pages.TIS.pages
 {
@@ -18,9 +22,80 @@ namespace caMon.pages.TIS.pages
     /// </summary>
     public partial class Indicator : Page
     {
+        /// <summary>ループタイマー</summary>
+        static readonly DispatcherTimer timer = new DispatcherTimer();
+        /// <summary>ループ間隔[ms]</summary>
+        readonly int timerInterval = 300;
+        /// <summary>BIDS Shared Memoryの状態</summary>
+        bool BIDSSMemIsEnabled = false;
+        /// <summary>Bve5から渡される情報</summary>
+        BIDSSharedMemoryData bve5;
+        /// <summary>OpenBveから渡される情報</summary>
+        OpenD obve;
+        /// <summary>panelの状態</summary>
+        public static List<int> panel = new List<int>();
+        /// <summary>soundの状態</summary>
+        public static List<int> sound = new List<int>();
+
+
         public Indicator()
         {
             InitializeComponent();
+
+            SharedFuncs.SML.SMC_BSMDChanged += SMemLib_BIDSSMemChanged;
+            SharedFuncs.SML.SMC_OpenDChanged += SMemLib_OpenChanged;
+            SharedFuncs.SML.SMC_PanelDChanged += SMemLib_PanelChanged;
+            SharedFuncs.SML.SMC_SoundDChanged += SMemLib_SoundChanged;
+
+            panel = new List<int>();
+            sound = new List<int>();
+
+            timer.Tick += Timer_Tick;
+            timer.Interval = new TimeSpan(0, 0, 0, 0, timerInterval);
+            timer.Start();
         }
+
+
+        /// <summary> 
+        /// SharedMemに更新があったときに呼ばれる関数
+        /// </summary>
+        private void SMemLib_BIDSSMemChanged(object sender, ValueChangedEventArgs<BIDSSharedMemoryData> e)
+        {
+            BIDSSMemIsEnabled = e.NewValue.IsEnabled;
+            bve5 = e.NewValue;
+        }
+
+        /// <summary> 
+        /// Openに更新があったときに呼ばれる関数
+        /// </summary>
+        private void SMemLib_OpenChanged(object sender, ValueChangedEventArgs<OpenD> e)
+        {
+            obve = e.NewValue;
+        }
+
+        /// <summary> 
+        /// Panelに更新があったときに呼ばれる関数
+        /// </summary>
+        private void SMemLib_PanelChanged(object sender, ValueChangedEventArgs<int[]> p)
+        {
+            panel = new List<int>(p.NewValue);
+        }
+
+        /// <summary> 
+        /// Soundに更新があったときに呼ばれる関数
+        /// </summary>
+        private void SMemLib_SoundChanged(object sender, ValueChangedEventArgs<int[]> s)
+        {
+            sound = new List<int>(s.NewValue);
+        }
+
+        /// <summary> 
+        /// タイマで呼ばれる関数
+        /// </summary>
+        private void Timer_Tick(object sender, object e)
+        {
+
+        }
+
     }
 }
