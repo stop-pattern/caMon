@@ -31,15 +31,15 @@
     <Viewbox Stretch="Fill">
         <Grid Width="300" Height="100">
             <Grid x:Name="On" Visibility="Collapsed">
-                <Border x:Name="OnBack" Background="{Binding BackgroundColor, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CustomIndicator}}}"/>
+                <Border x:Name="OnBack" Background="{Binding OnBrush, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CustomIndicator}}}"/>
                 <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" StretchDirection="DownOnly">
-                    <TextBlock x:Name="OnText" Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CustomIndicator}}}" FontSize="75" Foreground="{Binding TextColor, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CustomIndicator}}}" TextAlignment="Center"/>
+                    <TextBlock x:Name="OnText" Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CustomIndicator}}}" FontSize="75" Foreground="{Binding TextBrush, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CustomIndicator}}}" TextAlignment="Center"/>
                 </Viewbox>
             </Grid>
             <Grid x:Name="Off" Visibility="Visible">
-                <Border x:Name="OffBack" Background="Transparent" BorderBrush="{Binding ForegroundColor, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CustomIndicator}}}" BorderThickness="5"/>
+                <Border x:Name="OffBack" Background="Transparent" BorderBrush="{Binding OffBrush, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CustomIndicator}}}" BorderThickness="5"/>
                 <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" StretchDirection="DownOnly">
-                    <TextBlock x:Name="OffText" Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CustomIndicator}}}" FontSize="75" Foreground="{Binding ForegroundColor, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CustomIndicator}}}" TextAlignment="Center"/>
+                    <TextBlock x:Name="OffText" Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CustomIndicator}}}" FontSize="75" Foreground="{Binding OffBrush, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CustomIndicator}}}" TextAlignment="Center"/>
                 </Viewbox>
             </Grid>
         </Grid>

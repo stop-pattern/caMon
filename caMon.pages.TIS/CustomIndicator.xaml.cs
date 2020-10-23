@@ -23,8 +23,8 @@ namespace caMon.pages.TIS
         /// 背景色
         /// 依存プロパティ
         /// </summary>
-        public static readonly DependencyProperty BackgroundColorProperty =
-            DependencyProperty.Register("BackgroundColor",
+        public static readonly DependencyProperty OnBrushProperty =
+            DependencyProperty.Register("OnBrush",
                                         typeof(Brush),
                                         typeof(CustomIndicator),
                                         new FrameworkPropertyMetadata(new SolidColorBrush(Colors.Transparent)));
@@ -32,18 +32,18 @@ namespace caMon.pages.TIS
         /// 背景色
         /// ラッパー(CLI用プロパティ)
         /// </summary>
-        public Brush BackgroundColor
+        public Brush OnBrush
         {
-            get { return (Brush)GetValue(BackgroundColorProperty); }
-            set { SetValue(BackgroundColorProperty, value); }
+            get { return (Brush)GetValue(OnBrushProperty); }
+            set { SetValue(OnBrushProperty, value); }
         }
 
         /// <summary>
         /// 前景色
         /// 依存プロパティ
         /// </summary>
-        public static readonly DependencyProperty ForegroundColorProperty =
-            DependencyProperty.Register("ForegroundColor",
+        public static readonly DependencyProperty OffBrushProperty =
+            DependencyProperty.Register("OffBrush",
                                         typeof(Brush),
                                         typeof(CustomIndicator),
                                         new FrameworkPropertyMetadata(new SolidColorBrush(Colors.White)));
@@ -51,18 +51,18 @@ namespace caMon.pages.TIS
         /// 前景色
         /// ラッパー(CLI用プロパティ)
         /// </summary>
-        public Brush ForegroundColor
+        public Brush OffBrush
         {
-            get { return (Brush)GetValue(ForegroundColorProperty); }
-            set { SetValue(ForegroundColorProperty, value); }
+            get { return (Brush)GetValue(OffBrushProperty); }
+            set { SetValue(OffBrushProperty, value); }
         }
 
         /// <summary>
         /// 文字色
         /// 依存プロパティ
         /// </summary>
-        public static readonly DependencyProperty TextColorProperty =
-            DependencyProperty.Register("TextColor",
+        public static readonly DependencyProperty TextBrushProperty =
+            DependencyProperty.Register("TextBrush",
                                         typeof(Brush),
                                         typeof(CustomIndicator),
                                         new FrameworkPropertyMetadata(new SolidColorBrush(Colors.Black)));
@@ -70,10 +70,10 @@ namespace caMon.pages.TIS
         /// 文字色
         /// ラッパー(CLI用プロパティ)
         /// </summary>
-        public Brush TextColor
+        public Brush TextBrush
         {
-            get { return (Brush)GetValue(TextColorProperty); }
-            set { SetValue(TextColorProperty, value); }
+            get { return (Brush)GetValue(TextBrushProperty); }
+            set { SetValue(TextBrushProperty, value); }
         }
 
         /// <summary>
