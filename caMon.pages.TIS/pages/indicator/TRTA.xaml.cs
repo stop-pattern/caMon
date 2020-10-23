@@ -72,6 +72,7 @@ namespace caMon.pages.TIS.pages.indicator
         {
             if (BIDSSMemIsEnabled && panel?.Count > 0)
             {
+                PlatformDoor.Status = panel[181] == 0 ? true : false;
             }
         }
     }
