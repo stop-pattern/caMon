@@ -12,14 +12,9 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="3*"/>
-        </Grid.ColumnDefinitions>
-        
+
         <!--#region ページタイトル -->
-        <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Background="DodgerBlue">
+        <Grid Grid.Row="0" Background="DodgerBlue">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
