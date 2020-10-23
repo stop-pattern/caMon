@@ -27,7 +27,7 @@ namespace caMon.pages.TIS
             DependencyProperty.Register("BackgroundColor",
                                         typeof(Brush),
                                         typeof(CustomIndicator),
-                                        new FrameworkPropertyMetadata(new SolidColorBrush(Colors.Transparent), new PropertyChangedCallback(OnBackgroundColorChanged)));
+                                        new FrameworkPropertyMetadata(new SolidColorBrush(Colors.Transparent)));
         /// <summary>
         /// 背景色
         /// ラッパー(CLI用プロパティ)
@@ -36,15 +36,6 @@ namespace caMon.pages.TIS
         {
             get { return (Brush)GetValue(BackgroundColorProperty); }
             set { SetValue(BackgroundColorProperty, value); }
-        }
-        /// <summary> 値変更時に呼ばれるコールバック関数 </summary>
-        private static void OnBackgroundColorChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
-        {
-            // オブジェクトを取得して処理する
-            CustomIndicator ctrl = obj as CustomIndicator;
-            if (ctrl != null)
-            {
-            }
         }
 
         /// <summary>
@@ -55,7 +46,7 @@ namespace caMon.pages.TIS
             DependencyProperty.Register("ForegroundColor",
                                         typeof(Brush),
                                         typeof(CustomIndicator),
-                                        new FrameworkPropertyMetadata(new SolidColorBrush(Colors.White), new PropertyChangedCallback(OnForegroundColorChanged)));
+                                        new FrameworkPropertyMetadata(new SolidColorBrush(Colors.White)));
         /// <summary>
         /// 前景色
         /// ラッパー(CLI用プロパティ)
@@ -64,15 +55,6 @@ namespace caMon.pages.TIS
         {
             get { return (Brush)GetValue(ForegroundColorProperty); }
             set { SetValue(ForegroundColorProperty, value); }
-        }
-        /// <summary> 値変更時に呼ばれるコールバック関数 </summary>
-        private static void OnForegroundColorChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
-        {
-            // オブジェクトを取得して処理する
-            CustomIndicator ctrl = obj as CustomIndicator;
-            if (ctrl != null)
-            {
-            }
         }
 
         /// <summary>
@@ -83,7 +65,7 @@ namespace caMon.pages.TIS
             DependencyProperty.Register("TextColor",
                                         typeof(Brush),
                                         typeof(CustomIndicator),
-                                        new FrameworkPropertyMetadata(new SolidColorBrush(Colors.Black), new PropertyChangedCallback(OnTextColorChanged)));
+                                        new FrameworkPropertyMetadata(new SolidColorBrush(Colors.Black)));
         /// <summary>
         /// 文字色
         /// ラッパー(CLI用プロパティ)
@@ -92,15 +74,6 @@ namespace caMon.pages.TIS
         {
             get { return (Brush)GetValue(TextColorProperty); }
             set { SetValue(TextColorProperty, value); }
-        }
-        /// <summary> 値変更時に呼ばれるコールバック関数 </summary>
-        private static void OnTextColorChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
-        {
-            // オブジェクトを取得して処理する
-            CustomIndicator ctrl = obj as CustomIndicator;
-            if (ctrl != null)
-            {
-            }
         }
 
         /// <summary>
@@ -111,7 +84,7 @@ namespace caMon.pages.TIS
             DependencyProperty.Register("Text",
                                         typeof(string),
                                         typeof(CustomIndicator),
-                                        new FrameworkPropertyMetadata("Text", new PropertyChangedCallback(OnTextChanged)));
+                                        new FrameworkPropertyMetadata("Text"));
         /// <summary>
         /// 表示文字
         /// ラッパー(CLI用プロパティ)
@@ -120,15 +93,6 @@ namespace caMon.pages.TIS
         {
             get { return (string)GetValue(TextProperty); }
             set { SetValue(TextProperty, value); }
-        }
-        /// <summary> 値変更時に呼ばれるコールバック関数 </summary>
-        private static void OnTextChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
-        {
-            // オブジェクトを取得して処理する
-            CustomIndicator ctrl = obj as CustomIndicator;
-            if (ctrl != null)
-            {
-            }
         }
 
         /// <summary>
