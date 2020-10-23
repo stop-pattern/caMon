@@ -25,6 +25,10 @@
             </Viewbox>
         </Grid>
         <!--#endregion-->
+        
+        <!--#region 鍵表示 -->
+        <Border x:Name="KeyDisplay" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Background="Orange"/>
+        <!--#endregion-->
 
         <!--#region メインフレーム -->
         <Frame x:Name="MainFrame" Grid.Row="1"/>
