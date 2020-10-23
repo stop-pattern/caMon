@@ -21,7 +21,7 @@
 
         <Style TargetType="local:CustomIndicator">
             <Setter Property="ForegroundColor" Value="{StaticResource cW}"/>
-            <Setter Property="TextColor" Value="{StaticResource cW}"/>
+            <Setter Property="TextColor" Value="{StaticResource cB}"/>
             <Setter Property="Status" Value="False"/>
         </Style>
         <Style x:Key="Warning" TargetType="local:CustomIndicator">
