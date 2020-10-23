@@ -110,7 +110,7 @@ namespace caMon.pages.TIS.pages
         /// </summary>
         private void Timer_Tick(object sender, object e)
         {
-            if (BIDSSMemIsEnabled)
+            if (BIDSSMemIsEnabled && panel?.Count > 0)
             {
                 KeyDisplay.Text = keyKind[panel[92]];
                 switch (panel[92])
