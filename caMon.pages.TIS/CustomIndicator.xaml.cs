@@ -44,7 +44,6 @@ namespace caMon.pages.TIS
             CustomIndicator ctrl = obj as CustomIndicator;
             if (ctrl != null)
             {
-                //ctrl.BackgroundColor = ctrl.BackgroundColor;
             }
         }
 
