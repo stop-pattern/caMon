@@ -25,10 +25,12 @@
             </Viewbox>
         </Grid>
         <!--#endregion-->
-        
+
         <!--#region 鍵表示 -->
         <Border Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Background="Orange">
-            <TextBlock x:Name="KeyDisplay"/>
+            <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" StretchDirection="DownOnly">
+                <TextBlock x:Name="KeyDisplay" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="20" Text="TRTA"/>
+            </Viewbox>
         </Border>
         <!--#endregion-->
 
