@@ -37,6 +37,22 @@ namespace caMon.pages.TIS.pages
         /// <summary>soundの状態</summary>
         public static List<int> sound = new List<int>();
 
+        /// <summary>
+        /// 鍵種別
+        /// </summary>
+        readonly List<String> keyKind = new List<String>
+        {
+            "", /// 切
+            "地下鉄",
+            "東武",
+            "東急・横高",
+            "西武",
+            "相鉄",
+            "ＪＲ",
+            "小田急",
+            "東葉"
+        };
+
 
         public Indicator()
         {
@@ -94,7 +110,10 @@ namespace caMon.pages.TIS.pages
         /// </summary>
         private void Timer_Tick(object sender, object e)
         {
-
+            if (BIDSSMemIsEnabled)
+            {
+                KeyDisplay.Text = keyKind[panel[92]];
+            }
         }
 
     }

@@ -27,7 +27,9 @@
         <!--#endregion-->
         
         <!--#region 鍵表示 -->
-        <Border x:Name="KeyDisplay" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Background="Orange"/>
+        <Border Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Background="Orange">
+            <TextBlock x:Name="KeyDisplay"/>
+        </Border>
         <!--#endregion-->
 
         <!--#region メインフレーム -->
