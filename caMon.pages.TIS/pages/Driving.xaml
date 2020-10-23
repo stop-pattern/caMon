@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:caMon.pages.TIS.pages"
+      xmlns:custom="clr-namespace:caMon.pages.TIS"
       mc:Ignorable="d"
       Title="Driving">
 
@@ -172,6 +173,14 @@
         </Grid>
 
         <Frame x:Name="MainFrame" Grid.Row="2"/>
+
+        <Grid x:Name="cells" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Row="0" Source="../notch.xaml"/>
+        </Grid>
 
     </Grid>
 </Page>

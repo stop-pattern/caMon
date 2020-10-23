@@ -187,7 +187,7 @@ namespace caMon.pages.TIS
                     textMessage.Visibility = Visibility.Collapsed;
                     contentLabel.Content = "◆　" + PageStatus.Driver + "　◆";
                     mainFrame.Visibility = Visibility.Visible;
-                    //mainFrame.Source = new Uri(@"Pages\Driver.xaml", UriKind.Relative);
+                    mainFrame.Source = new Uri(@"Pages\Driving.xaml", UriKind.Relative);
                     break;
             }
         }
