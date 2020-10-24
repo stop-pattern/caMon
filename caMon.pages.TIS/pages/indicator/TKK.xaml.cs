@@ -72,7 +72,55 @@ namespace caMon.pages.TIS.pages.indicator
         {
             if (BIDSSMemIsEnabled && panel?.Count > 0)
             {
+                switch (panel[192])
+                {
+                    default:
+                    case 0: // 範囲外
+                        PlatformDoorGreen.Status = true;
+                        PlatformDoorGreen.Visibility = Visibility.Visible;
+                        PlatformDoorWhite.Visibility = Visibility.Hidden;
+                        break;
+                    case 1: // 範囲内
+                        PlatformDoorGreen.Status = !toBool(panel[181]);
+                        PlatformDoorGreen.Visibility = Visibility.Visible;
+                        PlatformDoorWhite.Visibility = Visibility.Hidden;
+                        break;
+                    case 2: // ドア開
+                        PlatformDoorGreen.Visibility = Visibility.Hidden;
+                        PlatformDoorWhite.Visibility = Visibility.Visible;
+                        break;
+                }
+
+                EmrDrive.Status = toBool(panel[31]);
+                Tasc.Status = toBool(panel[136]);
+                Atc.Status = toBool(panel[21]);
+                Shunting.Status = toBool(panel[32]);
+                Inside.Status = toBool(panel[31]);
+                NotInstitutionalized.Status = toBool(panel[27]) || toBool(panel[28]);
+
+                AtcEmergency.Status = toBool(panel[22]);
+                AtcService.Status = toBool(panel[23]);
+                TascControl.Status = toBool(panel[138]);
+                SnowResistant.Status = toBool(panel[176]);
+                //NonRegenerative.Status = toBool(panel[171]);    //廃止
+                EmrBrake.Status = (panel[55] == 9);
+
+                PlatformDoorInterlocking.Status = panel[155] == 1 ? true : false;
+                PlatformDoorNotInterlocking.Status = panel[155] == 2 ? true : false;
+
+                HighBeam.Status = toBool(panel[18]);
             }
+        }
+
+        /// <summary>
+        /// int -> bool
+        /// </summary>
+        /// <param name="arg"><int>input</param>
+        /// <returns></returns>
+        private bool toBool(int arg)
+        {
+            if (arg == 0) { return false; }
+            return true;
         }
     }
 }
