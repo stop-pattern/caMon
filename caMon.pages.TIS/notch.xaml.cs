@@ -139,6 +139,26 @@ namespace caMon.pages.TIS
 
             if (BIDSSMemIsEnabled && panel?.Count > 0/* && sound?.Count > 0*/)
             {
+                if (false)  // 通常
+                {
+                    ind_off.Status = false;
+                    ind_e.Status = (brakeNotch >= 9) ? true : false;
+                    ind_b8.Status = (brakeNotch >= 8) ? true : false;
+                    ind_b7.Status = (brakeNotch >= 7) ? true : false;
+                    ind_b6.Status = (brakeNotch >= 6) ? true : false;
+                    ind_b5.Status = (brakeNotch >= 5) ? true : false;
+                    ind_b4.Status = (brakeNotch >= 4) ? true : false;
+                    ind_b3.Status = (brakeNotch >= 3) ? true : false;
+                    ind_b2.Status = (brakeNotch >= 2) ? true : false;
+                    ind_b1.Status = (brakeNotch >= 1) ? true : false;
+                    ind_n.Status = (brakeNotch == 0 || powerNotch == 0) ? true : false;
+                    ind_p1.Status = (powerNotch >= 1) ? true : false;
+                    ind_p2.Status = (powerNotch >= 2) ? true : false;
+                    ind_p3.Status = (powerNotch >= 3) ? true : false;
+                    ind_p4.Status = (powerNotch >= 4) ? true : false;
+                    ind_p5.Status = (powerNotch >= 5) ? true : false;
+                }
+                // メトロ
                 if (panel[92] != 0 && panel[56] == 0)
                 {   // 通常時
                     ind_off.Status = false;
