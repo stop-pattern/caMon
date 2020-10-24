@@ -116,10 +116,12 @@ namespace caMon.pages.TIS.pages
                 switch (panel[92])
                 {
                     case 1:
-                        //MainFrame.Source = new Uri("@");
+                        MainFrame.Source = new Uri(@"./indicator/TRTA.xaml", UriKind.Relative);
+                        break;
+                    case 3:
+                        MainFrame.Source = new Uri(@"./indicator/TRTA.xaml", UriKind.Relative);
                         break;
                     case 2:
-                    case 3:
                     case 4:
                     case 0:
                     default:
