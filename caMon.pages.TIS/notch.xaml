@@ -39,7 +39,7 @@
     </Page.Resources>
 
     <Viewbox>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="750">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="700">
             <Border>
                 <local:CustomIndicator x:Name="ind_off" Status="False" Text="OFF" OnBrush="{StaticResource cR}" OffBrush="{StaticResource cW}"/>
             </Border>
