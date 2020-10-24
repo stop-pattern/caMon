@@ -119,7 +119,7 @@ namespace caMon.pages.TIS.pages
                         MainFrame.Source = new Uri(@"./indicator/TRTA.xaml", UriKind.Relative);
                         break;
                     case 3:
-                        MainFrame.Source = new Uri(@"./indicator/TRTA.xaml", UriKind.Relative);
+                        MainFrame.Source = new Uri(@"./indicator/TKK.xaml", UriKind.Relative);
                         break;
                     case 2:
                     case 4:
