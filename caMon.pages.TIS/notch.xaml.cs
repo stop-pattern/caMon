@@ -31,6 +31,7 @@ namespace caMon.pages.TIS
         int reverserPosition;
         bool door = false;
         Spec spec;
+        bool updateFlag = false;
 
         List<int> panel = new List<int>();
 
@@ -54,6 +55,7 @@ namespace caMon.pages.TIS
         /// </summary>
         private void SMemLib_BIDSSMemChanged(object sender, ValueChangedEventArgs<BIDSSharedMemoryData> e)
         {
+            updateFlag = true;
             BIDSSMemIsEnabled = e.NewValue.IsEnabled;
 
             brakeNotch = e.NewValue.HandleData.B;
@@ -78,6 +80,63 @@ namespace caMon.pages.TIS
         /// </summary>
         private void Timer_Tick(object sender, object e)
         {
+            if (updateFlag)
+            {
+                if (8 > spec.J)
+                {
+                    ind_b8.Visibility = Visibility.Hidden;
+                    if (7 > spec.J)
+                    {
+                        ind_b7.Visibility = Visibility.Hidden;
+                        if (6 > spec.J)
+                        {
+                            ind_b6.Visibility = Visibility.Hidden;
+                            if (5 > spec.J)
+                            {
+                                ind_b5.Visibility = Visibility.Hidden;
+                                if (4 > spec.J)
+                                {
+                                    ind_b4.Visibility = Visibility.Hidden;
+                                    if (3 > spec.J)
+                                    {
+                                        ind_b3.Visibility = Visibility.Hidden;
+                                        if (2 > spec.J)
+                                        {
+                                            ind_b2.Visibility = Visibility.Hidden;
+                                            if (1 > spec.J)
+                                            {
+                                                ind_b1.Visibility = Visibility.Hidden;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (5 > spec.P)
+                {
+                    ind_p5.Visibility = Visibility.Hidden;
+                    if (4 > spec.P)
+                    {
+                        ind_p4.Visibility = Visibility.Hidden;
+                        if (3 > spec.P)
+                        {
+                            ind_p3.Visibility = Visibility.Hidden;
+                            if (2 > spec.P)
+                            {
+                                ind_p2.Visibility = Visibility.Hidden;
+                                if (1 > spec.P)
+                                {
+                                    ind_p1.Visibility = Visibility.Hidden;
+                                }
+                            }
+                        }
+                    }
+                }
+                updateFlag = false;
+            }
+
             if (BIDSSMemIsEnabled && panel?.Count > 0/* && sound?.Count > 0*/)
             {
                 if (panel[92] != 0 && panel[56] == 0)
