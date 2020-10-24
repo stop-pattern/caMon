@@ -44,8 +44,8 @@
 
         <!--#region FD -->
         <Grid Grid.Column="3" Grid.Row="3">
-            <custom:CustomIndicator x:Name="PlatformDoorGreen" Status="False" Text="ﾎｰﾑﾄﾞｱ" OnBrush="LimeGreen" OffBrush="LimeGreen" TextBrush="Black" Margin="0,15"/>
-            <custom:CustomIndicator x:Name="PlatformDoorWhite" Visibility="Hidden" Status="False" Text="ﾎｰﾑﾄﾞｱ" OffBrush="White" Margin="0,15"/>
+            <custom:CustomIndicator x:Name="PlatformDoorGreen" Status="False" Text="ホームドア" OnBrush="LimeGreen" OffBrush="LimeGreen" TextBrush="Black" Margin="0,15"/>
+            <custom:CustomIndicator x:Name="PlatformDoorWhite" Visibility="Hidden" Status="False" Text="ホームドア" OffBrush="White" Margin="0,15"/>
         </Grid>
         <!--#endregion-->
 
