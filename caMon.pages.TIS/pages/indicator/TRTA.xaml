@@ -37,9 +37,9 @@
         </Grid.RowDefinitions>
 
         <!--#region ハンドル -->
-        <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="3">
+        <Viewbox Stretch="Fill" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3">
             <Frame Source="../../notch.xaml"/>
-        </Grid>
+        </Viewbox>
         <!--#endregion-->
 
         <!--#region FD -->
