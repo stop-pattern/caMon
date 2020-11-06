@@ -146,6 +146,8 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
+            <custom:CustomIndicator Text="情報伝送故障" Grid.Row="0"/>
+            <custom:CustomIndicator Text="ＴＩＳ試験" Grid.Row="1"/>
         </Grid>
         <!--#endregion-->
 
