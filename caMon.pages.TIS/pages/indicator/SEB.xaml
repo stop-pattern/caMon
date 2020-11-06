@@ -61,13 +61,13 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <custom:CustomIndicator x:Name="AtsNormal" Text="ＡＴＳ正常" OnBrush="Red" Grid.Row="0"/>
+            <custom:CustomIndicator x:Name="AtsNormal" Text="ＡＴＳ正常" Grid.Row="0"/>
             <custom:CustomIndicator x:Name="Braking" Text="動　作" Grid.Row="1"/>
             <custom:CustomIndicator x:Name="Stop" Text="停　車" Grid.Row="2"/>
             <custom:CustomIndicator x:Name="Failure" Text="故　障" Grid.Row="3"/>
             <custom:CustomIndicator x:Name="SpeedLimit" Text="速　制" Grid.Row="4"/>
             <custom:CustomIndicator x:Name="Confirm" Text="確　認" Grid.Row="5"/>
-            <custom:CustomIndicator x:Name="EmerBrake" Text="非常ﾌﾞﾚｰｷ" Grid.Row="6"/>
+            <custom:CustomIndicator x:Name="EmerBrake" Text="非常ﾌﾞﾚｰｷ" OnBrush="Red" Grid.Row="6"/>
         </Grid>
         <!--#endregion-->
 
