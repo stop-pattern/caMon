@@ -67,7 +67,47 @@
             <custom:CustomIndicator x:Name="Failure" Text="故　障" Grid.Row="3"/>
             <custom:CustomIndicator x:Name="SpeedLimit" Text="速　制" Grid.Row="4"/>
             <custom:CustomIndicator x:Name="Confirm" Text="確　認" Grid.Row="5"/>
-            <custom:CustomIndicator x:Name="EmerBrake" Text="非常ﾌﾞﾚｰｷ" OnBrush="Red" Grid.Row="6"/>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region 中上 -->
+        <Grid Grid.Column="7" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <custom:CustomIndicator x:Name="AtcService" Text="ＡＴＣ常用" Grid.Row="0"/>
+            <custom:CustomIndicator x:Name="AtcEmergency" Text="ＡＴＣ非常" Grid.Row="1"/>
+            <custom:CustomIndicator x:Name="EmrDrive" Text="非常運転" Grid.Row="2"/>
+            <custom:CustomIndicator x:Name="Atc" Text="ＡＴＣ" Grid.Row="3"/>
+            <custom:CustomIndicator x:Name="Inside" Text="構　内" Grid.Row="4"/>
+            <custom:CustomIndicator x:Name="NotInstitutionalized" Text="非　設" Grid.Row="5"/>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region 右上 -->
+        <Grid Grid.Column="9" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <custom:CustomIndicator x:Name="PlatformDoorInterlocking" Text="ﾎｰﾑﾄﾞｱ連動" Grid.Row="0"/>
+            <custom:CustomIndicator x:Name="PlatformDoorNotInterlocking" Text="ﾎｰﾑﾄﾞｱ非連動" Grid.Row="1"/>
+            <custom:CustomIndicator Text="ｽﾃｯﾌﾟ支障" Grid.Row="2"/>
+            <custom:CustomIndicator Text="ﾎｰﾑﾄﾞｱ支障" Grid.Row="3"/>
+            <custom:CustomIndicator Text="起動試験" Grid.Row="5"/>
         </Grid>
         <!--#endregion-->
 
