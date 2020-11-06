@@ -111,5 +111,42 @@
         </Grid>
         <!--#endregion-->
 
+        <!--#region 左下 -->
+        <Grid Grid.Column="5" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <custom:CustomIndicator Text="圧着ﾌﾞﾚｰｷ" Grid.Row="0"/>
+            <custom:CustomIndicator x:Name="NonRegenerative" Text="回生開放" Grid.Row="1"/>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region 中下 -->
+        <Grid Grid.Column="7" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <custom:CustomIndicator x:Name="Tasc" Text="ＴＡＳＣ" Grid.Row="0"/>
+            <custom:CustomIndicator x:Name="TascBrake" Text="ＴＡＳＣ制御" Grid.Row="1"/>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region 右下 -->
+        <Grid Grid.Column="9" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+        </Grid>
+        <!--#endregion-->
+
     </Grid>
 </Page>
