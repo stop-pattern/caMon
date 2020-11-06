@@ -121,6 +121,7 @@
 
             <custom:CustomIndicator x:Name="CrimpingBrake" Text="圧着ﾌﾞﾚｰｷ" Grid.Row="0"/>
             <custom:CustomIndicator x:Name="NonRegenerative" Text="回生開放" Grid.Row="1"/>
+            <custom:CustomIndicator x:Name="HighBeam" Text="ハイビーム" Grid.Row="2"/>
         </Grid>
         <!--#endregion-->
 

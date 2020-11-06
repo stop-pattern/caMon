@@ -110,11 +110,10 @@ namespace caMon.pages.TIS.pages.indicator
 
                 CrimpingBrake.Status = toBool(panel[176]);
                 //NonRegenerative.Status = toBool(panel[171]);    //廃止
+                HighBeam.Status = toBool(panel[50]);
 
                 Tasc.Status = toBool(panel[136]);
                 TascControl.Status = toBool(panel[138]);
-
-                //HighBeam.Status = toBool(panel[50]);
             }
         }
 
