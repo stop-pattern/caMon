@@ -35,6 +35,12 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
-        
+
+        <!--#region ハンドル -->
+        <Viewbox Stretch="Fill" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3">
+            <Frame Source="../../notch.xaml"/>
+        </Viewbox>
+        <!--#endregion-->
+
     </Grid>
 </Page>
