@@ -97,6 +97,7 @@ namespace caMon.pages.TIS.pages.indicator
                 Failure.Status = false;
                 SpeedLimit.Status = toBool(panel[49]);
                 Confirm.Status = toBool(panel[48]);
+                EmerBrake.Status = (panel[55] == 9);
 
                 AtcService.Status = toBool(panel[26]);
                 AtcEmergency.Status = toBool(panel[25]);
