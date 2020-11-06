@@ -119,7 +119,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <custom:CustomIndicator Text="圧着ﾌﾞﾚｰｷ" Grid.Row="0"/>
+            <custom:CustomIndicator x:Name="CrimpingBrake" Text="圧着ﾌﾞﾚｰｷ" Grid.Row="0"/>
             <custom:CustomIndicator x:Name="NonRegenerative" Text="回生開放" Grid.Row="1"/>
         </Grid>
         <!--#endregion-->
@@ -133,7 +133,7 @@
             </Grid.RowDefinitions>
 
             <custom:CustomIndicator x:Name="Tasc" Text="ＴＡＳＣ" Grid.Row="0"/>
-            <custom:CustomIndicator x:Name="TascBrake" Text="ＴＡＳＣ制御" Grid.Row="1"/>
+            <custom:CustomIndicator x:Name="TascControl" Text="ＴＡＳＣ制御" Grid.Row="1"/>
         </Grid>
         <!--#endregion-->
 

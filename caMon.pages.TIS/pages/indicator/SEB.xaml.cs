@@ -72,6 +72,49 @@ namespace caMon.pages.TIS.pages.indicator
         {
             if (BIDSSMemIsEnabled && panel?.Count > 0)
             {
+                switch (panel[192])
+                {
+                    default:
+                    case 0: // 範囲外
+                        PlatformDoorGreen.Status = true;
+                        PlatformDoorGreen.Visibility = Visibility.Visible;
+                        PlatformDoorWhite.Visibility = Visibility.Hidden;
+                        break;
+                    case 1: // 範囲内
+                        PlatformDoorGreen.Status = !toBool(panel[181]);
+                        PlatformDoorGreen.Visibility = Visibility.Visible;
+                        PlatformDoorWhite.Visibility = Visibility.Hidden;
+                        break;
+                    case 2: // ドア開
+                        PlatformDoorGreen.Visibility = Visibility.Hidden;
+                        PlatformDoorWhite.Visibility = Visibility.Visible;
+                        break;
+                }
+
+                AtsNormal.Status = toBool(panel[46]);
+                Braking.Status = toBool(panel[47]);
+                Stop.Status = toBool(panel[253]);
+                Failure.Status = false;
+                SpeedLimit.Status = toBool(panel[49]);
+                Confirm.Status = toBool(panel[48]);
+
+                AtcService.Status = toBool(panel[26]);
+                AtcEmergency.Status = toBool(panel[25]);
+                EmrDrive.Status = false;
+                Atc.Status = toBool(panel[20]);
+                Inside.Status = toBool(panel[33]);
+                NotInstitutionalized.Status = toBool(panel[30]);
+
+                PlatformDoorInterlocking.Status = panel[155] == 1 ? true : false;
+                PlatformDoorNotInterlocking.Status = panel[155] == 2 ? true : false;
+
+                CrimpingBrake.Status = toBool(panel[176]);
+                //NonRegenerative.Status = toBool(panel[171]);    //廃止
+
+                Tasc.Status = toBool(panel[136]);
+                TascControl.Status = toBool(panel[138]);
+
+                //HighBeam.Status = toBool(panel[50]);
             }
         }
 
