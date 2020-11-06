@@ -103,7 +103,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <custom:CustomIndicator x:Name="PlatformDoorInterlocking" Text="ﾎｰﾑﾄﾞｱ連動" Grid.Row="0"/>
+            <custom:CustomIndicator x:Name="PlatformDoorInterlocking" Text="ﾎｰﾑﾄﾞｱ連動" OnBrush="LimeGreen" Grid.Row="0"/>
             <custom:CustomIndicator x:Name="PlatformDoorNotInterlocking" Text="ﾎｰﾑﾄﾞｱ非連動" Grid.Row="1"/>
             <custom:CustomIndicator Text="ｽﾃｯﾌﾟ支障" Grid.Row="2"/>
             <custom:CustomIndicator Text="ﾎｰﾑﾄﾞｱ支障" Grid.Row="3"/>
