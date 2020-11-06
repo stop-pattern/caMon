@@ -121,8 +121,10 @@ namespace caMon.pages.TIS.pages
                     case 3:
                         MainFrame.Source = new Uri(@"./indicator/TKK.xaml", UriKind.Relative);
                         break;
-                    case 2:
                     case 4:
+                        MainFrame.Source = new Uri(@"./indicator/SEB.xaml", UriKind.Relative);
+                        break;
+                    case 2:
                     case 0:
                     default:
                         break;
