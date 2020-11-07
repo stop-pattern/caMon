@@ -79,15 +79,92 @@
 
         <!-- ドア表示 -->
         <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="4*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+
+            <!--#region  -->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region 凡例 -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--#region 開 -->
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Fill="HotPink" Grid.Row="1" Grid.Column="1"/>
+                    <Border VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2">
+                        <TextBlock TextAlignment="Center" Foreground="LimeGreen" Text=" : 開"/>
+                    </Border>
+                </Grid>
+                <!--#endregion-->
+
+                <!--#region 閉 -->
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Fill="White" Grid.Row="1" Grid.Column="1"/>
+                    <Border VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2">
+                        <TextBlock TextAlignment="Center" Foreground="LimeGreen" Text=" : 閉"/>
+                    </Border>
+                </Grid>
+                <!--#endregion-->
+
+                <!--#region 異常 -->
+                <Grid Grid.Column="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Fill="Red" Grid.Row="1" Grid.Column="1"/>
+                    <Border VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2">
+                        <TextBlock TextAlignment="Center" Foreground="LimeGreen" Text=" : 異常"/>
+                    </Border>
+                </Grid>
+                <!--#endregion-->
+
+            </Grid>
+            <!--#endregion-->
+
         </Grid>
 
     </Grid>
