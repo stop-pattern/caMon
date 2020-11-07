@@ -231,30 +231,26 @@ namespace caMon.pages.TIS.pages.driving
                 TrainKindText.Foreground = new SolidColorBrush(trainKind[panel[(int)panelIndex.TrainKind]].Item2);
 
                 /// ドア
-                if (DoorFlag)
-                {
-                    doorl0.Background = GetBrush(IsDoorClosed);
-                    doorl1.Background = GetBrush(IsDoorClosed);
-                    doorl2.Background = GetBrush(IsDoorClosed);
-                    doorl3.Background = GetBrush(IsDoorClosed);
-                    doorl4.Background = GetBrush(IsDoorClosed);
-                    doorl5.Background = GetBrush(IsDoorClosed);
-                    doorl6.Background = GetBrush(IsDoorClosed);
-                    doorl7.Background = GetBrush(IsDoorClosed);
-                    doorl8.Background = GetBrush(IsDoorClosed);
-                    doorl9.Background = GetBrush(IsDoorClosed);
-                    doorr0.Background = GetBrush(IsDoorClosed);
-                    doorr1.Background = GetBrush(IsDoorClosed);
-                    doorr2.Background = GetBrush(IsDoorClosed);
-                    doorr3.Background = GetBrush(IsDoorClosed);
-                    doorr4.Background = GetBrush(IsDoorClosed);
-                    doorr5.Background = GetBrush(IsDoorClosed);
-                    doorr6.Background = GetBrush(IsDoorClosed);
-                    doorr7.Background = GetBrush(IsDoorClosed);
-                    doorr8.Background = GetBrush(IsDoorClosed);
-                    doorr9.Background = GetBrush(IsDoorClosed);
-                    DoorFlag = false;
-                }
+                doorl0.Background = GetBrush(IsDoorClosed);
+                doorl1.Background = GetBrush(IsDoorClosed);
+                doorl2.Background = GetBrush(IsDoorClosed);
+                doorl3.Background = GetBrush(IsDoorClosed);
+                doorl4.Background = GetBrush(IsDoorClosed);
+                doorl5.Background = GetBrush(IsDoorClosed);
+                doorl6.Background = GetBrush(IsDoorClosed);
+                doorl7.Background = GetBrush(IsDoorClosed);
+                doorl8.Background = GetBrush(IsDoorClosed);
+                doorl9.Background = GetBrush(IsDoorClosed);
+                doorr0.Background = GetBrush(IsDoorClosed);
+                doorr1.Background = GetBrush(IsDoorClosed);
+                doorr2.Background = GetBrush(IsDoorClosed);
+                doorr3.Background = GetBrush(IsDoorClosed);
+                doorr4.Background = GetBrush(IsDoorClosed);
+                doorr5.Background = GetBrush(IsDoorClosed);
+                doorr6.Background = GetBrush(IsDoorClosed);
+                doorr7.Background = GetBrush(IsDoorClosed);
+                doorr8.Background = GetBrush(IsDoorClosed);
+                doorr9.Background = GetBrush(IsDoorClosed);
             }
             else
             {
