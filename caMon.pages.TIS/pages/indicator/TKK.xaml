@@ -1,0 +1,151 @@
+﻿<Page x:Class="caMon.pages.TIS.pages.indicator.TKK"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:caMon.pages.TIS.pages.indicator"
+      xmlns:custom="clr-namespace:caMon.pages.TIS"
+      mc:Ignorable="d" 
+      d:DesignHeight="380" d:DesignWidth="640"
+      Title="TKK">
+    <Page.Resources>
+        <Style TargetType="custom:CustomIndicator">
+            <Setter Property="OnBrush" Value="Orange"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="Black" Height="380" Width="640">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="1.75*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="15"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+
+        <!--#region ハンドル -->
+        <Viewbox Stretch="Fill" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3">
+            <Frame Source="../../notch.xaml"/>
+        </Viewbox>
+        <!--#endregion-->
+
+        <!--#region FD -->
+        <Grid Grid.Column="3" Grid.Row="3">
+            <custom:CustomIndicator x:Name="PlatformDoorGreen" Status="False" Text="ホームドア" OnBrush="LimeGreen" OffBrush="LimeGreen" TextBrush="Black" Margin="0,15"/>
+            <custom:CustomIndicator x:Name="PlatformDoorWhite" Visibility="Hidden" Status="False" Text="ホームドア" OffBrush="White" Margin="0,15"/>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region 左上 -->
+        <Grid Grid.Column="5" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <custom:CustomIndicator x:Name="EmrDrive" Text="非常運転" OnBrush="Red" Grid.Row="0"/>
+            <custom:CustomIndicator x:Name="Tasc" Text="ＴＡＳＣ" Grid.Row="2"/>
+            <custom:CustomIndicator x:Name="Atc" Text="ＡＴＣ" Grid.Row="3"/>
+            <custom:CustomIndicator x:Name="Shunting" Text="入　換" Grid.Row="4"/>
+            <custom:CustomIndicator x:Name="Inside" Text="構　内" Grid.Row="5"/>
+            <custom:CustomIndicator x:Name="NotInstitutionalized" Text="非　設" Grid.Row="6"/>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region 中上 -->
+        <Grid Grid.Column="7" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <custom:CustomIndicator x:Name="AtcEmergency" Text="ＡＴＣ非常" Grid.Row="0"/>
+            <custom:CustomIndicator x:Name="AtcService" Text="ＡＴＣ常用" Grid.Row="1"/>
+            <custom:CustomIndicator x:Name="TascControl" Text="TASC制御" Grid.Row="2"/>
+            <custom:CustomIndicator x:Name="SnowResistant" Text="耐雪ﾌﾞﾚｰｷ" Grid.Row="3"/>
+            <custom:CustomIndicator x:Name="NonRegenerative" Text="回生開放" Grid.Row="4"/>
+            <custom:CustomIndicator x:Name="EmrBrake" Text="非常ﾌﾞﾚｰｷ" OnBrush="Red" TextBrush="White" Grid.Row="5"/>
+            <custom:CustomIndicator x:Name="NonControl" Text="制御開放" Grid.Row="6"/>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region 右上 -->
+        <Grid Grid.Column="9" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <custom:CustomIndicator x:Name="PlatformDoorInterlocking" Text="ﾎｰﾑﾄﾞｱ連動" OnBrush="LimeGreen" Grid.Row="0"/>
+            <custom:CustomIndicator x:Name="PlatformDoorNotInterlocking" Text="ﾎｰﾑﾄﾞｱ非連動" Grid.Row="1"/>
+            <custom:CustomIndicator Text="ﾎｰﾑﾄﾞｱ支障" Grid.Row="3"/>
+            <custom:CustomIndicator Text="起動試験" Grid.Row="5"/>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region 左下 -->
+        <Grid Grid.Column="5" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <custom:CustomIndicator x:Name="HighBeam" Text="ハイビーム" Grid.Row="0"/>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region 中下 -->
+        <Grid Grid.Column="7" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <custom:CustomIndicator Text="情報伝送故障" Grid.Row="0"/>
+            <custom:CustomIndicator Text="ＴＩＳ試験" Grid.Row="1"/>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region 右下 -->
+        <Grid Grid.Column="9" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+        </Grid>
+        <!--#endregion-->
+
+    </Grid>
+</Page>

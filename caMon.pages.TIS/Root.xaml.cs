@@ -141,8 +141,6 @@ namespace caMon.pages.TIS
         /// </summary>
         private void Timer_Tick(object sender, object e)
         {
-            TimerStart();
-
             switch (status)
             {
                 case PageStatus.CannotLoadPages:
@@ -180,7 +178,7 @@ namespace caMon.pages.TIS
                     textMessage.Visibility = Visibility.Collapsed;
                     contentLabel.Content = "◆　" + PageStatus.Indicator + "　◆";
                     mainFrame.Visibility = Visibility.Visible;
-                    //mainFrame.Source = new Uri(@"Pages\Indicator.xaml", UriKind.Relative);
+                    mainFrame.Source = new Uri(@"Pages\Indicator.xaml", UriKind.Relative);
                     break;
                 case PageStatus.Driver:
                     mainFrameCover.Visibility = Visibility.Collapsed;
