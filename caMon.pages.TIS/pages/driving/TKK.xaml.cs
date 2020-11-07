@@ -137,6 +137,8 @@ namespace caMon.pages.TIS.pages.driving
         readonly DispatcherTimer timer = new DispatcherTimer();  /// <summary> ループタイマー </summary>
         const int timerInterval = 10;
         bool BIDSSMemIsEnabled = false;
+        bool IsDoorClosed = false;
+        bool DoorFlag = false;
         Spec spec;
 
         List<int> panel = new List<int>();
@@ -149,6 +151,8 @@ namespace caMon.pages.TIS.pages.driving
             SharedFuncs.SML.SMC_OpenDChanged += SMemLib_OpenChanged;
             SharedFuncs.SML.SMC_PanelDChanged += SMemLib_PanelChanged;
             SharedFuncs.SML.SMC_SoundDChanged += SMemLib_SoundChanged;
+
+            DoorFlag = true;
 
             panel = new List<int>();
             sound = new List<int>();
@@ -164,6 +168,12 @@ namespace caMon.pages.TIS.pages.driving
         private void SMemLib_BIDSSMemChanged(object sender, ValueChangedEventArgs<BIDSSharedMemoryData> e)
         {
             BIDSSMemIsEnabled = e.NewValue.IsEnabled;
+
+            if (e.OldValue.IsDoorClosed != e.NewValue.IsDoorClosed)
+            {
+                DoorFlag = true;
+                IsDoorClosed = e.NewValue.IsDoorClosed;
+            }
 
             spec = e.NewValue.SpecData;
         }
@@ -219,6 +229,32 @@ namespace caMon.pages.TIS.pages.driving
                 TrainKind.Visibility = Visibility.Visible;
                 TrainKindText.Text = trainKind[panel[(int)panelIndex.TrainKind]].Item1;
                 TrainKindText.Foreground = new SolidColorBrush(trainKind[panel[(int)panelIndex.TrainKind]].Item2);
+
+                /// ドア
+                if (DoorFlag)
+                {
+                    doorl0.Background = GetBrush(IsDoorClosed);
+                    doorl1.Background = GetBrush(IsDoorClosed);
+                    doorl2.Background = GetBrush(IsDoorClosed);
+                    doorl3.Background = GetBrush(IsDoorClosed);
+                    doorl4.Background = GetBrush(IsDoorClosed);
+                    doorl5.Background = GetBrush(IsDoorClosed);
+                    doorl6.Background = GetBrush(IsDoorClosed);
+                    doorl7.Background = GetBrush(IsDoorClosed);
+                    doorl8.Background = GetBrush(IsDoorClosed);
+                    doorl9.Background = GetBrush(IsDoorClosed);
+                    doorr0.Background = GetBrush(IsDoorClosed);
+                    doorr1.Background = GetBrush(IsDoorClosed);
+                    doorr2.Background = GetBrush(IsDoorClosed);
+                    doorr3.Background = GetBrush(IsDoorClosed);
+                    doorr4.Background = GetBrush(IsDoorClosed);
+                    doorr5.Background = GetBrush(IsDoorClosed);
+                    doorr6.Background = GetBrush(IsDoorClosed);
+                    doorr7.Background = GetBrush(IsDoorClosed);
+                    doorr8.Background = GetBrush(IsDoorClosed);
+                    doorr9.Background = GetBrush(IsDoorClosed);
+                    DoorFlag = false;
+                }
             }
             else
             {
@@ -233,7 +269,42 @@ namespace caMon.pages.TIS.pages.driving
 
                 /// 種別
                 TrainKind.Visibility = Visibility.Collapsed;
+
+                /// ドア
+                Brush doorClose = new SolidColorBrush(Colors.White);
+                doorl0.Background = GetBrush(true);
+                doorl1.Background = GetBrush(true);
+                doorl2.Background = GetBrush(true);
+                doorl3.Background = GetBrush(true);
+                doorl4.Background = GetBrush(true);
+                doorl5.Background = GetBrush(true);
+                doorl6.Background = GetBrush(true);
+                doorl7.Background = GetBrush(true);
+                doorl8.Background = GetBrush(true);
+                doorl9.Background = GetBrush(true);
+                doorr0.Background = GetBrush(true);
+                doorr1.Background = GetBrush(true);
+                doorr2.Background = GetBrush(true);
+                doorr3.Background = GetBrush(true);
+                doorr4.Background = GetBrush(true);
+                doorr5.Background = GetBrush(true);
+                doorr6.Background = GetBrush(true);
+                doorr7.Background = GetBrush(true);
+                doorr8.Background = GetBrush(true);
+                doorr9.Background = GetBrush(true);
             }
+        }
+
+        /// <summary>
+        /// ドア色変更
+        /// </summary>
+        /// <param name="arg">isDoorClosed?</param>
+        /// <returns></returns>
+        Brush GetBrush(bool arg)
+        {
+            Brush doorOpen = new SolidColorBrush(Colors.HotPink);
+            Brush doorClose = new SolidColorBrush(Colors.White);
+            return arg ? doorClose : doorOpen;
         }
     }
 }

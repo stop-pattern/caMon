@@ -155,29 +155,29 @@
                     <!--#endregion-->
 
                     <!--#region 海側ドア(2) -->
-                    <Border Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="0"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="1"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="2"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="3"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="4"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="5"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="6"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="7"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="8"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="9"/>
+                    <Border x:Name="doorl0" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="0"/>
+                    <Border x:Name="doorl1" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="1"/>
+                    <Border x:Name="doorl2" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="2"/>
+                    <Border x:Name="doorl3" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="3"/>
+                    <Border x:Name="doorl4" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="4"/>
+                    <Border x:Name="doorl5" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="5"/>
+                    <Border x:Name="doorl6" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="6"/>
+                    <Border x:Name="doorl7" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="7"/>
+                    <Border x:Name="doorl8" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="8"/>
+                    <Border x:Name="doorl9" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="9"/>
                     <!--#endregion-->
 
                     <!--#region 山側ドア(1) -->
-                    <Border Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="0"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="1"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="2"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="3"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="4"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="5"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="6"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="7"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="8"/>
-                    <Border Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="9"/>
+                    <Border x:Name="doorr0" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="0"/>
+                    <Border x:Name="doorr1" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="1"/>
+                    <Border x:Name="doorr2" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="2"/>
+                    <Border x:Name="doorr3" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="3"/>
+                    <Border x:Name="doorr4" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="4"/>
+                    <Border x:Name="doorr5" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="5"/>
+                    <Border x:Name="doorr6" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="6"/>
+                    <Border x:Name="doorr7" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="7"/>
+                    <Border x:Name="doorr8" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="8"/>
+                    <Border x:Name="doorr9" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="9"/>
                     <!--#endregion-->
                 </Grid>
             </Grid>
