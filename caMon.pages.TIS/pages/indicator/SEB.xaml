@@ -89,7 +89,7 @@
             <custom:CustomIndicator x:Name="Atc" Text="ＡＴＣ" Grid.Row="3"/>
             <custom:CustomIndicator x:Name="Inside" Text="構　内" Grid.Row="4"/>
             <custom:CustomIndicator x:Name="NotInstitutionalized" Text="非　設" Grid.Row="5"/>
-            <custom:CustomIndicator x:Name="nazo" Text="謎" Visibility="Collapsed" Grid.Row="6"/>
+            <custom:CustomIndicator x:Name="nazo" Text="制御開放" Visibility="Collapsed" Grid.Row="6"/>
         </Grid>
         <!--#endregion-->
 
