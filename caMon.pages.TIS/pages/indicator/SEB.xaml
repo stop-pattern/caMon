@@ -42,6 +42,91 @@
         </Viewbox>
         <!--#endregion-->
 
+        <!--#region 列選 -->
+        <Grid Grid.Column="3" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.6*"/>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border BorderBrush="White" BorderThickness="2" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="4">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.6*"/>
+                        <ColumnDefinition Width="1.4*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Viewbox HorizontalAlignment="Left" VerticalAlignment="Center" StretchDirection="UpOnly" Grid.Row="0" Grid.Column="1">
+                        <TextBlock x:Name="trainKind" Foreground="Red" TextAlignment="Center">
+                            種　別
+                        </TextBlock>
+                    </Viewbox>
+
+                    <Viewbox HorizontalAlignment="Left" VerticalAlignment="Center" StretchDirection="UpOnly" Grid.Row="1" Grid.Column="1">
+                        <TextBlock x:Name="trainDestination" Foreground="Red" TextAlignment="Center">
+                            行　先
+                        </TextBlock>
+                    </Viewbox>
+
+                    <Viewbox HorizontalAlignment="Left" VerticalAlignment="Center" StretchDirection="UpOnly" Grid.Row="2" Grid.Column="1">
+                        <TextBlock x:Name="trainNumber" Foreground="Red" TextAlignment="Center">
+                            列　番
+                        </TextBlock>
+                    </Viewbox>
+                </Grid>
+            </Border>
+            
+            <Border BorderBrush="White" BorderThickness="2" Grid.Row="1">
+                <Viewbox HorizontalAlignment="Left" VerticalAlignment="Center" StretchDirection="UpOnly">
+                    <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                    列情
+                    </TextBlock>
+                </Viewbox>
+            </Border>
+
+            <Viewbox HorizontalAlignment="Left" VerticalAlignment="Center" StretchDirection="UpOnly" Grid.Row="4">
+                <Label VerticalAlignment="Center">
+                    <TextBlock FontSize="12" Foreground="LimeGreen" TextAlignment="Center">
+                    通信中
+                    </TextBlock>
+                </Label>
+            </Viewbox>
+            <Viewbox  Grid.Row="4" Grid.Column="1">
+                <Ellipse Stroke="OrangeRed" Fill="Transparent" StrokeThickness="1"/>
+            </Viewbox>
+
+            <Viewbox HorizontalAlignment="Left" VerticalAlignment="Center" StretchDirection="UpOnly" Grid.Row="5">
+                <Label VerticalAlignment="Center">
+                    <TextBlock FontSize="12" Foreground="LimeGreen" TextAlignment="Center">
+                    照　合
+                    </TextBlock>
+                </Label>
+            </Viewbox>
+            <Viewbox  Grid.Row="5" Grid.Column="1">
+                <Ellipse Stroke="LimeGreen" Fill="LimeGreen" StrokeThickness="1"/>
+            </Viewbox>
+        </Grid>
+        <!--#endregion-->
+
         <!--#region FD -->
         <Grid Grid.Column="3" Grid.Row="3">
             <custom:CustomIndicator x:Name="PlatformDoorGreen" Status="False" Text="ホームドア" OnBrush="LimeGreen" OffBrush="LimeGreen" TextBrush="Black" Margin="0,15"/>
