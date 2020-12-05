@@ -3,17 +3,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:caMon.pages.TIS">
 
-
-    <Style TargetType="{x:Type local:CommandIndicator}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:CommandIndicator}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/CustomControls;component/CustomControls/CommandIndicator.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
 </ResourceDictionary>
