@@ -132,9 +132,9 @@ namespace caMon.pages.TIS.CustomControls
                 typeof(CommandIndicator),
                 new UIPropertyMetadata()
             );
-        public Brush UpBorderThickness
+        public Thickness UpBorderThickness
         {
-            get { return (Brush)GetValue(UpBorderThicknessProperty); }
+            get { return (Thickness)GetValue(UpBorderThicknessProperty); }
             set { SetValue(UpBorderThicknessProperty, value); }
         }
 
@@ -180,9 +180,9 @@ namespace caMon.pages.TIS.CustomControls
                 typeof(CommandIndicator),
                 new UIPropertyMetadata()
             );
-        public Brush DownBorderThickness
+        public Thickness DownBorderThickness
         {
-            get { return (Brush)GetValue(DownBorderThicknessProperty); }
+            get { return (Thickness)GetValue(DownBorderThicknessProperty); }
             set { SetValue(DownBorderThicknessProperty, value); }
         }
     }
