@@ -44,18 +44,15 @@ namespace caMon.pages.TIS.CustomControls
     /// </summary>
     public class CommandIndicator : Control
     {
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         static CommandIndicator()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CommandIndicator), new FrameworkPropertyMetadata(typeof(CommandIndicator)));
         }
-        /// <summary>
-        /// コンストラクタ
-        /// </summary>
         public CommandIndicator()
         {
-            this.Status = true;
-            this.UpBackground = new SolidColorBrush(Colors.Blue);
-            this.DownBackground = new SolidColorBrush(Colors.White);
         }
 
         /// <summary>
