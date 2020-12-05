@@ -6,7 +6,7 @@
 
     
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/CustomControls;component/CustomControls/CommandIndicator.xaml" />
+        <ResourceDictionary Source="/caMon.pages.TIS;component/CustomControls/CommandIndicator.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>
