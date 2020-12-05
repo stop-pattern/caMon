@@ -44,7 +44,7 @@
         <!--#endregion-->
         
         <!--#region 指令テスト表示 -->
-        <CustomControls:CommandIndicator/>
+        <CustomControls:CommandIndicator UpBackground="Blue" DownBackground="White" />
         <!--#endregion-->
 
         <!--#region FD -->
