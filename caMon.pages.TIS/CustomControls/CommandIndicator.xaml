@@ -18,18 +18,59 @@
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
 
-                                <Border Name="Up"
+                                <!--#region 上半分 -->
+                                <Border Grid.Row="0"
                                     Background="{TemplateBinding UpBackground}"
                                     BorderBrush="{TemplateBinding UpBorderBrush}"
                                     BorderThickness="{TemplateBinding UpBorderThickness}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="8*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="8*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
 
+                                        <Viewbox Grid.Row="1" Grid.Column="1">
+                                            <TextBlock Text="TemplateBinding"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Foreground="White"/>
+                                        </Viewbox>
+                                    </Grid>
                                 </Border>
-                                <Border x:Name="Down"
+                                <!--#endregion-->
+
+                                <!--#region 下半分 -->
+                                <Border Grid.Row="1"
                                     Background="{TemplateBinding DownBackground}"
                                     BorderBrush="{TemplateBinding DownBorderBrush}"
                                     BorderThickness="{TemplateBinding DownBorderThickness}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="8*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="8*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
 
+                                        <Viewbox Grid.Row="1" Grid.Column="1">
+                                            <TextBlock Text="TemplateBinding"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Foreground="Black"/>
+                                        </Viewbox>
+                                    </Grid>
                                 </Border>
+                                <!--#endregion-->
 
                             </Grid>
                         </Border>
