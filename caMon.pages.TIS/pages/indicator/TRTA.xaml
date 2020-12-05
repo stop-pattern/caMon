@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:caMon.pages.TIS.pages.indicator"
       xmlns:custom="clr-namespace:caMon.pages.TIS"
+      xmlns:CustomControls="clr-namespace:caMon.pages.TIS.CustomControls"
       mc:Ignorable="d" 
       d:DesignHeight="380" d:DesignWidth="640"
       Title="TRTA">
@@ -43,7 +44,7 @@
         <!--#endregion-->
         
         <!--#region 指令テスト表示 -->
-        <custom:CommandIndicator/>
+        <CustomControls:CommandIndicator/>
         <!--#endregion-->
 
         <!--#region FD -->

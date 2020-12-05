@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace caMon.pages.TIS
+namespace caMon.pages.TIS.CustomControls
 {
     /// <summary>
     /// このカスタム コントロールを XAML ファイルで使用するには、手順 1a または 1b の後、手順 2 に従います。
@@ -47,6 +47,143 @@ namespace caMon.pages.TIS
         static CommandIndicator()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CommandIndicator), new FrameworkPropertyMetadata(typeof(CommandIndicator)));
+        }
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        public CommandIndicator()
+        {
+            this.Status = true;
+            this.UpBackground = new SolidColorBrush(Colors.Blue);
+            this.DownBackground = new SolidColorBrush(Colors.White);
+        }
+
+        /// <summary>
+        /// 表示
+        /// </summary>
+        public static readonly DependencyProperty StatusProperty =
+            DependencyProperty.Register(
+                "Status",
+                typeof(bool),
+                typeof(CommandIndicator),
+                new UIPropertyMetadata(
+                    false,
+                    new PropertyChangedCallback(
+                        (sender, e) =>
+                            {
+                                (sender as CommandIndicator).OnStatusPropertyChanged(sender, e);
+                            }
+                        )
+                    )
+            );
+        public bool Status
+        {
+            get { return (bool)GetValue(StatusProperty); }
+            set { SetValue(StatusProperty, value); }
+        }
+        private void OnStatusPropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+        {
+            switch (e.NewValue)
+            {
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 上側背景
+        /// </summary>
+        public static readonly DependencyProperty UpBackgroundProperty =
+            DependencyProperty.Register(
+                "UpBackground",
+                typeof(Brush),
+                typeof(CommandIndicator),
+                new UIPropertyMetadata(Brushes.Transparent)
+            );
+        public Brush UpBackground
+        {
+            get { return (Brush)GetValue(UpBackgroundProperty); }
+            set { SetValue(UpBackgroundProperty, value); }
+        }
+
+        /// <summary>
+        /// 上側ボーダー
+        /// </summary>
+        public static readonly DependencyProperty UpBorderBrushProperty =
+            DependencyProperty.Register(
+                "UpBorderBrush",
+                typeof(Brush),
+                typeof(CommandIndicator),
+                new UIPropertyMetadata(Brushes.Transparent)
+            );
+        public Brush UpBorderBrush
+        {
+            get { return (Brush)GetValue(UpBorderBrushProperty); }
+            set { SetValue(UpBorderBrushProperty, value); }
+        }
+
+        /// <summary>
+        /// 上側ボーダー線幅
+        /// </summary>
+        public static readonly DependencyProperty UpBorderThicknessProperty =
+            DependencyProperty.Register(
+                "UpBorderThickness",
+                typeof(Thickness),
+                typeof(CommandIndicator),
+                new UIPropertyMetadata()
+            );
+        public Brush UpBorderThickness
+        {
+            get { return (Brush)GetValue(UpBorderThicknessProperty); }
+            set { SetValue(UpBorderThicknessProperty, value); }
+        }
+
+        /// <summary>
+        /// 下側背景
+        /// </summary>
+        public static readonly DependencyProperty DownBackgroundProperty =
+            DependencyProperty.Register(
+                "DownBackground",
+                typeof(Brush),
+                typeof(CommandIndicator),
+                new UIPropertyMetadata(Brushes.Transparent)
+            );
+        public Brush DownBackground
+        {
+            get { return (Brush)GetValue(DownBackgroundProperty); }
+            set { SetValue(DownBackgroundProperty, value); }
+        }
+
+        /// <summary>
+        /// 下側ボーダー
+        /// </summary>
+        public static readonly DependencyProperty DownBorderBrushProperty =
+            DependencyProperty.Register(
+                "DownBorderBrush",
+                typeof(Brush),
+                typeof(CommandIndicator),
+                new UIPropertyMetadata(Brushes.Transparent)
+            );
+        public Brush DownBorderBrush
+        {
+            get { return (Brush)GetValue(DownBorderBrushProperty); }
+            set { SetValue(DownBorderBrushProperty, value); }
+        }
+
+        /// <summary>
+        /// 下側ボーダー線幅
+        /// </summary>
+        public static readonly DependencyProperty DownBorderThicknessProperty =
+            DependencyProperty.Register(
+                "DownBorderThickness",
+                typeof(Thickness),
+                typeof(CommandIndicator),
+                new UIPropertyMetadata()
+            );
+        public Brush DownBorderThickness
+        {
+            get { return (Brush)GetValue(DownBorderThicknessProperty); }
+            set { SetValue(DownBorderThicknessProperty, value); }
         }
     }
 }

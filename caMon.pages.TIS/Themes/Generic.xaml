@@ -1,7 +1,8 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:caMon.pages.TIS">
+    xmlns:local="clr-namespace:caMon.pages.TIS"
+    xmlns:CustomControls="clr-namespace:caMon.pages.TIS.CustomControls">
 
     
     <ResourceDictionary.MergedDictionaries>

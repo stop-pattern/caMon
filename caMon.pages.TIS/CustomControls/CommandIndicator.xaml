@@ -1,5 +1,49 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:caMon.pages.TIS.CustomControls">
-    
+
+    <Style TargetType="{x:Type local:CommandIndicator}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:CommandIndicator}">
+                    <Grid x:Name="Main">
+
+                        <!--#region 表示本体 -->
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <Border Name="Up"
+                                    Background="{TemplateBinding UpBackground}"
+                                    BorderBrush="{TemplateBinding UpBorderBrush}"
+                                    BorderThickness="{TemplateBinding UpBorderThickness}">
+
+                                </Border>
+                                <Border x:Name="Down"
+                                    Background="{TemplateBinding DownBackground}"
+                                    BorderBrush="{TemplateBinding DownBorderBrush}"
+                                    BorderThickness="{TemplateBinding DownBorderThickness}">
+
+                                </Border>
+
+                            </Grid>
+                        </Border>
+                        <!--#endregion-->
+                        
+                        <!--#region 滅灯カバー -->
+                        <Border x:Name="Top" Background="{TemplateBinding Foreground}" Visibility="{TemplateBinding Status}">
+                            
+                        </Border>
+                        <!--#endregion-->
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
