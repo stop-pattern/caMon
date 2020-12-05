@@ -24,6 +24,9 @@ This project is under the MIT License.
   - セレクタに便利であると思われる関数も実装しています.
 - caMon.selector.default
   - デフォルトのセレクタ機能を提供するライブラリです.
+- caMon.pages.TIS
+  - 東急5000系列の運転台画面風表示を実装した画面表示ライブラリです
+  - 牛歩ながら開発中です
 
 以下のプロジェクトはアーカイブ的な扱いです.
 
