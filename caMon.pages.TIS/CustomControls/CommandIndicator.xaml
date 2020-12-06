@@ -83,7 +83,45 @@
                             <!--#region 滅灯カバー -->
                             <Border x:Name="Top" Background="{TemplateBinding Foreground}" Visibility="{Binding Status, Converter={StaticResource BoolVisibilityConverter}}">
                                 <!-- {Binding Status, Converter={StaticResource BoolVisibilityConverter}} -->
-                                <Line Stroke="White" StrokeThickness="5" X1="30" X2="120" Y1="60" Y2="60"/>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <!--#region 下半分 -->
+                                    <Grid Grid.Row="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Border Grid.Row="1" Grid.Column="1" BorderBrush="White" BorderThickness="0,1,0,0"/>
+                                    </Grid>
+                                    <!--#endregion-->
+
+                                    <!--#region 下半分 -->
+                                    <Grid Grid.Row="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Border Grid.Row="0" Grid.Column="1" BorderBrush="White" BorderThickness="0,0,0,1"/>
+                                    </Grid>
+                                    <!--#endregion-->
+
+                                </Grid>
                             </Border>
                             <!--#endregion-->
 
