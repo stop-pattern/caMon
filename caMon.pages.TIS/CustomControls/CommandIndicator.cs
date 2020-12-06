@@ -139,7 +139,12 @@ namespace caMon.pages.TIS.CustomControls
         /// 上側表示文字色
         /// </summary>
         public static readonly DependencyProperty UpDisplayBrushProperty =
-            RegisterDependencyProperty<Brush, CommandIndicator>("UpDisplayBrush", Brushes.White);
+            DependencyProperty.Register(
+                "UpDisplayBrush",
+                typeof(Brush),
+                typeof(CommandIndicator),
+                new UIPropertyMetadata(Brushes.White)
+            );
         public Brush UpDisplayBrush
         {
             get { return (Brush)GetValue(UpDisplayBrushProperty); }
@@ -214,7 +219,12 @@ namespace caMon.pages.TIS.CustomControls
         /// 下側表示文字色
         /// </summary>
         public static readonly DependencyProperty DownDisplayBrushProperty =
-            RegisterDependencyProperty<Brush, CommandIndicator>("DownDisplayBrush", Brushes.Black);
+            DependencyProperty.Register(
+                "DownDisplayBrush",
+                typeof(Brush),
+                typeof(CommandIndicator),
+                new UIPropertyMetadata(Brushes.Black)
+            );
         public Brush DownDisplayBrush
         {
             get { return (Brush)GetValue(DownDisplayBrushProperty); }
