@@ -80,7 +80,7 @@
                         <!--#endregion-->
                         
                         <!--#region 滅灯カバー -->
-                        <Border x:Name="Top" Background="{TemplateBinding Foreground}" Visibility="Collapsed">
+                        <Border x:Name="Top" Background="{TemplateBinding Foreground}" Visibility="{Binding Status, Converter={StaticResource BoolVisibilityConverter}}">
                             <!-- {Binding Status, Converter={StaticResource BoolVisibilityConverter}} -->
                             <Line Stroke="White"/>
                         </Border>
