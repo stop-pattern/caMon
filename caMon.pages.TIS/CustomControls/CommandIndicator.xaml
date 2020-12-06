@@ -8,85 +8,87 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:CommandIndicator}">
-                    <Grid x:Name="Main">
+                    <Viewbox Width="150" Height="120">
+                        <Grid x:Name="Main">
 
-                        <!--#region 表示本体 -->
-                        <Border Margin="1"
+                            <!--#region 表示本体 -->
+                            <Border Margin="1"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
 
-                                <!--#region 上半分 -->
-                                <Border Grid.Row="0"
+                                    <!--#region 上半分 -->
+                                    <Border Grid.Row="0"
                                     Background="{TemplateBinding UpBackground}"
                                     BorderBrush="{TemplateBinding UpBorderBrush}"
                                     BorderThickness="{TemplateBinding UpBorderThickness}">
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="8*"/>
-                                            <RowDefinition Height="*"/>
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="8*"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="8*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="8*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
 
-                                        <Viewbox Grid.Row="1" Grid.Column="1">
-                                            <TextBlock Text="{TemplateBinding UpDisplay}"
+                                            <Viewbox Grid.Row="1" Grid.Column="1">
+                                                <TextBlock Text="{TemplateBinding UpDisplay}"
                                                VerticalAlignment="Center"
                                                HorizontalAlignment="Center"
                                                Foreground="{TemplateBinding UpDisplayBrush}"/>
-                                        </Viewbox>
-                                    </Grid>
-                                </Border>
-                                <!--#endregion-->
+                                            </Viewbox>
+                                        </Grid>
+                                    </Border>
+                                    <!--#endregion-->
 
-                                <!--#region 下半分 -->
-                                <Border Grid.Row="1"
+                                    <!--#region 下半分 -->
+                                    <Border Grid.Row="1"
                                     Background="{TemplateBinding DownBackground}"
                                     BorderBrush="{TemplateBinding DownBorderBrush}"
                                     BorderThickness="{TemplateBinding DownBorderThickness}">
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="8*"/>
-                                            <RowDefinition Height="*"/>
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="8*"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="8*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="8*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
 
-                                        <Viewbox Grid.Row="1" Grid.Column="1">
-                                            <TextBlock Text="{TemplateBinding DownDisplay}"
+                                            <Viewbox Grid.Row="1" Grid.Column="1">
+                                                <TextBlock Text="{TemplateBinding DownDisplay}"
                                                VerticalAlignment="Center"
                                                HorizontalAlignment="Center"
                                                Foreground="{TemplateBinding DownDisplayBrush}"/>
-                                        </Viewbox>
-                                    </Grid>
-                                </Border>
-                                <!--#endregion-->
+                                            </Viewbox>
+                                        </Grid>
+                                    </Border>
+                                    <!--#endregion-->
 
-                            </Grid>
-                        </Border>
-                        <!--#endregion-->
-                        
-                        <!--#region 滅灯カバー -->
-                        <Border x:Name="Top" Background="{TemplateBinding Foreground}" Visibility="{Binding Status, Converter={StaticResource BoolVisibilityConverter}}">
-                            <!-- {Binding Status, Converter={StaticResource BoolVisibilityConverter}} -->
-                            <Line Stroke="White"/>
-                        </Border>
-                        <!--#endregion-->
+                                </Grid>
+                            </Border>
+                            <!--#endregion-->
 
-                    </Grid>
+                            <!--#region 滅灯カバー -->
+                            <Border x:Name="Top" Background="{TemplateBinding Foreground}" Visibility="{Binding Status, Converter={StaticResource BoolVisibilityConverter}}">
+                                <!-- {Binding Status, Converter={StaticResource BoolVisibilityConverter}} -->
+                                <Line Stroke="White"/>
+                            </Border>
+                            <!--#endregion-->
+
+                        </Grid>
+                    </Viewbox>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
