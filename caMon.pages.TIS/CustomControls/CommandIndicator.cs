@@ -45,6 +45,18 @@ namespace caMon.pages.TIS.CustomControls
     public class CommandIndicator : Control
     {
         /// <summary>
+        /// 表示モードリスト
+        /// </summary>
+        enum modeList : int
+        {
+            Off,
+            Manual,
+            TASC,
+            ATO,
+            Number
+        }
+
+        /// <summary>
         /// コンストラクタ
         /// </summary>
         static CommandIndicator()
@@ -318,6 +330,25 @@ namespace caMon.pages.TIS.CustomControls
         */
 
 
+        private void SetDisplay(int arg)
+        {
+            switch (arg)
+            {
+                case (int)modeList.Manual:
+                    ChangeDisplay(/*MNU*/);
+                    break;
+                case (int)modeList.TASC:
+                    ChangeDisplay(/*TASC*/);
+                    break;
+                case (int)modeList.ATO:
+                    ChangeDisplay(/*ATO*/);
+                    break;
+                case (int)modeList.Off:
+                default:
+                    ChangeDisplay();
+                    break;
+            }
+        }
 
         /// <summary>
         /// 一括で表示を変更
