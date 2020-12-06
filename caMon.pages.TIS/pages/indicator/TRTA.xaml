@@ -44,7 +44,9 @@
         <!--#endregion-->
         
         <!--#region 指令テスト表示 -->
-        <CustomControls:CommandIndicator UpBackground="Blue" DownBackground="White" />
+        <CustomControls:CommandIndicator Status="False"
+                                         UpBackground="Aqua" UpDisplay="ＡＴＯ"
+                                         DownBackground="Red" DownDisplay="ＥＢ"/>
         <!--#endregion-->
 
         <!--#region FD -->
