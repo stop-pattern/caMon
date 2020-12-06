@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:caMon.pages.TIS.CustomControls">
 
-    <BooleanToVisibilityConverter x:Key="BoolVisibilityConverter" />
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     
     <Style TargetType="{x:Type local:CommandIndicator}">
         <Setter Property="Template">
@@ -81,8 +81,9 @@
                             <!--#endregion-->
 
                             <!--#region 滅灯カバー -->
-                            <Border x:Name="Top" Background="{TemplateBinding Foreground}" Visibility="{Binding Status, Converter={StaticResource BoolVisibilityConverter}}">
-                                <!-- {Binding Status, Converter={StaticResource BoolVisibilityConverter}} -->
+                            <Border x:Name="Top" Background="{TemplateBinding Foreground}" Visibility="{Binding Status, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource TemplatedParent}}">
+                                <!-- {Binding Status, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource TemplatedParent}} -->
+                                <!-- {Binding Status, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CommandIndicator}}} -->
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition/>
