@@ -291,5 +291,46 @@ namespace caMon.pages.TIS.CustomControls
             set { SetValue(dependencyProperty, value); }
         }
         */
+
+
+
+        /// <summary>
+        /// 一括で表示を変更
+        /// 引数無しの場合は無表示
+        /// </summary>
+        /// <param name="up">上側表示文字</param>
+        /// <param name="upBack">上側背景色</param>
+        /// <param name="upbBrush">上側ボーダー色</param>
+        /// <param name="upDispBrush">上側表示文字色</param>
+        /// <param name="downBack">下側背景色</param>
+        /// <param name="downbBrush">下側ボーダー色</param>
+        /// <param name="downDispBrush">下側表示文字</param>
+        private void ChangeDisplay(string up, Brush upBack, Brush upbBrush, Brush upDispBrush, Brush downBack, Brush downbBrush, Brush downDispBrush)
+        {
+            Status = true;
+            ChangeDisplay(up, upBack, upDispBrush, downBack, downDispBrush);
+            UpBorderBrush = upbBrush;
+            DownBorderBrush = downbBrush;
+            UpBorderThickness = new Thickness(5);
+            DownBorderThickness = new Thickness(5);
+        }
+        private void ChangeDisplay(string up, Brush upBack, Brush upDispBrush, Brush downBack, Brush downDispBrush)
+        {
+            ChangeDisplay(up, upBack, upDispBrush);
+            DownBackground = downBack;
+            DownDisplayBrush = downDispBrush;
+        }
+        private void ChangeDisplay(string up, Brush upBack, Brush upDispBrush)
+        {
+            UpDisplay = up;
+            UpBackground = upBack;
+            UpDisplayBrush = upDispBrush;
+            UpBorderThickness = new Thickness();
+            DownBorderThickness = new Thickness();
+        }
+        private void ChangeDisplay()
+        {
+            Status = false;
+        }
     }
 }
