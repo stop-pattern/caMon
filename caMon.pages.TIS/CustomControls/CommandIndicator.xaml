@@ -36,10 +36,10 @@
                                         </Grid.ColumnDefinitions>
 
                                         <Viewbox Grid.Row="1" Grid.Column="1">
-                                            <TextBlock Text="TemplateBinding"
+                                            <TextBlock Text="{TemplateBinding UpDisplay}"
                                                VerticalAlignment="Center"
                                                HorizontalAlignment="Center"
-                                               Foreground="White"/>
+                                               Foreground="{TemplateBinding UpDisplayBrush}"/>
                                         </Viewbox>
                                     </Grid>
                                 </Border>
@@ -63,10 +63,10 @@
                                         </Grid.ColumnDefinitions>
 
                                         <Viewbox Grid.Row="1" Grid.Column="1">
-                                            <TextBlock Text="TemplateBinding"
+                                            <TextBlock Text="{TemplateBinding DownDisplay}"
                                                VerticalAlignment="Center"
                                                HorizontalAlignment="Center"
-                                               Foreground="Black"/>
+                                               Foreground="{TemplateBinding DownDisplayBrush}"/>
                                         </Viewbox>
                                     </Grid>
                                 </Border>
@@ -75,7 +75,7 @@
                             </Grid>
                         </Border>
                         <!--#endregion-->
-                        
+
                         <!--#region 滅灯カバー -->
                         <Border x:Name="Top" Background="{TemplateBinding Foreground}" Visibility="{TemplateBinding Status}">
                             

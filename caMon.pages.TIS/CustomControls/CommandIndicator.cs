@@ -67,9 +67,9 @@ namespace caMon.pages.TIS.CustomControls
                     false,
                     new PropertyChangedCallback(
                         (sender, e) =>
-                            {
-                                (sender as CommandIndicator).OnStatusPropertyChanged(sender, e);
-                            }
+                        {
+                            (sender as CommandIndicator).OnStatusPropertyChanged(sender, e);
+                        }
                         )
                     )
             );
@@ -136,6 +136,33 @@ namespace caMon.pages.TIS.CustomControls
         }
 
         /// <summary>
+        /// 上側表示文字
+        /// </summary>
+        public static readonly DependencyProperty UpDisplayProperty =
+            DependencyProperty.Register(
+                "UpDisplay",
+                typeof(string),
+                typeof(CommandIndicator),
+                new UIPropertyMetadata("MNU")
+            );
+        public string UpDisplay
+        {
+            get { return (string)GetValue(UpDisplayProperty); }
+            set { SetValue(UpDisplayProperty, value); }
+        }
+
+        /// <summary>
+        /// 上側表示文字色
+        /// </summary>
+        public static readonly DependencyProperty UpDisplayBrushProperty =
+            RegisterDependencyProperty<Brush, CommandIndicator>("UpDisplayBrush", Brushes.White);
+        public Brush UpDisplayBrush
+        {
+            get { return (Brush)GetValue(UpDisplayBrushProperty); }
+            set { SetValue(UpDisplayBrushProperty, value); }
+        }
+
+        /// <summary>
         /// 下側背景
         /// </summary>
         public static readonly DependencyProperty DownBackgroundProperty =
@@ -182,5 +209,89 @@ namespace caMon.pages.TIS.CustomControls
             get { return (Thickness)GetValue(DownBorderThicknessProperty); }
             set { SetValue(DownBorderThicknessProperty, value); }
         }
+
+        /// <summary>
+        /// 下側表示文字
+        /// </summary>
+        public static readonly DependencyProperty DownDisplayProperty =
+            DependencyProperty.Register(
+                "DownDisplay",
+                typeof(string),
+                typeof(CommandIndicator),
+                new UIPropertyMetadata("OFF")
+            );
+        public string DownDisplay
+        {
+            get { return (string)GetValue(DownDisplayProperty); }
+            set { SetValue(DownDisplayProperty, value); }
+        }
+
+        /// <summary>
+        /// 下側表示文字色
+        /// </summary>
+        public static readonly DependencyProperty DownDisplayBrushProperty =
+            RegisterDependencyProperty<Brush, CommandIndicator>("DownDisplayBrush", Brushes.Black);
+        public Brush DownDisplayBrush
+        {
+            get { return (Brush)GetValue(DownDisplayBrushProperty); }
+            set { SetValue(DownDisplayBrushProperty, value); }
+        }
+
+
+        /// <summary>
+        /// DependencyPropertyを指定の型と値で初期化
+        /// </summary>
+        /// <typeparam name="Type">DependencyPropertyの型</typeparam>
+        /// <typeparam name="ParentType">DependencyPropertyを所有する型</typeparam>
+        /// <param name="propertyName">DependencyPropertyの名前</param>
+        /// <param name="propertyInitParam">DependencyPropertyの初期値</param>
+        /// <returns>生成されたオブジェクト</returns>
+        public static DependencyProperty RegisterDependencyProperty<Type, ParentType>(string propertyName, Type propertyInitParam)
+        {
+            return DependencyProperty.Register(
+                propertyName,
+                typeof(Type),
+                typeof(ParentType),
+                new UIPropertyMetadata(propertyInitParam)
+            );
+        }
+        /// <summary>
+        /// DependencyPropertyを指定の型と値で初期化
+        /// </summary>
+        /// <typeparam name="Type">DependencyPropertyの型</typeparam>
+        /// <typeparam name="ParentType">DependencyPropertyを所有する型</typeparam>
+        /// <param name="propertyName">DependencyPropertyの名前</param>
+        /// <param name="propertyInitParam">DependencyPropertyの初期値</param>
+        /// <param name="func"></param>
+        /// <returns>生成されたオブジェクト</returns>
+        /*
+        public static DependencyProperty RegisterDependencyProperty<Type, ParentType>(string propertyName, Type propertyInitParam, Func<DependencyObject, DependencyPropertyChangedEventArgs, void> func)
+        {
+            return DependencyProperty.Register(
+                propertyName,
+                typeof(Type),
+                typeof(ParentType),
+                new UIPropertyMetadata(
+                    propertyInitParam,
+                    new PropertyChangedCallback(
+                        (sender, e) => { func(sender, e); }
+                        )
+                    )
+            );
+        }
+        */
+
+        /// <summary>
+        /// コード内でDependencyPropertyを扱うためのWrapper
+        /// </summary>
+        /// <typeparam name="Type">DependencyPropertyの型</typeparam>
+        /// <param name="dependencyProperty">任意のDependencyProperty</param>
+        /*
+        public Type PropertyWrapper
+        {
+            get { return (Type)GetValue(dependencyProperty); }
+            set { SetValue(dependencyProperty, value); }
+        }
+        */
     }
 }
