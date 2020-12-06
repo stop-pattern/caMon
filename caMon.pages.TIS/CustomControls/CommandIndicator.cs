@@ -55,6 +55,7 @@ namespace caMon.pages.TIS.CustomControls
         {
         }
 
+
         /// <summary>
         /// 表示
         /// </summary>
@@ -70,6 +71,7 @@ namespace caMon.pages.TIS.CustomControls
             get { return (bool)GetValue(StatusProperty); }
             set { SetValue(StatusProperty, value); }
         }
+
 
         /// <summary>
         /// 上側背景
@@ -151,6 +153,7 @@ namespace caMon.pages.TIS.CustomControls
             set { SetValue(UpDisplayBrushProperty, value); }
         }
 
+
         /// <summary>
         /// 下側背景
         /// </summary>
@@ -230,6 +233,7 @@ namespace caMon.pages.TIS.CustomControls
             get { return (Brush)GetValue(DownDisplayBrushProperty); }
             set { SetValue(DownDisplayBrushProperty, value); }
         }
+
 
 
         /// <summary>
