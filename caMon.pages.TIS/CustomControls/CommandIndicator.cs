@@ -78,10 +78,13 @@ namespace caMon.pages.TIS.CustomControls
             get { return (bool)GetValue(StatusProperty); }
             set { SetValue(StatusProperty, value); }
         }
-        private void OnStatusPropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+        private static void OnStatusPropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
             switch (e.NewValue)
             {
+                case true:
+                    break;
+                case false:
                 default:
                     break;
             }
