@@ -11,7 +11,8 @@
                     <Grid x:Name="Main">
 
                         <!--#region 表示本体 -->
-                        <Border Background="{TemplateBinding Background}"
+                        <Border Margin="1"
+                            Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
                             <Grid>
