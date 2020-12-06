@@ -8,8 +8,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:CommandIndicator}">
-                    <Viewbox Width="150" Height="120">
-                        <Grid x:Name="Main">
+                    <Viewbox>
+                        <Grid x:Name="Main" Width="150" Height="120">
 
                             <!--#region 表示本体 -->
                             <Border Margin="1"
