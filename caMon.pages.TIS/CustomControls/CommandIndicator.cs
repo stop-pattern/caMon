@@ -63,31 +63,12 @@ namespace caMon.pages.TIS.CustomControls
                 "Status",
                 typeof(bool),
                 typeof(CommandIndicator),
-                new UIPropertyMetadata(
-                    false,
-                    new PropertyChangedCallback(
-                        (sender, e) =>
-                        {
-                            (sender as CommandIndicator).OnStatusPropertyChanged(sender, e);
-                        }
-                        )
-                    )
+                new UIPropertyMetadata(true)
             );
         public bool Status
         {
             get { return (bool)GetValue(StatusProperty); }
             set { SetValue(StatusProperty, value); }
-        }
-        private static void OnStatusPropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
-        {
-            switch (e.NewValue)
-            {
-                case true:
-                    break;
-                case false:
-                default:
-                    break;
-            }
         }
 
         /// <summary>
