@@ -74,6 +74,31 @@ namespace caMon.pages.TIS.CustomControls
 
 
         /// <summary>
+        /// 表示モード
+        /// </summary>
+        public static readonly DependencyProperty DisplayModeProperty =
+            DependencyProperty.Register(
+                "DisplayMode",
+                typeof(int),
+                typeof(CommandIndicator),
+                new UIPropertyMetadata(
+                    0,
+                    OnDisplayModePropertyChanged
+                    //coerceValueCallback
+                    )
+            );
+        public int DisplayMode
+        {
+            get { return (int)GetValue(DisplayModeProperty); }
+            set { SetValue(DisplayModeProperty, value); }
+        }
+        private static void OnDisplayModePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
+
+        /// <summary>
         /// 上側背景
         /// </summary>
         public static readonly DependencyProperty UpBackgroundProperty =
