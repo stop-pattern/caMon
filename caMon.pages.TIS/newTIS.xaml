@@ -58,11 +58,74 @@
         <!--#region ページ選択 -->
         <Grid Grid.Row="5" Background="SlateGray">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="0.25*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.25*"/>
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Column="1" Grid.Row="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="運転" Foreground="Black"/>
+            </Button>
+            <Button Grid.Column="2" Grid.Row="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="車掌" Foreground="Black"/>
+            </Button>
+            <Button Grid.Column="3" Grid.Row="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="出庫" Foreground="Black"/>
+            </Button>
+            <Button Grid.Column="4" Grid.Row="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="メニュー&#xA;放送" Foreground="Black"/>
+            </Button>
+            <Button Grid.Column="5" Grid.Row="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="時計" Foreground="Black"/>
+            </Button>
+            <Button Grid.Column="6" Grid.Row="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="空調" Foreground="Black"/>
+            </Button>
+            <Button Grid.Column="7" Grid.Row="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="行先" Foreground="Black"/>
+            </Button>
+            <Button Grid.Column="8" Grid.Row="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="案内&#xA;設定" Foreground="Black"/>
+            </Button>
+            <Button Grid.Column="9" Grid.Row="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="前灯&#xA;点滅" Foreground="Black"/>
+            </Button>
+            <Button Grid.Column="11" Grid.Row="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="ドア&#xA;方向" Foreground="Black"/>
+            </Button>
+            <Button Grid.Column="13" Grid.Row="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="運行" Foreground="Black"/>
+            </Button>
+            <Button Grid.Column="22" Grid.Row="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="☼" FontSize="20" Foreground="Black"/>
+            </Button>
         </Grid>
-
-
         <!--#endregion-->
 
     </Grid>
