@@ -75,9 +75,6 @@
             <Border x:Name="TrainKind" Grid.Column="1" Grid.Row="1" BorderBrush="White" BorderThickness="5,5,5,5" Visibility="Collapsed">
                 <TextBlock x:Name="TrainKindText" Text=""  FontSize="65" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
             </Border>
-            <CustomControls:CommandIndicator Status="True" Grid.Row="1" Grid.Column="1"
-                                         UpBackground="Aqua" UpDisplay="ＡＴＯ"
-                                         DownBackground="Red" DownDisplay="ＥＢ"/>
         </Grid>
 
 

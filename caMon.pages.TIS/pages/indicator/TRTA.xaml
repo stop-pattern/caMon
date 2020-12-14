@@ -42,12 +42,6 @@
             <Frame Source="../../notch.xaml"/>
         </Viewbox>
         <!--#endregion-->
-        
-        <!--#region 指令テスト表示 -->
-        <CustomControls:CommandIndicator Status="False"
-                                         UpBackground="Aqua" UpDisplay="ＡＴＯ"
-                                         DownBackground="Red" DownDisplay="ＥＢ"/>
-        <!--#endregion-->
 
         <!--#region FD -->
         <Grid Grid.Column="3" Grid.Row="3">
