@@ -55,6 +55,185 @@
         </Grid>
         <!--#endregion-->
 
+        <!--#region ドア表示 -->
+        <Grid Grid.Row="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--#region 列車 -->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="海（②）側" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                <TextBlock Text="山（①）側" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Grid.Row="2" Grid.Column="0"/>
+
+                <Grid Grid.RowSpan="3" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.6*"/>
+                        <RowDefinition Height="0.8*"/>
+                        <RowDefinition Height="0.6*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--#region 列車アイコン -->
+                    <Border BorderBrush="White" BorderThickness="2" CornerRadius="5,0,0,5" Grid.Row="2" Grid.Column="0">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="White" Text="1"/>
+                    </Border>
+                    <Border BorderBrush="White" BorderThickness="2" Grid.Row="2" Grid.Column="1">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="White" Text="2"/>
+                    </Border>
+                    <Border BorderBrush="White" BorderThickness="2" Grid.Row="2" Grid.Column="2">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="White" Text="3"/>
+                    </Border>
+                    <Border BorderBrush="White" BorderThickness="2" Grid.Row="2" Grid.Column="3">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="White" Text="4"/>
+                    </Border>
+                    <Border BorderBrush="White" BorderThickness="2" Grid.Row="2" Grid.Column="4">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="White" Text="5"/>
+                    </Border>
+                    <Border BorderBrush="White" BorderThickness="2" Grid.Row="2" Grid.Column="5">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="White" Text="6"/>
+                    </Border>
+                    <Border BorderBrush="White" BorderThickness="2" Grid.Row="2" Grid.Column="6">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="White" Text="7"/>
+                    </Border>
+                    <Border BorderBrush="White" BorderThickness="2" Grid.Row="2" Grid.Column="7">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="White" Text="8"/>
+                    </Border>
+                    <Border BorderBrush="White" BorderThickness="2" Grid.Row="2" Grid.Column="8">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="White" Text="9"/>
+                    </Border>
+                    <Border BorderBrush="White" BorderThickness="2" CornerRadius="0,5,5,0" Grid.Row="2" Grid.Column="9">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="White" Text="10"/>
+                    </Border>
+                    <!--#endregion-->
+
+                    <!--#region 海側ドア(2) -->
+                    <Border x:Name="doorl0" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="0"/>
+                    <Border x:Name="doorl1" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="1"/>
+                    <Border x:Name="doorl2" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="2"/>
+                    <Border x:Name="doorl3" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="3"/>
+                    <Border x:Name="doorl4" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="4"/>
+                    <Border x:Name="doorl5" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="5"/>
+                    <Border x:Name="doorl6" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="6"/>
+                    <Border x:Name="doorl7" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="7"/>
+                    <Border x:Name="doorl8" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="8"/>
+                    <Border x:Name="doorl9" Background="White" Width="30" Height="16" Grid.Row="0" Grid.Column="9"/>
+                    <!--#endregion-->
+
+                    <!--#region 山側ドア(1) -->
+                    <Border x:Name="doorr0" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="0"/>
+                    <Border x:Name="doorr1" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="1"/>
+                    <Border x:Name="doorr2" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="2"/>
+                    <Border x:Name="doorr3" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="3"/>
+                    <Border x:Name="doorr4" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="4"/>
+                    <Border x:Name="doorr5" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="5"/>
+                    <Border x:Name="doorr6" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="6"/>
+                    <Border x:Name="doorr7" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="7"/>
+                    <Border x:Name="doorr8" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="8"/>
+                    <Border x:Name="doorr9" Background="White" Width="30" Height="16" Grid.Row="4" Grid.Column="9"/>
+                    <!--#endregion-->
+                </Grid>
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region 凡例 -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--#region 開 -->
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Fill="HotPink" Width="30" Height="16" Grid.Row="1" Grid.Column="1"/>
+                    <Border VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2">
+                        <TextBlock TextAlignment="Center" Foreground="LimeGreen" Text=" : 開"/>
+                    </Border>
+                </Grid>
+                <!--#endregion-->
+
+                <!--#region 閉 -->
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Fill="White" Width="30" Height="16" Grid.Row="1" Grid.Column="1"/>
+                    <Border VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2">
+                        <TextBlock TextAlignment="Center" Foreground="LimeGreen" Text=" : 閉"/>
+                    </Border>
+                </Grid>
+                <!--#endregion-->
+
+                <!--#region 異常 -->
+                <Grid Grid.Column="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Fill="Red"  Grid.Row="1" Grid.Column="1"/>
+                    <Border VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2">
+                        <TextBlock TextAlignment="Center" Foreground="LimeGreen" Text=" : 異常"/>
+                    </Border>
+                </Grid>
+                <!--#endregion-->
+
+            </Grid>
+            <!--#endregion-->
+
+        </Grid>
+        <!--#endregion-->
+
         <!--#region ページ選択 -->
         <Grid Grid.Row="5" Background="SlateGray">
             <Grid.ColumnDefinitions>
