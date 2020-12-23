@@ -11,7 +11,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Diagnostics;
 using System.Windows.Threading;
+using System.Runtime.InteropServices;
 
 using TR;
 using TR.BIDSSMemLib;
@@ -42,7 +44,32 @@ namespace caMon.pages.TIS
         /// <summary>表示状態</summary>
         PageStatus status = new PageStatus();
         /// <summary>ウィンドウがアクティブかどうか</summary>
-        bool isActive;
+        bool isWindowActive;
+        /// <summary>Bveをアクティブに保つかどうか</summary>
+        bool isMostActive = true;
+        /// <summary>BVEがアクティブかどうか</summary>
+        bool isBveActive;
+        /// <summary>アクティブウィンドウ</summary>
+        Process activeWindow;
+        /// <summary>アクティブウィンドウ更新用タイマー</summary>
+        static readonly DispatcherTimer wintimer = new DispatcherTimer();
+        /// <summary>ループ間隔[ms]</summary>
+        readonly int wintimerInterval = 250;
+
+
+        [DllImport("USER32.DLL")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        [DllImport("USER32.DLL")]
+        private static extern IntPtr GetForegroundWindow();
+
+        [DllImport("USER32.DLL", CharSet = CharSet.Auto)]
+        private static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int length);
+
+        [DllImport("USER32.DLL")]
+        public static extern int GetWindowThreadProcessId(IntPtr hWnd, out int lpdwProcessId);
+
 
         /// <summary>
         /// 表示状態
@@ -73,6 +100,9 @@ namespace caMon.pages.TIS
             var app = Application.Current;
             app.Activated += App_Activated;
             app.Deactivated += App_Activated;
+
+            wintimer.Tick += winTimer_Tick;
+            wintimer.Interval = new TimeSpan(0, 0, 0, 0, 100);
 
             panel = new List<int>();
             sound = new List<int>();
@@ -195,6 +225,9 @@ namespace caMon.pages.TIS
                     mainFrame.Source = new Uri(@"Pages\Driving.xaml", UriKind.Relative);
                     break;
             }
+
+            activeWindow = GetActiveProcess();
+            isBveActive = checkProcessName(activeWindow);
         }
 
 
@@ -227,13 +260,84 @@ namespace caMon.pages.TIS
         private void App_Activated(object sender, EventArgs e)
         {
             // Application activated
-            this.isActive = true;
+            this.isWindowActive = true;
+            if (isMostActive) wintimer.Start();
         }
 
         private void App_Deactivated(object sender, EventArgs e)
         {
             // Application deactivated
-            this.isActive = false;
+            this.isWindowActive = false;
         }
+
+        /// <summary> 
+        /// タイマで呼ばれる関数
+        /// </summary>
+        private void winTimer_Tick(object sender, object e)
+        {
+            ActivateBve();
+        }
+
+        /// <summary>
+        /// caMonを選択したときだけbveのウィンドウをアクティブにする
+        /// </summary>
+        /// <returns>設定結果</returns>
+        private bool ActivateBve()
+        {
+            if (GetActiveProcess().ProcessName != Process.GetCurrentProcess().ProcessName) return false;
+            foreach (Process item in Process.GetProcesses())
+            {
+                if (checkProcessName(item))
+                {
+                    SetForegroundWindow(item.MainWindowHandle);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// アクティブウィンドウのプロセスを取得
+        /// </summary>
+        private Process GetActiveProcess()
+        {
+            int processId;
+            GetWindowThreadProcessId(GetForegroundWindow(), out processId);
+
+            return Process.GetProcessById(processId);
+        }
+
+        /// <summary>
+        /// プロセス名からプロセスを正誤判定
+        /// </summary>
+        /// <param name="process">判定対象</param>
+        /// <returns>判定結果</returns>
+        bool checkProcessName(Process process)
+        {
+            string targetName = "Bve trainsim";
+            return (0 <= process.MainWindowTitle.IndexOf(targetName));
+            //return process.ProcessName == targetName ? true : false;
+        }
+
+        /*
+        /// <summary>
+        /// うまく動かないやつ
+        /// </summary>
+        private bool ActivateBve()
+        {
+            string targetName = "Bve trainsim";
+            Process.GetCurrentProcess();
+            const int sbI = 256;
+            StringBuilder sb = new StringBuilder(sbI);
+            sb.ToString(0, GetWindowText(GetForegroundWindow(), sb, sbI));
+            var processList = Process.GetProcessesByName(targetName);
+            if (processList?.Length < 1) return false;
+            foreach (var item in Process.GetProcessesByName(targetName))
+            {
+                SetForegroundWindow(item.MainWindowHandle);
+            }
+            return true;
+        }
+        */
     }
 }
