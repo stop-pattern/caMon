@@ -45,8 +45,6 @@ namespace caMon.pages.TIS
         PageStatus status = new PageStatus();
         /// <summary>ウィンドウがアクティブかどうか</summary>
         bool isWindowActive;
-        /// <summary>Bveをアクティブに保つかどうか</summary>
-        bool isMostActive = true;
         /// <summary>BVEがアクティブかどうか</summary>
         bool isBveActive;
         /// <summary>アクティブウィンドウ</summary>
@@ -55,6 +53,20 @@ namespace caMon.pages.TIS
         static readonly DispatcherTimer wintimer = new DispatcherTimer();
         /// <summary>ループ間隔[ms]</summary>
         readonly int wintimerInterval = 250;
+
+        /// <summary>Bveをアクティブに保つかどうか</summary>
+        public static readonly DependencyProperty isMostActiveProperty =
+            DependencyProperty.Register(
+                "isMostActive",
+                typeof(bool),
+                typeof(Page),
+                new UIPropertyMetadata(false)
+            );
+        public bool isMostActive
+        {
+            get { return (bool)GetValue(isMostActiveProperty); }
+            set { SetValue(isMostActiveProperty, value); }
+        }
 
 
         [DllImport("USER32.DLL")]
@@ -225,6 +237,8 @@ namespace caMon.pages.TIS
                     mainFrame.Source = new Uri(@"Pages\Driving.xaml", UriKind.Relative);
                     break;
             }
+
+            //SettingActive.IsChecked;
 
             activeWindow = GetActiveProcess();
             isBveActive = checkProcessName(activeWindow);

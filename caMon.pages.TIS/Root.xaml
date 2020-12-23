@@ -65,6 +65,9 @@
                 <ToggleButton x:Name="Driving" Grid.Row="1" Grid.Column="2" Background="White" Click="Driving_Click">
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">運転</TextBlock>
                 </ToggleButton>
+                <ToggleButton x:Name="SettingActive" Grid.Row="1" Grid.Column="11" Background="White" IsChecked="{Binding Path=isMostActive, Mode=OneWay}">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">前面<LineBreak/>維持</TextBlock>
+                </ToggleButton>
                 <Button x:Name="BrightnessUp" Grid.Row="1" Grid.Column="13" Background="White" IsHitTestVisible="False">
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">明度<LineBreak/>暗</TextBlock>
                 </Button>
