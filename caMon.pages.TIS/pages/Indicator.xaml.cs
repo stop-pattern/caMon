@@ -125,8 +125,6 @@ namespace caMon.pages.TIS.pages
                         MainFrame.Source = new Uri(@"./indicator/SEB.xaml", UriKind.Relative);
                         break;
                     case 2: /// TOB
-                        MainFrame.Source = new Uri(@"./indicator/TOB.xaml", UriKind.Relative);
-                        break;
                     case 5: /// SOT
                     case 6: /// JR
                     case 7: /// OER
