@@ -91,7 +91,6 @@ namespace caMon.pages.TIS.pages.indicator
                         break;
                 }
 
-                EmrDrive.Status = toBool(panel[31]);
                 Tasc.Status = toBool(panel[136]);
                 Atc.Status = toBool(panel[21]);
                 Shunting.Status = toBool(panel[32]);
