@@ -102,7 +102,7 @@ namespace caMon.pages.TIS
             app.Deactivated += App_Activated;
 
             wintimer.Tick += winTimer_Tick;
-            wintimer.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            wintimer.Interval = new TimeSpan(0, 0, 0, 0, wintimerInterval);
 
             panel = new List<int>();
             sound = new List<int>();
