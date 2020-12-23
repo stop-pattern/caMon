@@ -82,28 +82,28 @@ namespace caMon.pages.TIS
         {
             if (updateFlag)
             {
-                if (8 > spec.J)
+                if (8 > spec.J + 1)
                 {
                     ind_b8.Visibility = Visibility.Hidden;
-                    if (7 > spec.J)
+                    if (7 > spec.J + 1)
                     {
                         ind_b7.Visibility = Visibility.Hidden;
-                        if (6 > spec.J)
+                        if (6 > spec.J + 1)
                         {
                             ind_b6.Visibility = Visibility.Hidden;
-                            if (5 > spec.J)
+                            if (5 > spec.J + 1)
                             {
                                 ind_b5.Visibility = Visibility.Hidden;
-                                if (4 > spec.J)
+                                if (4 > spec.J + 1)
                                 {
                                     ind_b4.Visibility = Visibility.Hidden;
-                                    if (3 > spec.J)
+                                    if (3 > spec.J + 1)
                                     {
                                         ind_b3.Visibility = Visibility.Hidden;
-                                        if (2 > spec.J)
+                                        if (2 > spec.J + 1)
                                         {
                                             ind_b2.Visibility = Visibility.Hidden;
-                                            if (1 > spec.J)
+                                            if (1 > spec.J + 1)
                                             {
                                                 ind_b1.Visibility = Visibility.Hidden;
                                             }
