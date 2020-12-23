@@ -319,25 +319,5 @@ namespace caMon.pages.TIS
             //return process.ProcessName == targetName ? true : false;
         }
 
-        /*
-        /// <summary>
-        /// うまく動かないやつ
-        /// </summary>
-        private bool ActivateBve()
-        {
-            string targetName = "Bve trainsim";
-            Process.GetCurrentProcess();
-            const int sbI = 256;
-            StringBuilder sb = new StringBuilder(sbI);
-            sb.ToString(0, GetWindowText(GetForegroundWindow(), sb, sbI));
-            var processList = Process.GetProcessesByName(targetName);
-            if (processList?.Length < 1) return false;
-            foreach (var item in Process.GetProcessesByName(targetName))
-            {
-                SetForegroundWindow(item.MainWindowHandle);
-            }
-            return true;
-        }
-        */
     }
 }
