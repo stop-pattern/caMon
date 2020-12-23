@@ -41,6 +41,8 @@ namespace caMon.pages.TIS
         public static List<int> sound = new List<int>();
         /// <summary>表示状態</summary>
         PageStatus status = new PageStatus();
+        /// <summary>ウィンドウがアクティブかどうか</summary>
+        bool isActive;
 
         /// <summary>
         /// 表示状態
@@ -66,6 +68,11 @@ namespace caMon.pages.TIS
             SharedFuncs.SML.SMC_OpenDChanged += SMemLib_OpenChanged;
             SharedFuncs.SML.SMC_PanelDChanged += SMemLib_PanelChanged;
             SharedFuncs.SML.SMC_SoundDChanged += SMemLib_SoundChanged;
+
+            var win = Window.GetWindow(this);
+            var app = Application.Current;
+            app.Activated += App_Activated;
+            app.Deactivated += App_Activated;
 
             panel = new List<int>();
             sound = new List<int>();
@@ -215,6 +222,18 @@ namespace caMon.pages.TIS
             Driving.IsChecked = false;
             Driving.Foreground = new SolidColorBrush(Colors.Black);
             Driving.Background = new SolidColorBrush(Colors.White);
+        }
+
+        private void App_Activated(object sender, EventArgs e)
+        {
+            // Application activated
+            this.isActive = true;
+        }
+
+        private void App_Deactivated(object sender, EventArgs e)
+        {
+            // Application deactivated
+            this.isActive = false;
         }
     }
 }
