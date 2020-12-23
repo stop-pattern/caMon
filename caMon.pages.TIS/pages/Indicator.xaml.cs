@@ -115,16 +115,20 @@ namespace caMon.pages.TIS.pages
                 KeyDisplay.Text = keyKind[panel[92]];
                 switch (panel[92])
                 {
-                    case 1:
+                    case 1: /// TRTA
                         MainFrame.Source = new Uri(@"./indicator/TRTA.xaml", UriKind.Relative);
                         break;
-                    case 3:
+                    case 3: /// TKK
                         MainFrame.Source = new Uri(@"./indicator/TKK.xaml", UriKind.Relative);
                         break;
-                    case 4:
+                    case 4: /// SEB
                         MainFrame.Source = new Uri(@"./indicator/SEB.xaml", UriKind.Relative);
                         break;
-                    case 2:
+                    case 2: /// TOB
+                    case 5: /// SOT
+                    case 6: /// JR
+                    case 7: /// OER
+                    case 8: /// TOY
                     case 0:
                     default:
                         break;

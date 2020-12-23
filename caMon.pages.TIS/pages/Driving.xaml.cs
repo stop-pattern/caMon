@@ -1022,6 +1022,8 @@ namespace caMon.pages.TIS.pages
                     case 6: /// JR
                     case 7: /// OER
                     case 8: /// TOY
+                        MainFrame.Source = new Uri(@"driving\TKK.xaml", UriKind.Relative);
+                        break;
                     case 0:
                     default:
                         break;
